@@ -14,3 +14,4 @@ Hemos tomado los siguientes sitios como referencias para nuestro proyecto:
 - **[distrito moda](https://www.distritomoda.com.ar/)**
 - **[Benka](https://www.benka.com.ar/)**
 - **[Galpon de Ropa](https://www.galponderopa.com/)**
+- **[Renova Tu Vestidor](https://www.renovatuvestidor.com/home)**: se toma como referencia porque a diferencia de los demás sitios, el mismo usuario publica la ropa y la sube al sitio, en vez de llevarla a los dueños y que ellos publiquen.
