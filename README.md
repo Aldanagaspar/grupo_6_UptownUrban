@@ -12,4 +12,5 @@ Queremos ofrecerles a las personas la posibilidad de comprar ropa más economico
 Hemos tomado los siguientes sitios como referencias para nuestro proyecto:
 - **[Urban Luxury Shop](https://urbanluxurymarcas.com/tienda/)**
 - **[distrito moda](https://www.distritomoda.com.ar/)**
-- **[Benka](https://monasteriohuerta.org/)**
+- **[Benka](https://www.benka.com.ar/)**
+- **[Galpon de Ropa](https://www.galponderopa.com/)**
