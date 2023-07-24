@@ -1,4 +1,5 @@
-# Venta de Ropa Usada 
+# Used Fashion
+## Venta de Ropa Usada 
 Queremos ofrecerles a las personas la posibilidad de comprar ropa más economico desde la comodidad de su casa.
 
 ## Sitio propuesto por:
