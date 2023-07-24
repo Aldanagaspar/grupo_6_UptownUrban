@@ -1,6 +1,6 @@
 # Used Fashion
 ## Venta de Ropa Usada 
-Queremos ofrecerles a las personas la posibilidad de comprar ropa más economico desde la comodidad de su casa.
+Queremos ofrecerles a las personas la posibilidad de comprar ropa más economico desde la comodidad de su casa. El publico al que va dirigido es a todo aquel que se encuentre interesado en vender o comprar ropa de segunda mano.
 
 ## Sitio propuesto por:
 ### Grupo 6
