@@ -10,8 +10,8 @@ Queremos ofrecerles a las personas la posibilidad de comprar ropa más economico
 - **Farfán, Facundo, 21 años**: Estudiante de A.P.U. en la Facultad de Ingeniería. Me gusta el anime, la musica y los videojuegos.
 
 Hemos tomado los siguientes sitios como referencias para nuestro proyecto:
-- **[Urban Luxury Shop](https://urbanluxurymarcas.com/tienda/)**
-- **[distrito moda](https://www.distritomoda.com.ar/)**
-- **[Benka](https://www.benka.com.ar/)**
-- **[Galpon de Ropa](https://www.galponderopa.com/)**
+- **[Mercado Libre](https://www.mercadolibre.com.ar/)**: Lo tomamos de referencia por la completitud de los datos presente en la página del detalle del producto.
+- **[distrito moda](https://www.distritomoda.com.ar/)**: Tomamos de referncia la página del Carrito de Productos.
+- **[Benka](https://www.benka.com.ar/)**: Tomamos de referencia las ofertas en la página principal.
+- **[Galpon de Ropa](https://www.galponderopa.com/)**: Tomamos de referencia las previews de las fotos del producto antes de hacer clic en él.
 - **[Renova Tu Vestidor](https://www.renovatuvestidor.com/home)**: se toma como referencia porque a diferencia de los demás sitios, el mismo usuario publica la ropa y la sube al sitio, en vez de llevarla a los dueños y que ellos publiquen.
