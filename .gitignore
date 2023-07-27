@@ -1,2 +1,5 @@
 # Carpetas
 node_modules
+
+#Ejecutables y otros
+*.sh
