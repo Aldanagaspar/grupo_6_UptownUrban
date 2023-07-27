@@ -1,0 +1,26 @@
+{
+  "name": "grupo_6_usedfashion",
+  "version": "1.0.0",
+  "description": "Queremos ofrecerles a las personas la posibilidad de comprar ropa más economico desde la comodidad de su casa. El publico al que va dirigido es a todo aquel que se encuentre interesado en vender o comprar ropa de segunda mano.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aldanagaspar/grupo_6_UsedFashion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aldanagaspar/grupo_6_UsedFashion/issues"
+  },
+  "homepage": "https://github.com/Aldanagaspar/grupo_6_UsedFashion#readme",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
