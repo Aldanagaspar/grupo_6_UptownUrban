@@ -1,0 +1,116 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'DM Sans';
+}
+.productos{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+}
+.carrito{
+    color:orangered;
+}
+.barra{
+    background-color: #c0c0c0;
+    display: flex;
+}
+.cantidad{
+    width: 20%;
+    padding: 5px 30px;
+}
+.producto{
+    
+    width:60%;
+    padding: 5px 30px;
+}
+.subtotal{
+    width: 20%;
+    padding: 5px 30px;
+}
+.carrito1{
+    display:flex;
+    /*padding:30px;*/
+    height: 300px;
+    
+    width: 100%;
+    flex-wrap: wrap;
+}
+.carrito2{
+    display:flex;
+    /*padding:30px;*/
+    height: 300px;
+    
+    width: 100%;
+    flex-wrap: wrap;
+}
+.imagen{
+    padding:1%;
+    width: 17%;
+    height: 90%;
+
+}
+.nombre{
+    padding: 5% 5%;
+    width: 39%;
+     
+}
+.cant{
+    padding: 5% 5%;
+    width: 21%;
+
+}
+.precio{
+    padding: 5% 5%;
+    width: 15%;
+    
+}
+.basura{
+    padding: 5% 2%;
+    width: 5%;
+    
+    font-size: 20px;
+}
+.barra2{
+    border: 1px solid black;
+    background-color: #FFF;
+    display:flex;
+}
+.botones{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.vaciar{
+    margin:30px 12.5%;
+    width: 25%;
+    font-size: 20px;
+    background-color: white;
+}
+.vaciar:hover{
+    color:#D41F1F;
+    border: solid 1px #D41F1F;
+}
+.vaciar:active{
+    border: solid 1px #1c3041;
+    box-shadow:inset 0 0 10px red;
+    color:red;
+}
+.confirmar{
+    margin:30px 15%;
+    width: 20%;
+    font-size: 20px;
+    background-color: #f1a656;
+    border: solid 1px #1c3041;
+}
+.confirmar:hover{
+    background-color: #ffbd59;
+    cursor:pointer;
+}
+.confirmar:active{
+    background-color: #55c5ba;
+    border: solid 1px #1c3041;
+    box-shadow:inset 0 0 10px #1c30414a;
+}
