@@ -7,6 +7,128 @@
     <title>(Nombre del Producto) - Used Fashion</title>
 </head>
 <body>
-    <h1>Detalles del Producto</h1>
+    <header>
+        <h1>Detalles del Producto</h1>
+    </header>
+
+    <div class="container-title">Prendas</div>
+    <main>
+        <div class="container-img">
+            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/CPB2ITLKTJGITMH2LURD3LJMCE.jpg" alt="imagen-producto"/>
+        </div>
+        <div 
+        class="container-info-product">
+            <div class="container-price">
+                <span>$100</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            
+            <div class="container-detail-product">
+                <div class="form-group">
+                    <label for="colour">Color</label>
+                    <select name="colour" id="colour">
+                        <option disable selected value="">
+                            Escoge una opcion
+                        </option>
+                        <option 
+                            value="rojo">Rojo
+                        </option>
+                        <option 
+                            value="blanco">Blanco
+                        </option>
+                        <option 
+                            value="beige">beige
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="size">talla</label>
+                    <select name="size" id="size">
+                        <option disable selected value="">
+                            Escoge una opcion
+                        </option>
+                        <option 
+                            value="40">40
+                        </option>
+                        <option 
+                            value="41">41
+                        </option>
+                        <option 
+                            value="43">43
+                        </option>
+                    </select>
+                </div>
+                <button 
+                    class="btn-clean">Limpiar
+                </button>
+            </div>
+            <div class="container-add-cart">
+                <div class="container-quantity">
+                    <input 
+                        type="number" 
+                        placeholder="1" 
+                        value="1" 
+                        min="1" 
+                        class="input-quantity"/>
+                        <div 
+                            class="btn-increment-decrement">
+                            <i class="fa-solid fa-chevron-up"></i>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                </div>
+                <button class="btn-add-to-cart">
+                    <i class="fa-solid fa-plus"></i>
+                    Añadir al carrito
+                </button>
+            </div>
+            <div class="container-description">
+                <div class="title-description">
+                    <h4>Descripcion</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-description">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, ducimus? Architecto aspernatur, ipsum, nesciunt porro nam cum, incidunt necessitatibus quas tempora quasi ad debitis rerum cupiditate itaque. Consectetur, iusto illum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime explicabo harum expedita iusto, tempore saepe soluta maiores perferendis ullam qui! Quisquam sunt modi eveniet repellat incidunt totam, nisi molestias.
+                    </p>
+                </div>
+            </div>
+            <div class="container-additional-information">
+                <div class="title-additional-information">
+                    <h4>
+                        Informacion Adicional
+                    </h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                 <div class="text-aditional-information">
+                    <p>
+                        ----------------
+                    </p>
+                 </div>   
+            </div>
+            <div class="container-reviews">
+                <div class="title-reviews">
+                    <h4>
+                        Reseñas
+                    </h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                 <div class="text-aditional-information">
+                    <p>
+                        ----------------
+                    </p>
+                 </div>   
+            </div>
+        </div>
+    </main>
+   
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    <script 
+        src="http://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>  
+    <script 
+        src= "server.js"></script>
+           
 </body>
 </html>
