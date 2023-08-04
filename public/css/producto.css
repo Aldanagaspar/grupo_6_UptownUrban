@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100vw;
+    padding: 2vw 0;
+    text-align: center;
+    background-color: #256;
+}
+
+header h1 {
+    margin: auto;
+}
+
+main {
+    width: 95vw;
+    border-radius: 5px;
+    padding: 1vw;
+    margin: auto;
+}
+
+main .detalle {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh;
+}
+
+
+main .detalle .container-img-small {
+    width: 10%
+}
+
+main .detalle .container-img-small .img-small {
+    width: 5vw;
+    height: 5vw;
+    background: url("/img/camiseta-argentina.png") center;
+    background-size: contain;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+main .detalle .container-img-small .img-small:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+main .detalle .container-img-big {
+    width: 45%;
+    background: url("/img/camiseta-argentina.png") center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+main .detalle .container-img-big .fa-chevron-left {
+    position: absolute;
+    top: 220px;
+    left: 35px;
+    font-size: 1.4rem;
+    color: #444;
+    cursor: pointer;
+}
+
+main .detalle .container-img-big .fa-chevron-right {
+    position: absolute;
+    top: 220px;
+    right: 35px;
+    font-size: 1.4rem;
+    color: #444;
+    cursor: pointer;
+}
+
+main .detalle .container-img-data {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1vw;
+    color: #333;
+    font-family: 'League Spartan', 'Helvetica', sans-serif;
+}
+
+main .detalle .container-img-data h2 {
+    margin-bottom: 10px;
+}
+
+main .detalle .container-img-data p {
+    margin: 12px 0;
+}
+
+main .detalle .container-img-data p i {
+    color: rgb(81, 39, 127);
+}
+
+main .detalle .container-img-data .anuncios {
+    width: 45%;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .detalle .container-img-data .anuncios .orange {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(228, 121, 39);
+}
+
+main .detalle .container-img-data .anuncios p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+main .detalle .container-img-data .info {
+    margin: 15px 0;
+}
+
+main .detalle .container-img-data .info h4 {
+    margin: 5px 0;
+}
+
+
+main .detalle .container-img-data .info h3 {
+    font-size: 2rem;
+}
+
+main .detalle .container-img-data .info span {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+main .detalle .container-img-data .info a {
+    color: rgb(42, 146, 181);
+}
+
+main .detalle .container-img-data .info p {
+    color: #444;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+main .detalle .container-img-data .info .colors {
+    width: 30%;
+    height: 2vw;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+main .detalle .container-img-data .info .colors .circle {
+    width: 1vw;
+    height: 1vw;
+    border-radius: 50%;
+}
+
+main .detalle .container-img-data .info .colors .gray {
+    background-color: gray;
+}
+
+main .detalle .container-img-data .info .colors .red {
+    background-color: red;
+}
+
+main .detalle .container-img-data .info .colors .green {
+    background-color: green;
+}
+
+main .detalle .container-img-data .info .colors .purple {
+    background-color: purple;
+}
+
+main .detalle .container-img-data .info .colors .orange {
+    background-color: orange;
+}
+
+main .detalle .container-img-data .info select {
+    padding: 1vh 2vh;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 600
+}
+
+main .detalle .container-img-data .info .btns {
+    margin: 15px 0;
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .detalle .container-img-data .info .btns .comprar {
+    padding: 1vh 3vh;
+    border: none;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 4px;
+    background-color: rgb(172, 27, 82);
+    cursor: pointer;
+}
+
+main .detalle .container-img-data .info .btns .agregar {
+    padding: 1vh 3vh;
+    border: none;
+    font-size: .8rem;
+    font-weight: 600;
+    color: rgb(172, 27, 82);
+    border-radius: 4px;
+    border: 1px solid rgb(172, 27, 82);
+    background-color: #fff;
+    cursor: pointer;
+}
