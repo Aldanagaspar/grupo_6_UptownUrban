@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const publicPath= path.resolve(__dirname, './public');
 
 const app = express();
 
@@ -30,4 +31,4 @@ app.get('/registro',(req,res)=>{
 });
 
 
-app.use(express.static("public"));
+app.use(express.static(publicPath));

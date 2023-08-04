@@ -1,0 +1,34 @@
+body{
+    background-color: #55c5ba;
+    }
+.header-logo { 
+    height: 40px;
+}
+#header {
+    background-color: coral;
+    font-family: 'DM Sans';
+}
+
+#footer {
+    background-color: #62c1fc ;
+}
+#footer ul li {
+    list-style: none;
+}
+    
+#section-Carrusel {
+    background-color: darkgrey;
+    text-align: center;
+}
+.Carrusel-1 {
+    text-align: center;
+    width: 900px;
+}
+.carrusel-2 {
+    text-align: center;
+    width: 900px;
+}
+.carrusel-3 {
+    text-align: center;
+    width: 900px;
+}
