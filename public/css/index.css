@@ -1,34 +1,161 @@
-body{
-    background-color: #55c5ba;
-    }
-.header-logo { 
-    height: 40px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-#header {
-    background-color: coral;
+
+header {
+    padding: 10px 0;
+    font-family: 'DM Sans';
+}
+header .header-logo {
+    width: 75px;
+    cursor: pointer;
+}
+header nav {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav ul {
+    width: 28%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    padding: 10px;
+}
+
+header nav ul li a:hover{
+    text-shadow: 1px 0px 5px #ccc;
+    border-bottom: 2px solid gold;
+}
+
+header form {
+    width: 21%;
+    border: 1px solid #bbb;
+    border-radius: 12px;
+    padding: .4vw;
+    transition: .5s;
+}
+
+header form:hover {
+    border: 1px solid #555;
+}
+
+header form label input {
+    border: none;
+    outline: none;
+    padding: .4vh 1.1vh;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+header nav .login-bar {
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav .nav-bar .vende {
+    background-color: rgb(137, 26, 16);
+    color: #fff;
+    padding: 15px 10px;
+}
+
+.carrusel {
+    margin: 3vw 0;
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 20px;
     font-family: 'DM Sans';
 }
 
-#footer {
-    background-color: #62c1fc ;
+.carrusel .container-img {
+    display: block;
+    width: 95%;
+    margin: auto;
+    position: relative;
 }
-#footer ul li {
-    list-style: none;
+
+.carrusel .container-img .img-carrusel {
+    width: 100%;
+    height: 580px;
+    object-fit: cover;
 }
-    
-#section-Carrusel {
-    background-color: darkgrey;
-    text-align: center;
+
+.carrusel .container-img div .text-carrusel {
+    background-color: rgba(226, 178, 35, 0.8);
+    border-radius: 35px;
+    padding: 1.5vw;
+    position: absolute;
+    bottom: 90px;
+    left: 75px;
+    color: black;
 }
-.Carrusel-1 {
-    text-align: center;
-    width: 900px;
+
+.carrusel .container-img div .text-carrusel h3 {
+    text-shadow: 2px 1px 2px #333;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
-.carrusel-2 {
-    text-align: center;
-    width: 900px;
+
+.carrusel .container-img div .text-carrusel p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 5px 0;
+    letter-spacing: 2px;
 }
-.carrusel-3 {
-    text-align: center;
-    width: 900px;
+
+.carrusel .container-img div .text-carrusel span {
+    font-size: 1.5rem;
+}
+
+.carrusel .container-img div .fa-chevron-left {
+    position: absolute;
+    color: #000;
+    text-shadow: 1px 1px 1px gold;
+    font-size: 2rem;
+    top: 270px;
+    left: 30px;
+    cursor: pointer;
+}
+
+.carrusel .container-img div .fa-chevron-right {
+    position: absolute;
+    color: #000;
+    text-shadow: 1px 1px 1px gold;
+    font-size: 2rem;
+    top: 270px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.carrusel .container-img div .circles {
+    position: absolute;
+    left: 530px;
+    width: 100px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.carrusel .container-img div .circles div {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #555;
 }

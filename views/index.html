@@ -1,63 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome (icons)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!--Font(Links de tipografias)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,400&family=League+Spartan:wght@200;400;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,400&family=League+Spartan:wght@200;400;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/css/index.css">
     <title>Used Fashion</title>
     <link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon">
 </head>
+
 <body>
-    <header id="header">
-        <div><img class="header-logo" src="/img/Logo.png" alt="Logo de la marca"></div>
+    <header>
         <nav>
-            <ul>
+            <img class="header-logo" src="/img/Logo.png" alt="Logo de la marca">
+            <ul class="nav-bar">
                 <li><a href="#">Categorias</a></li>
                 <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Vendé tu Ropa</a></li>
-                <li><a href="#">Carrito</a></li>
+                <li><a href="#" class="vende">Vendé tu Ropa</a></li>
+            </ul>
+            <form>
+                <label for="search-bar">
+                    <input type="text" placeholder="Buscar productos">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </form>
+            <ul class="login-bar">
+                <li><a href="#">Carrito<i class="fa-solid fa-cart-shopping"></i></a></li>
                 <li><a href="#">Registro</a></li>
                 <li><a href="#">Iniciar Sesion</a></li>
             </ul>
         </nav>
-
     </header>
-    <section id="section-Carrusel">
-        <article>
-            <img class="Carrusel-1" src="/img/carrusel-1.jpg" alt="Ropa Deportiva">
-            <h3>Ropa Deportiva</h3>
-            <p>Bajada del Producto</p>
-        </article>
-        <article>
-            <img class="carrusel-2" src="/img/carrusel-2.jpg" alt="Ropa Casual">
-            <h3>Ropa Casual</h3>
-            <p>Bajada del Producto</p>
-        </article>
-        <article>
-            <img class="carrusel-3" src="/img/carrusel-3.jpg" alt="Alta Costura">
-            <h3>Alta Costura</h3>
-            <p>Bajada del Producto</p>
-        </article>
+    <section class="carrusel">
+        <a class="container-img">
+            <div>
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chevron-right"></i>
+                <img class="img-carrusel" src="/img/anastase-maragos-HyvE5SiKMUs-unsplash.jpg" alt="Ropa Deportiva">
+                <div class="text-carrusel">
+                    <h3>Ropa Deportiva</h3>
+                    <p>Bajada del Producto</p>
+                    <span>30% OFF</span>
+                    <span>XXXXXX</span>
+                </div>
+                <div class="circles">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </a>
+        <!-- <a class="container-img">
+            <div>
+                <img class="img-carrusel" src="" alt="Ropa Casual">
+                <h3>Ropa Casual</h3>
+                <p>Bajada del Producto</p>
+            </div>
+        </a> -->
+        <!-- <a class="container-img">
+            <div>
+                <img class="img-carrusel" src="" alt="Alta Costura">
+                <h3>Alta Costura</h3>
+                <p>Bajada del Producto</p>
+            </div>
+        </a> -->
     </section>
     <section>
-      <h2>¿Qué andás buscando?</h2>
-      <article>
-        <h5>Remeras</h5>
-      </article>
-      <article>
-        <h5>Pantalones</h5>
-      </article>
-      <article>
-        <h5>Calzado</h5>
-      </article>
-      <article>
-        <h5>Accesorios</h5>
-      </article>
+        <h2>¿Qué andás buscando?</h2>
+        <article>
+            <h5>Remeras</h5>
+        </article>
+        <article>
+            <h5>Pantalones</h5>
+        </article>
+        <article>
+            <h5>Calzado</h5>
+        </article>
+        <article>
+            <h5>Accesorios</h5>
+        </article>
     </section>
     <section>
         <h3>Lo último que llegó</h3>
@@ -121,4 +151,5 @@
         </section>
     </footer>
 </body>
+
 </html>
