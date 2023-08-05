@@ -2,12 +2,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'DM Sans';
 }
 
 header {
     padding: 10px 0;
-    font-family: 'DM Sans';
 }
+
 header .header-logo {
     width: 75px;
     cursor: pointer;
@@ -75,9 +76,14 @@ header nav .nav-bar .vende {
     padding: 15px 10px;
 }
 
+main {
+    width: 90vw;
+    margin: auto;
+}
+
 .carrusel {
     margin: 3vw 0;
-    width: 90vw;
+    width: 100%;
     margin: auto;
     margin-bottom: 20px;
     font-family: 'DM Sans';
@@ -148,7 +154,8 @@ header nav .nav-bar .vende {
     position: absolute;
     left: 530px;
     width: 100px;
-    margin: 5px 0;
+    margin: auto;
+    margin-top: 15px;
     display: flex;
     justify-content: space-around;
 }
@@ -158,4 +165,47 @@ header nav .nav-bar .vende {
     height: 15px;
     border-radius: 50%;
     background-color: #555;
+}
+
+
+.filtro {
+    width: 90%;
+    margin: auto;
+    margin-top: 5vw;
+    padding: 1vh 0;
+    background-image: linear-gradient(to right, #060709, #0a0e0f, #0e1313, #131715, #191a16);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.filtro h2 {
+    color: goldenrod;
+    font-size: 2.5rem;
+}
+
+.filtro div a {
+    display: block;
+    padding: 2.1vw;
+    margin: 15px;
+    border: 1px solid goldenrod;
+    border-radius: 2px;
+    text-decoration: none;
+    color: #fff;
+    transition: .5s;
+}
+
+
+.filtro div a:hover {
+    background-color: goldenrod;
+    color: #000;
+    border: 1px solid transparent;
+}
+
+.filtro div {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
