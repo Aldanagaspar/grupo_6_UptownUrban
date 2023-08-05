@@ -59,6 +59,12 @@ footer ul li a:hover{
 
 .redes-sociales li a i{
     font-size: 36px;
+    transition: all .3s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.redes-sociales li a i:hover{
+    color:antiquewhite;
 }
 
 @media (min-width: 768px){
