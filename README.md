@@ -15,3 +15,6 @@ Hemos tomado los siguientes sitios como referencias para nuestro proyecto:
 - **[Benka](https://www.benka.com.ar/)**: Tomamos de referencia las ofertas en la página principal.
 - **[Galpon de Ropa](https://www.galponderopa.com/)**: Tomamos de referencia las previews de las fotos del producto antes de hacer clic en él.
 - **[Renova Tu Vestidor](https://www.renovatuvestidor.com/home)**: se toma como referencia porque a diferencia de los demás sitios, el mismo usuario publica la ropa y la sube al sitio, en vez de llevarla a los dueños y que ellos publiquen.
+
+
+**Nuestro tablero de trabajo:** [Proyecto Integrador - Grupo 6 | Trello](https://trello.com/b/amtcEKh6/proyecto-integrador-grupo-6)
