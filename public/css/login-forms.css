@@ -83,7 +83,7 @@ fieldset{
 .loginForm button{
     display: block;
     padding: 0.5rem;
-    margin: auto;
+    margin: .5rem auto;
     width: 100%;
     text-align: center;
     background-color: #f1a656;
@@ -129,6 +129,14 @@ fieldset{
 .bg{
     display:none;
     width: 80%;
+}
+
+.txt-small{
+    font-size: 12px;
+}
+
+.txt-center{
+    text-align: center;
 }
 
 @media (min-width: 381px){
