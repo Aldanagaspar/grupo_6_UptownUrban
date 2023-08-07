@@ -209,3 +209,103 @@ main {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+.texto {
+    width: 90%;
+    height: 100px;
+    padding: 12px;
+    border: solid 3px #444;
+    margin: 50px;
+    color: goldenrod;
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: #444;
+    box-sizing: border-box;
+}
+
+.contenedor-padre {
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.contenedor-img {
+    margin: 10px;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+
+}
+.carousel-indicators button {
+    
+    font-size:10px;
+    font-weight:normal;
+    text-align: center;
+    width:15px;
+    height:10px;
+
+    background-color:#444;
+    margin: 2px;
+    padding:5px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    font-size:10px;
+    line-height:29px;
+    text-transform: uppercase;
+  
+
+}
+.carousel-indicators button:hover{
+    opacity: 0.50;
+    -moz-opacity: .50;
+    filter:alpha (opacity=50);
+  }
+.card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin: 10px;
+    width:270px;
+    height: 420px;
+    border: 1px solid lightgray;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius:15px;
+}
+.cuerpo{
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+}
+
+.button:hover {
+    opacity: 0.7;
+}
+.button a {
+
+    text-decoration: none;
+    color: white;
+      
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 5px;
+    color: white;
+    background-color: #409fda;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius:0 0 15px 15px;
+
+}
+
+.button:hover, a:hover {
+    opacity: 0.9;
+}
