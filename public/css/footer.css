@@ -1,20 +1,19 @@
-*{
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
+:root{
+    --var: #434343;
 }
 
 footer{
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: darkslategray;
-    color: darkkhaki;
+    background-color: white;
+    color: #888;
     text-align: center;
+    box-shadow: 0px 0px 15px #0e131322 ;
 }
 
 footer h2{
-    color:white;
+    color:#666;
     padding-bottom: 1rem;
 }
 
@@ -31,7 +30,7 @@ footer ul li{
 }
 
 footer ul li a{
-    color: burlywood;
+    color: #EB6D33;
     text-decoration: none;
 }
 
@@ -64,7 +63,7 @@ footer ul li a:hover{
 }
 
 .redes-sociales li a i:hover{
-    color:antiquewhite;
+    color:#f28a35;
 }
 
 @media (min-width: 768px){

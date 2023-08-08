@@ -1,3 +1,7 @@
+:root{
+    --primario:#ee7d58;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,7 +10,10 @@
 }
 
 header {
-    padding: 10px 0;
+    padding: 1px 0;
+    background-color: white;
+    box-shadow: 0px 0px 15px #0e131322 ;
+    
 }
 
 header .header-logo {
@@ -71,14 +78,23 @@ header nav .login-bar {
 }
 
 header nav .nav-bar .vende {
-    background-color: rgb(137, 26, 16);
+    background-color: var(--primario);
     color: #fff;
     padding: 15px 10px;
+    font-weight: 600;
+}
+
+body{
+    background-color: #efeff3;
 }
 
 main {
     width: 90vw;
     margin: auto;
+}
+
+article div p{
+    color:#666;
 }
 
 .carrusel {
@@ -92,7 +108,7 @@ main {
 .carrusel .container-img {
     display: block;
     width: 95%;
-    margin: auto;
+    margin: 4rem auto;
     position: relative;
 }
 
@@ -165,6 +181,11 @@ main {
     height: 15px;
     border-radius: 50%;
     background-color: #555;
+}
+
+.circles{
+    width:8px;
+    border-radius: 50%;
 }
 
 
@@ -265,6 +286,7 @@ main {
     filter:alpha (opacity=50);
   }
 .card{
+    background-color: white;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
@@ -297,7 +319,7 @@ main {
     display: inline-block;
     padding: 5px;
     color: white;
-    background-color: #409fda;
+    background-color: var(--primario);
     text-align: center;
     cursor: pointer;
     width: 100%;
