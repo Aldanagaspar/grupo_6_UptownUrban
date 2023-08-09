@@ -1,5 +1,8 @@
-:root{
-    --primario:#ee7d58;
+:root {
+    --verde-claro: #BABD8D;
+    --verde-oscuro: #7C6A0A;
+    --amarillo-naranja: #FA9500;
+    --naranja: #EB6424;
 }
 
 * {
@@ -9,89 +12,6 @@
     font-family: 'DM Sans';
 }
 
-header {
-    padding: 1px 0;
-    background-color: white;
-    box-shadow: 0px 0px 15px #0e131322 ;
-    
-}
-
-header .header-logo {
-    width: 75px;
-    cursor: pointer;
-}
-header nav {
-    width: 95%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-header nav ul {
-    width: 28%;
-    display: flex;
-    justify-content: space-between;
-}
-
-
-header nav ul li {
-    list-style: none;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    font-size: 1rem;
-    color: #333;
-    padding: 10px;
-}
-
-header nav ul li a:hover{
-    text-shadow: 1px 0px 5px #ccc;
-    border-bottom: 2px solid gold;
-}
-
-header form {
-    width: 21%;
-    border: 1px solid #bbb;
-    border-radius: 12px;
-    padding: .4vw;
-    transition: .5s;
-}
-
-header form:hover {
-    border: 1px solid #555;
-}
-
-header form label input {
-    border: none;
-    outline: none;
-    padding: .4vh 1.1vh;
-    font-size: 1.1rem;
-    color: #444;
-}
-
-header nav .login-bar {
-    width: 22%;
-    display: flex;
-    justify-content: space-between;
-}
-
-header nav .nav-bar .vende {
-    background-color: var(--primario);
-    color: #fff;
-    padding: 15px 10px;
-    font-weight: 600;
-}
-
-body{
-    background-color: #efeff3;
-}
-
-main {
-    width: 90vw;
-    margin: auto;
-}
 
 article div p{
     color:#666;
@@ -100,21 +20,20 @@ article div p{
 .carrusel {
     margin: 3vw 0;
     width: 100%;
-    margin: auto;
-    margin-bottom: 20px;
+    margin: 0 auto;
     font-family: 'DM Sans';
 }
 
 .carrusel .container-img {
     display: block;
-    width: 95%;
-    margin: 4rem auto;
+    width: 100%;
+    margin: auto;
     position: relative;
 }
 
 .carrusel .container-img .img-carrusel {
     width: 100%;
-    height: 580px;
+    height: 430px;
     object-fit: cover;
 }
 
@@ -123,8 +42,8 @@ article div p{
     border-radius: 35px;
     padding: 1.5vw;
     position: absolute;
-    bottom: 90px;
-    left: 75px;
+    bottom: 40px;
+    left: 25%;
     color: black;
 }
 
@@ -146,7 +65,7 @@ article div p{
     font-size: 1.5rem;
 }
 
-.carrusel .container-img div .fa-chevron-left {
+/* .carrusel .container-img div .fa-chevron-left {
     position: absolute;
     color: #000;
     text-shadow: 1px 1px 1px gold;
@@ -164,7 +83,7 @@ article div p{
     top: 270px;
     right: 30px;
     cursor: pointer;
-}
+} */
 
 .carrusel .container-img div .circles {
     position: absolute;
@@ -174,6 +93,7 @@ article div p{
     margin-top: 15px;
     display: flex;
     justify-content: space-around;
+    display: none;
 }
 
 .carrusel .container-img div .circles div {
@@ -190,67 +110,89 @@ article div p{
 
 
 .filtro {
-    width: 90%;
-    margin: auto;
-    margin-top: 5vw;
-    padding: 1vh 0;
-    background-image: linear-gradient(to right, #060709, #0a0e0f, #0e1313, #131715, #191a16);
+    width: 100%;
+    overflow: hidden;
+    padding: 3vh 2vh;
+    background-color: #222;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 2px;
+    flex-wrap: wrap;
+    gap: 5vw;
+    text-align: center;
 }
 
 .filtro h2 {
-    color: goldenrod;
-    font-size: 2.5rem;
+    width: 100%;
+    color: var(--naranja);
+    font-size: 1.1rem;
+}
+
+.filtro div {
+    display: flex;
 }
 
 .filtro div a {
     display: block;
-    padding: 2.1vw;
-    margin: 15px;
-    border: 1px solid goldenrod;
+    width: 40vw;
+    height: 55vw;
+    border: 1px solid var(--naranja);
     border-radius: 2px;
     text-decoration: none;
     color: #fff;
-    transition: .5s;
+    position: relative;
 }
 
-
-.filtro div a:hover {
-    background-color: goldenrod;
-    color: #000;
-    border: 1px solid transparent;
+.filtro div .pantalones-filtro {
+    background: url("/img/pantalones-filtro.jpg") center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.filtro div .remeras-filtro {
+    background: url("/img/remeras-filtro.jpg") center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.filtro div .zapatillas-filtro {
+    background: url("/img/zapatillas-filtro.jpg") center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.filtro div .accesorios-filtro {
+    background: url("/img/accesorios-filtro.jpg") center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.filtro div {
-    width: 35%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.filtro div a h3 {
+    margin: auto;
+    margin-top: 25vw;
+    color: var(--amarillo-naranja);
 }
+
 
 .texto {
-    width: 90%;
-    height: 100px;
-    padding: 12px;
-    border: solid 3px #444;
-    margin: 50px;
-    color: goldenrod;
-    font-size: 2.5rem;
-    text-align: center;
-    background-color: #444;
+    width: 80%;
+    text-align: justify;
+    margin: auto;
+    margin-top: 8vw;
+    color: #333;
+    font-size: 1.5rem;
     box-sizing: border-box;
 }
 
 .contenedor-padre {
-    margin: 30px;
+    margin: 15px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    justify-content: center;
+    gap: 3vh;
+    justify-content: space-evenly;
+}
 
+.contenedor-padre .card .name-product {
+    background: #333;
+    padding: 2vw;
+    color: #fff;
+    border-radius: 15px 15px 1px 1px;
 }
 
 .contenedor-img {
@@ -261,13 +203,11 @@ article div p{
 
 }
 .carousel-indicators button {
-    
     font-size:10px;
     font-weight:normal;
     text-align: center;
     width:15px;
     height:10px;
-
     background-color:#444;
     margin: 2px;
     padding:5px;
@@ -290,13 +230,12 @@ article div p{
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    margin: 10px;
-    width:270px;
-    height: 420px;
     border: 1px solid lightgray;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius:15px;
+    position: relative;
 }
+
 .cuerpo{
     padding: 10px;
     margin: 10px;
@@ -307,7 +246,6 @@ article div p{
     opacity: 0.7;
 }
 .button a {
-
     text-decoration: none;
     color: white;
       
@@ -318,8 +256,8 @@ article div p{
     outline: 0;
     display: inline-block;
     padding: 5px;
-    color: white;
-    background-color: var(--primario);
+    color: #fff;
+    background-color: var(--naranja);
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -330,4 +268,15 @@ article div p{
 
 .button:hover, a:hover {
     opacity: 0.9;
+}
+
+.contenedor-padre .card i {
+    padding: 2vw;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    position: absolute;
+    right: 2px;
+    bottom: 100px;
+    transform: scaleX(-1) rotate(-45deg);
+    background: var(--amarillo-naranja);
 }
