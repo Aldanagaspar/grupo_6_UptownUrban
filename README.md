@@ -8,6 +8,7 @@ Queremos ofrecerles a las personas la posibilidad de comprar ropa más economico
 - **Torres, Ismael Ignacio Miguel, 21 años**: Egresado de Analista Programador, estudiante de Desarrollo de Videojuegos. Siempre atento a las necesidades y opiniones del grupo, suelo tener buen ojo para el diseño.
 - **Aldana M. Gaspar, 17 años**:Estudiante para técnico en informática, vivo en palpalá, Jujuy, Me gusta la música y curiosa por la programación y con ganas de aprender. 
 - **Farfán, Facundo, 21 años**: Estudiante de A.P.U. en la Facultad de Ingeniería. Me gusta el anime, la musica y los videojuegos.
+- **Álvaro Ramos,  21 años**: actualmente estudio en la carrera de Analista Programador. En mis tiempos libres me gusta programar y crear soluciones con música de fondo. También toco la guitarra y me junto a pasar las tardes con gente que aprecio. Mi objetivo es dedicar mi carrera profesional a esta área en constante evolución, adquiriendo conocimientos especializados en programación de IA y robótica, colaborando en proyectos que marquen la diferencia en el mundo de la tecnología.
 
 Hemos tomado los siguientes sitios como referencias para nuestro proyecto:
 - **[Mercado Libre](https://www.mercadolibre.com.ar/)**: Lo tomamos de referencia por la completitud de los datos presente en la página del detalle del producto.

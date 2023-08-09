@@ -217,7 +217,7 @@ article div p{
 }
 
 .contenedor-padre .card i {
-    padding: 2vw;
+    padding: 10px;
     border-radius: 50%;
     font-size: 1.3rem;
     position: absolute;
@@ -262,6 +262,10 @@ article div p{
     }
     .container-secciones .seccion{
         width:40%;
+    }
+
+    .texto {
+        width: 90%;
     }
 }
 
