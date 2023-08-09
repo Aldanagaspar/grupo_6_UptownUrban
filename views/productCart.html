@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/carrito.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <title>Tu Carrito - Used Fashion</title>
@@ -12,6 +13,48 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,400&family=League+Spartan:wght@200;400;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="nav-mobile">
+                <i class="fa-solid fa-bars"></i>
+                <img class="header-logo" src="/img/Logo.png" alt="Logo de la marca">
+                <div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <form>
+                    <label>
+                        <input type="text" placeholder="Buscar...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                </form>
+            </div>
+            <div class="nav-md-lg">
+                <img class="header-logo" src="/img/Logo.png" alt="Logo de la marca">
+                <ul class="nav-bar">
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#" class="vende">Vendé tu Ropa</a></li>
+                </ul>
+                <form>
+                    <label>
+                        <input type="text" placeholder="Buscar...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                </form>
+                <ul class="login-bar">
+                    <li><a href="#">Carrito<i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="#">Registro</a></li>
+                    <li><a href="#">Iniciar Sesion</a></li>
+                </ul>
+                <div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <h1>Carrito<i class="carrito fa-solid fa-cart-shopping"></i></h1>
     <div class="barra">
         <p class="producto">Producto</p>
@@ -50,5 +93,44 @@
         <button class="vaciar"><i class="basura fa-solid fa-trash-can"></i>.        Vaciar Carrito</button>
         <button class="confirmar">Confirmar</button>
     </div>
+    <footer id="footer">
+        <div>
+            <h2>Categorias</h2>
+            <ul>
+                <li><a href="#">Hombre</a></li>
+                <li><a href="#">Mujer</a></li>
+                <li><a href="#">Infantil</a></li>
+                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Calzado</a></li>
+                <li><a href="#">Ofertas</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>Acerca de</h2>
+            <ul>
+                <li><a href="#">Used Fashion</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Politica de privacidad</a></li>
+            </ul>
+        </div>
+        <div class="logo-footer-container">
+            <img class="logo-footer" src="/img/Logo.png" alt="Logo de Marca">
+        </div>
+        <div>
+            <h2>Contacto</h2>
+            <ul>
+                <li>Telefono de Contacto: 388-1234567</li>
+                <li>Email: usedfashion@gmail.com</li>
+                <li>Direccion: Calle Cualquiera N°123,San salvador de Jujuy, Jujuy</li>
+            </ul>
+        </div>
+        <div class="container-sociales">
+            <h2>Seguinos</h2>
+            <ul class="redes-sociales">
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
