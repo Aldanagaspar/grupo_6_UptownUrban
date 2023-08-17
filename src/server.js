@@ -3,17 +3,21 @@ const path = require("path");
 const publicPath= path.resolve(__dirname, './public');
 
 const app = express();
+const mainRoutes = require("./routes")
 
 const PORT = 8000;
+
 
 
 app.listen(PORT, () => {
     console.log("\n¡Servidor en línea! :D");
     console.log(`Iniciado en el puerto ${PORT}`);
-    console.log("Ingresá a localhost:8000 para empezar a visualizar el sitio");
+    console.log(`Ingresá a localhost:${PORT} para empezar a visualizar el sitio`);
 });
 
+app.use('/', mainRoutes);
 
+/*
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/index.html"));
 });
@@ -29,6 +33,6 @@ app.get('/login',(req,res)=>{
 app.get('/registro',(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/register.html"));
 });
+*/
 
-
-app.use(express.static(publicPath));
+app.use(express.static('public'));

@@ -2,11 +2,11 @@
   "name": "grupo_6_usedfashion",
   "version": "1.0.0",
   "description": "Queremos ofrecerles a las personas la posibilidad de comprar ropa más economico desde la comodidad de su casa. El publico al que va dirigido es a todo aquel que se encuentre interesado en vender o comprar ropa de segunda mano.",
-  "main": "server.js",
+  "main": "./src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "dev": "nodemon ./src/server.js",
+    "start": "node ./src/server.js"
   },
   "repository": {
     "type": "git",
