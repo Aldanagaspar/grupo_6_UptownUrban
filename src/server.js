@@ -2,7 +2,9 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const mainRoutes = require("./routes")
+const mainRoutes = require("./routes");
+const productRoutes = require("./routes/products");
+const usersRoutes = require("./routes/users");
 
 const PORT = 8000;
 
@@ -20,6 +22,8 @@ app.listen(PORT, () => {
 });
 
 app.use('/', mainRoutes);
+app.use('/usuarios', usersRoutes);
+app.use('/producto', productRoutes);
 
 /*
 app.get('/',(req,res)=>{
