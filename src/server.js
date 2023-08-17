@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const publicPath= path.resolve(__dirname, './public');
 
 const app = express();
 const mainRoutes = require("./routes")
@@ -8,6 +7,11 @@ const mainRoutes = require("./routes")
 const PORT = 8000;
 
 
+
+app.use(express.static('public'));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,"/views"));
 
 app.listen(PORT, () => {
     console.log("\n¡Servidor en línea! :D");
@@ -34,5 +38,3 @@ app.get('/registro',(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/register.html"));
 });
 */
-
-app.use(express.static('public'));
