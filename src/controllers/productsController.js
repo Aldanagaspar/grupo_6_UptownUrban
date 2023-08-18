@@ -5,6 +5,9 @@ const productsController = {
     item: (req,res) => {
         let idProduct = req.params.id;
         res.render("./products/productDetail");
+    },
+    create: (req,res) => {
+        res.render('./products/createProduct')
     }
 }
 

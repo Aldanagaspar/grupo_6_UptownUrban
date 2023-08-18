@@ -1,0 +1,126 @@
+* {
+    font-family: 'League Spartan';
+}
+main {
+    width: 90vw;
+    padding: 3vw;
+    margin: auto;
+    display: flex;
+}
+
+main .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+main .title-form {
+    display: flex;
+    justify-content: space-around;
+    gap: 4vw;
+}
+
+main .title-form .labels {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    text-align: end;
+}
+
+main .container .title-form .labels p {
+    color: #333;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+
+main .container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.8vw;
+}
+
+main .container .title-form form input[type="text"],select {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #777;
+    border-radius: 7px;
+    color: #222;
+    font-weight: bolder;
+    font-size: 1rem;
+    padding: 8px 0;
+    outline: none;
+    text-indent: 3px;
+}
+
+
+::placeholder {
+    font-size: .9rem;
+}
+
+main .img-product-add {
+    width: 40%;
+}
+
+main .img-product-add h2 {
+    margin: 10px 0;
+}
+
+main .img-product-add .add-img{
+    border: 1px solid gray;
+    text-align: center;
+    border-radius: 8px;
+}
+main .img-product-add .add-img p {
+    padding: 28% 30%;
+}
+
+main .container .img-product-add p {
+    color: #333;
+    font-weight: 600;
+    margin: 8px 0;
+} 
+
+main .container .img-product-add textarea {
+    min-width: 252px;
+    max-width: 252px;
+    min-height: 100px;
+    max-height: 110px;
+    outline: none;
+    border-radius: 7px;
+    text-indent: 3px;
+    font-weight: bolder;
+}
+
+main .container .btns {
+    width: 100%;
+    text-align: center;
+    padding: 2vw;
+}
+
+main .btns button {
+    margin: 0 2vw;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+main .btns button:hover {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+main .btns .cargar {
+    background-color: #323ab1;
+    color: #fff;
+    font-weight: 800;
+}
+
+main .btns .modificar {
+    background-color: #a53675;
+    color: #fff;
+    font-weight: 800;
+}
