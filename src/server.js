@@ -24,7 +24,7 @@ app.listen(PORT, () => {
 app.use('/', mainRoutes);
 app.use('/usuarios', usersRoutes);
 app.use('/producto', productRoutes);
-app.use('/carrito', productRoutes)
+
 /*
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/index.html"));
