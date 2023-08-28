@@ -37,10 +37,10 @@ main .container:hover {
     header nav .nav-md-lg {
         display: flex;
     }
-    footer{
+    /* footer{
         flex-direction: row;
         flex-wrap: wrap;
-    }
+    } */
 }
 
 @media (min-width:1024px){
@@ -51,9 +51,9 @@ main .container:hover {
     main .container td{
         text-indent: 2em;
     }
-    footer{
+    /* footer{
         padding: 2rem 3rem;
         flex-wrap:nowrap;
         text-align: left;
-    }
+    } */
 }
