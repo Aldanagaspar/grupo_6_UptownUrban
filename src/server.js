@@ -22,8 +22,8 @@ app.listen(PORT, () => {
 });
 
 app.use('/', mainRoutes);
-app.use('/usuarios', usersRoutes);
-app.use('/producto', productRoutes);
+app.use('/users', usersRoutes);
+app.use('/product', productRoutes);
 
 /*
 app.get('/',(req,res)=>{
