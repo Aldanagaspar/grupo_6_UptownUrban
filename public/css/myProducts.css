@@ -1,0 +1,59 @@
+
+
+h1{
+    text-align: center;
+    margin: 15px auto;
+    font-size: 2.8rem;
+}
+
+
+main {
+    justify-content: center;
+    width: 100vw;
+    text-indent: 2em hanging;
+  }
+
+main .container { 
+    border: 1px solid #000000;
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    background-color: #ffffff;
+    transition: transform 0.2s linear;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    text-indent: 2em hanging;
+}
+main .container:hover {
+    transform: scale(1.05);
+}
+
+
+
+@media (min-width: 768px){
+    header nav .nav-mobile {
+        display: none;
+    }
+    header nav .nav-md-lg {
+        display: flex;
+    }
+    footer{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width:1024px){
+
+    main .container th{
+        text-indent: 2em;
+    }
+    main .container td{
+        text-indent: 2em;
+    }
+    footer{
+        padding: 2rem 3rem;
+        flex-wrap:nowrap;
+        text-align: left;
+    }
+}
