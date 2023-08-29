@@ -2,10 +2,10 @@
     <nav>
         <div class="nav-mobile">
             <i class="fa-solid fa-bars"></i>
-            <img class="header-logo" src="/img/Logo.png" alt="Logo de la marca">
+            <a href="/"><img class="header-logo" src="/img/Logo.png" alt="Logo de la marca"></a>
             <div>
                 <i class="fa-solid fa-cart-shopping"></i>
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-circle-user"></i>
             </div>
             <form>
                 <label>
@@ -15,7 +15,7 @@
             </form>
         </div>
         <div class="nav-md-lg">
-            <img class="header-logo" src="/img/Logo.png" alt="Logo de la marca">
+            <a href="/"><img class="header-logo" src="/img/Logo.png" alt="Logo de la marca"></a>
             <ul class="nav-bar">
                 <li><a href="#">Categorias</a></li>
                 <li><a href="#">Ofertas</a></li>
@@ -28,9 +28,14 @@
                 </label>
             </form>
             <ul class="login-bar">
-                <li><a href="#">Carrito<i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href="#">Registro</a></li>
-                <li><a href="#">Iniciar Sesion</a></li>
+                <li><a href="/product/cart"><i class="fa-solid fa-cart-shopping icon-cart"></i></a></li>
+                <li class="dropdown">
+                    <i class="fa-solid fa-circle-user dropbtn icon-med"></i>
+                    <div class="dropdown-content">
+                        <a href="/users/myProducts">Tus Productos</a>
+                        <a class="texto-rojo" href="#">Cerrar Sesión</a>
+                    </div>
+                </li>
             </ul>
             <div>
                 <i class="fa-solid fa-cart-shopping"></i>

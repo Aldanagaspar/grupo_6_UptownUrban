@@ -9,7 +9,6 @@
     <!--Font(Links de tipografias)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;800&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,400&family=League+Spartan:wght@200;400;800&display=swap"
         rel="stylesheet">
@@ -21,139 +20,43 @@
 
 <body>
     <%- include("partials/header.ejs") %>
-    <main>
-        <section class="carrusel">
-            <a class="container-img">
-                <div>
-                    <!-- <i class="fa-solid fa-chevron-left"></i> -->
-                    <!-- <i class="fa-solid fa-chevron-right"></i> -->
-                    <img class="img-carrusel" src="/img/banner-carrousel.jpg" alt="Ropa Deportiva">
-                    <div class="circles">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+        <main>
+
+            <section class="carrusel">
+                <a class="container-img">
+                    <div>
+                        <img class="img-carrusel" src="/img/banner-carrousel.jpg" alt="Ropa Deportiva">
                     </div>
-                </div>
-            </a>
-            <!-- <a class="container-img">
-                <div>
-                    <img class="img-carrusel" src="" alt="Ropa Casual">
-                    <h3>Ropa Casual</h3>
-                    <p>Bajada del Producto</p>
-                </div>
-            </a> -->
-            <!-- <a class="container-img">
-                <div>
-                    <img class="img-carrusel" src="" alt="Alta Costura">
-                    <h3>Alta Costura</h3>
-                    <p>Bajada del Producto</p>
-                </div>
-            </a> -->
-        </section>
-        <section class="filtro">
-            <h2>¿Qué andás buscando?</h2>
-            <div class="container-secciones">
-                <a href="#" class="seccion">
-                    <img src="/img/remeras-filtro.jpg" alt="">
                 </a>
-                <a href="#" class="seccion">
-                    <img src="/img/pantalones-filtro.jpg" alt="">
-                </a>
-                <a href="#" class="seccion">
-                    <img src="/img/zapatillas-filtro.jpg" alt="">
-                </a>
-                <a href="#" class="seccion">
-                    <img src="/img/accesorios-filtro.jpg" alt="">
-                </a>
-            </div>
-        </section>
-        <h3 class="texto">Lo último que llegó</h3>
-        <section class="contenedor-padre">
-            <article class="card">
-                <div class="name-product">
-                    <p>Campera Reebok Negra</p>
-                </div>
-                <img class="contenedor-img" src="/img/campera-reebok-essentials-linear-logo-negra.jpg"
-                    alt="Campera Reebok Negra">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <div class="cuerpo">
-                    <h3>$12.000,00</h3>
-                    <p>Talle: XL</p>
-                </div>
-                <div class="pie">
-                    <button class="button"><a href="#">ver más</a></button>
-                </div>
-                <i class="fa-solid fa-truck-fast"></i>
-            </article>
+            </section>
 
-            <article class="card">
-                <div class="name-product">
-                    <p>Buzo Nike Retro Verde</p>
+            <section class="filtro">
+                <h2>¿Qué andás buscando?</h2>
+                <div class="container-secciones">
+                    <a href="#" class="seccion">
+                        <img src="/img/remeras-filtro.jpg" alt="">
+                    </a>
+                    <a href="#" class="seccion">
+                        <img src="/img/pantalones-filtro.jpg" alt="">
+                    </a>
+                    <a href="#" class="seccion">
+                        <img src="/img/zapatillas-filtro.jpg" alt="">
+                    </a>
+                    <a href="#" class="seccion">
+                        <img src="/img/accesorios-filtro.jpg" alt="">
+                    </a>
                 </div>
+            </section>
 
-                <img class="contenedor-img" src="/img/buzo-Nike-Verde.jpg" alt="Buzo nike Retro Verde">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <div class="cuerpo">
-                    <h3>$5.000,00</h3>
-                    <p>Talle: L</p>
-                </div>
-                <div class="pie">
-                    <button class="button"><a href="#">ver más</a></button>
-                </div>
-                <i class="fa-solid fa-truck-fast"></i>
-            </article>
+            <section class="contenedor-padre">
+                <h3 class="titulo-seccion">Lo último que llegó</h3>
+                <% for (let i=0; i < 4; i++) { %>
+                    <%- include("partials/article-card.ejs") %>
+                        <% } %>
+            </section>
 
-            <article class="card">
-                <div class="name-product">
-                    <p>Pantalon Cargo Verde </p>
-                </div>
-                <img class="contenedor-img" src="/img/Pantalon-Cargo-Verde.jpg" alt="Pantalon Cargo Verde">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <div class="cuerpo">
-                    <h3>$8.500,00</h3>
-                    <p>Talle: M </p>
-                </div>
-                <div class="pie">
-                    <button class="button"><a href="#">ver más</a></button>
-                </div>
-                <i class="fa-solid fa-truck-fast"></i>
-            </article>
-
-            <article class="card">
-                <div class="name-product">
-                    <p>Remera deL inter de miami </p>
-                </div>
-
-                <img class="contenedor-img" src="/img/remera-inter.png" alt="Pantalon Cargo Verde">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <div class="cuerpo">
-                    <h3>$10.500,00</h3>
-                    <p>Talle: S </p>
-                </div>
-                <div class="pie">
-                    <button class="button"><a href="#">ver más</a></button>
-                </div>
-                <i class="fa-solid fa-truck-fast"></i>
-            </article>
-        </section>
-    </main>
-    <%- include("partials/footer.ejs") %>
+        </main>
+        <%- include("partials/footer.ejs") %>
 </body>
 
 </html>
