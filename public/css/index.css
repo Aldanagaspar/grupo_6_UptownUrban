@@ -72,6 +72,14 @@ article div p {
 .container-secciones .seccion img {
     border: solid 1px #eee;
     width: 100%;
+    transition: all .1s;
+    transition-timing-function: ease;
+}
+.container-secciones .seccion img:hover{  
+    background-color: #000;
+    opacity: .9;
+    outline: solid 4px #eee;
+    outline-offset: -4px;
 }
 
 .contenedor-img {
@@ -82,19 +90,10 @@ article div p {
 
 }
 
-.button:hover {
-    opacity: 0.7;
-}
-
 .button a {
     text-decoration: none;
     color: white;
 
-}
-
-.button:hover,
-a:hover {
-    opacity: 0.9;
 }
 
 .titulo-seccion {
@@ -126,6 +125,12 @@ a:hover {
     flex-direction: column;
     gap: .5rem;
     text-decoration: none;
+    transition: all .1s;
+}
+
+.card:hover{
+    outline: solid 4px #222;
+    outline-offset: -4px;
 }
 
 .card img {
@@ -141,7 +146,7 @@ a:hover {
 .card__subtitle {
     font-weight: 400;
     font-size: 12px;
-    color: #444;
+    color: #333;
     letter-spacing: 0.5px;
 }
 

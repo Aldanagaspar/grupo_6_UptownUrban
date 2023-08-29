@@ -44,10 +44,8 @@ header nav .nav-md-lg {
 }
 
 header nav .nav-mobile form {
+    margin: 1rem 0 0;
     width: 75%;
-}
-
-header nav .nav-mobile form label {
     box-shadow: 0 0 5px #ccc;
     border-radius: 5px;
     display: block;
@@ -56,7 +54,7 @@ header nav .nav-mobile form label {
     padding: 0.5vw;
 }
 
-header nav .nav-mobile form label input {
+header nav .nav-mobile form input {
     display: block;
     width: 90%;
     font-size: 1.1rem;
@@ -66,15 +64,16 @@ header nav .nav-mobile form label input {
     color: #555;
 }
 
-header nav .nav-mobile form label i {
+header nav .nav-mobile form i {
     display: block;
     width: 10%;
     font-size: 1.2rem;
 }
 
 header nav .nav-md-lg {
+    padding: .1rem 1rem;
     display: none;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -101,22 +100,28 @@ header nav .nav-md-lg .nav-bar li .vende {
 
 
 header nav .nav-md-lg form {
-    border-radius: 5px;
-    display: block;
-    padding: 0.5vw;
+    display: flex;
     box-shadow: 0 0 5px #ccc;
+    border-radius: 5px;
 }
-
 
 header nav .nav-md-lg form label input {
+    width: 40rem;
     border: none;
-    outline: none;
-    margin: 2px;
-    width: 85%;
+    border-radius: 5px;
+    padding: .5rem;
 }
 
-header nav .nav-md-lg form label i {
-    color: #333;
+.search-btn{
+    background-color: #0000;
+    border: none;
+    height: 100%;
+    padding: .5rem;
+}
+
+.search-btn:hover{
+    background-color: #eee;
+    cursor: pointer;
 }
 
 header nav .nav-md-lg div i {
@@ -158,10 +163,6 @@ header nav .nav-md-lg .login-bar li a {
     background-color: #eee;
     box-shadow: 0 0 10px #2224;
     z-index: 1;
-}
-
-.texto-rojo{
-    color:#f45;
 }
 
 .dropdown-content a {
