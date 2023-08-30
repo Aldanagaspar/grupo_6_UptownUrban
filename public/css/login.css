@@ -6,21 +6,24 @@
 }
 main{
     display:flex;
-    width: 100%;
-    height: 100%;
-    background: url("https://www.hdwallpapers.in/download/black_colorful_minimalist_artistic_shapes_4k_hd_abstract-HD.jpg") no-repeat center center fixed;
-    background-size: cover;
+    /* background-image: linear-gradient(to bottom, #ffffff, #f9f9f9, #f3f3f3, #eeeeee, #e8e8e8, #e3e3e3, #dddddd, #d8d8d8, #d2d2d2, #cdcbcc, #c7c5c6, #c2bfbf); */
+    background-image: linear-gradient(to bottom, #ebebeb, #dcdcdc, #cdcdcd, #bebebe, #b0b0b0, #a6a6a6, #9d9d9d, #939393, #8c8c8c, #848484, #7d7d7d, #767676);    height: 100vh;
 }
 
 h1{
     font-family: 'League Spartan', 'Helvetica', sans-serif;
     font-weight: 800;
     font-size: 48px;
-    margin:1rem 0;
+    margin-bottom: 1rem;
 }
 
-.login .bg h1{
-    color:#ffbd59
+.login .bg {
+    background: url("/img/logo.png") no-repeat center;
+}
+
+.login .bg h2{
+    color:#ffbd59;
+    font-size: 2.5rem;
 }
 .login .bg p{
     color: #FFF;
@@ -40,39 +43,93 @@ a:visited{
 }
 
 /* Login / Registro */
-fieldset{
-    border:none;
-}
+
+.form__group {
+    position: relative;
+    padding: 30px 0 0;
+    width: 100%;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: #444;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  
+  .form__field::placeholder {
+    color: transparent;
+  }
+  
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+  }
+  
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #9b9b9b;
+    pointer-events: none;
+  }
+  
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
+  }
+  
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #38caef;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
+    box-shadow: none;
+  }
+
+
+
+/* /////////////////////*/
 
 .loginWindow{
-    background-color: #FFF;
-    align-self: center;
+    /* background-image: linear-gradient(to bottom, #c4c2c2, #bfbebe, #bbb9b9, #b6b5b5, #b2b1b1, #abaaab, #a5a4a4, #9e9d9e, #949394, #8a898a, #808080, #767676);*/
+    background: #eee;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: auto;
-    padding: 2rem 0;
+    padding: 5vw 3vw;
+    width: 30vw;
+    border-radius: 10px;
 }
 
 .encabezadoLogin{
-    /*border: solid 1px gainsboro;*/
     text-align: center;
-    margin: auto;
+    margin: 15px auto;
 }
 
-.encabezadoLogin img{
-    width: 25%;
-}
 
 .encabezadoLogin span{
     color:dimgray;
 }
 
-.loginForm{
-    /*border: solid 1px gainsboro;*/
-    margin:2rem 0 0 0;
-    padding: 0 3rem;
-}
 
 .loginForm label{
     font-size: 18px;
@@ -80,20 +137,28 @@ fieldset{
     margin:15px 0;
 }
 
+.check {
+    margin: 15px auto 10px auto;
+}
+
 .loginForm button{
     display: block;
-    padding: 0.5rem;
-    margin: .5rem auto;
+    padding: 10px ;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 20px auto;
     width: 100%;
     text-align: center;
-    background-color: #f1a656;
-    border: solid 1px #1c3041;
+    background: transparent;
+    border: 1px solid #111;
     border-radius: 5px;
+    cursor:pointer;
+    transition: .5s;
 }
 
 .loginForm button:hover{
-    background-color: #ffbd59;
-    cursor:pointer;
+    color: rgb(218, 165, 32);
+    background-color: #111;
 }
 
 .loginForm button:active{
@@ -153,3 +218,47 @@ fieldset{
         margin:.5rem;
     }
 }
+
+.animation-container {
+    text-align: center;
+  }
+  
+  .animate-heading {
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInUp 2s ease 1s forwards, fadeIn 2s ease 1s forwards;
+}
+  
+  .animate-subtext {
+    display: block;
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: 800;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: sweepIn 2s ease 2s forwards, fadeIn 2s ease 2s forwards;  }
+  
+  @keyframes slideInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes sweepIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
