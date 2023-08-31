@@ -266,6 +266,10 @@ footer ul li a:hover {
 
 
 /* Botones */
+button{
+    border: none;
+}
+
 .boton-primario{
     padding: 1rem;
 
@@ -330,6 +334,10 @@ footer ul li a:hover {
     outline-offset: -2px;
 }
 
+.boton-primario, .boton-secundario{
+    text-align: center;
+}
+
 .boton-primario:hover, .boton-secundario:hover{    
     cursor: pointer;
 }
@@ -346,13 +354,16 @@ footer ul li a:hover {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 1233px) {
     header nav .nav-mobile {
         display: none;
     }
 
     header nav .nav-md-lg {
         display: flex;
+    }
+    header nav .nav-md-lg div {
+        display: none;
     }
 
     footer {
@@ -361,19 +372,28 @@ footer ul li a:hover {
     }
 }
 
-@media (min-width:1024px) {
+@media (min-width: 1180px) {
+    header nav .nav-mobile {
+        display: none;
+    }
+
+    header nav .nav-md-lg {
+        display: flex;
+    }
     header nav .nav-md-lg div {
         display: none;
     }
 
-    header nav .nav-md-lg .login-bar {
-        display: flex;
-    }
-
     footer {
+        flex-direction: row;
+        flex-wrap: wrap;
         padding: 2rem 3rem;
         flex-wrap: nowrap;
         text-align: left;
+    }
+
+    header nav .nav-md-lg .login-bar {
+        display: flex;
     }
 
     .container-sociales {

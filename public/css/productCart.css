@@ -1,15 +1,10 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'DM Sans';
-}
 .productos{
     display:flex;
     flex-wrap: wrap;
     width: 100%;
     flex-direction: column;
 }
+
 .carrito{
     color:orangered;
 }
@@ -78,10 +73,27 @@
     background-color: #FFF;
     display:flex;
 }
+
 .botones{
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: space-around;
 }
+
+.botones button{    
+    margin: 1rem 2rem;
+}
+
+@media (min-width:1024px) {
+    .botones{
+        flex-direction: row;
+    }
+    .botones button{
+        width: 100%;
+        margin: 1rem 5rem;
+    }
+}
+
+
 
