@@ -80,37 +80,8 @@
 }
 .botones{
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: space-around;
 }
-.vaciar{
-    margin:30px 12.5%;
-    width: 25%;
-    font-size: 20px;
-    background-color: white;
-}
-.vaciar:hover{
-    color:#D41F1F;
-    border: solid 1px #D41F1F;
-}
-.vaciar:active{
-    border: solid 1px #1c3041;
-    box-shadow:inset 0 0 10px red;
-    color:red;
-}
-.confirmar{
-    margin:30px 15%;
-    width: 20%;
-    font-size: 20px;
-    background-color: #f1a656;
-    border: solid 1px #1c3041;
-}
-.confirmar:hover{
-    background-color: #ffbd59;
-    cursor:pointer;
-}
-.confirmar:active{
-    background-color: #55c5ba;
-    border: solid 1px #1c3041;
-    box-shadow:inset 0 0 10px #1c30414a;
-}
+
