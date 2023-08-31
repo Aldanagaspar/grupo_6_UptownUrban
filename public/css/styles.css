@@ -94,7 +94,6 @@ header nav .nav-md-lg .nav-bar li a {
 
 header nav .nav-md-lg .nav-bar li .vende {
     margin: 0 .5rem;
-    background-color: #333;
     color: #eee;
 }
 
@@ -264,6 +263,78 @@ footer ul li a:hover {
 .icon-footer.fa-whatsapp {
     color: #5c7;
 }
+
+.boton-primario{
+    padding: 1rem;
+
+    font-weight: 600;
+    text-decoration: none;
+    color: #eee;
+
+    background-color: #222;
+    box-shadow: 0 0 5px #ccc;
+
+    border-radius: 1px;
+      
+    outline: solid 1px #eee;
+    outline-offset: -1px;
+
+    transition: all .1s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.boton-primario:hover{        
+    outline: solid 4px #eee;
+    outline-offset: -5px;
+
+}
+
+.boton-primario:active{
+    background-color: #000;
+    color: #999;
+     
+    outline: solid 4px #ccc;
+    outline-offset: -5px;
+}
+
+
+
+.boton-secundario{
+    padding: 1rem;
+
+    font-weight: 400;
+    text-decoration: none;
+    color: #222;
+    background-color: #fff;
+    box-shadow: 0 0 5px #ccc;
+      
+    outline: solid 1px #222;
+    outline-offset: -1px;
+
+    transition: all .1s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+
+}
+
+.boton-secundario:hover{        
+    outline: solid 3px #222;
+    outline-offset: -3px;
+}
+
+.boton-secundario:active{
+    background-color: #ddd;
+    color: #333;
+     
+    outline: solid 3px #333;
+    outline-offset: -3px;
+}
+
+.sutil{
+    outline:none;
+    box-shadow: none;
+}
+
 
 @media (min-width: 768px) {
     header nav .nav-mobile {
