@@ -73,7 +73,7 @@ article div p {
     border: solid 1px #eee;
     width: 100%;
     transition: all .1s;
-    transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .container-secciones .seccion img:hover{  
     background-color: #000;
@@ -126,11 +126,12 @@ article div p {
     gap: .5rem;
     text-decoration: none;
     transition: all .1s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card:hover{
-    outline: solid 4px #222;
-    outline-offset: -4px;
+    outline: solid 5px #222;
+    outline-offset: -5px;
 }
 
 .card img {

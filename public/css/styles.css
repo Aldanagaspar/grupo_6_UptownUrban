@@ -6,8 +6,7 @@
 }
 
 header {
-    margin-bottom: 2vw;
-    box-shadow: 0 0px 10px #ccc;
+    box-shadow: 0 0px 10px #2223;
 }
 
 header nav .nav-mobile {
@@ -152,6 +151,7 @@ header nav .nav-md-lg .login-bar li a {
 .dropdown {
     position: relative;
     display: inline-block;
+
 }
 
 .dropdown-content {
@@ -195,7 +195,7 @@ footer {
     background-color: #222;
     color: #777;
     text-align: center;
-    box-shadow: 0 0px 10px #ccc;
+    box-shadow: 0 0px 10px #2223;
 }
 
 footer h2 {
@@ -264,6 +264,8 @@ footer ul li a:hover {
     color: #5c7;
 }
 
+
+/* Botones */
 .boton-primario{
     padding: 1rem;
 
@@ -330,7 +332,12 @@ footer ul li a:hover {
     outline-offset: -3px;
 }
 
-.sutil{
+/* Clases útiles */
+.negrita{
+    font-weight: 600;
+}
+
+.sutil{ /* Oculta los bordes y sombras de un elemento (pensado para botones principalmente) */
     outline:none;
     box-shadow: none;
 }
