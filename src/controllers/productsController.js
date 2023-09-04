@@ -1,3 +1,8 @@
+// ***** importando librerías *****
+const path = require('path');
+const fs = require('fs');
+
+
 const productsController = {
     carrito: (req,res) => {
         res.render("./products/productCart",{
