@@ -174,8 +174,12 @@ article div p {
 }
 
 @media (min-width:1024px) {
+    main .carrusel .container-img div {
+        background-color: #eee;
+    }
     main .carrusel .container-img div .img-carrusel {
-        height: 500px;
+        height: 380px;
+        object-fit: cover;
     }
 
     .filtro {
@@ -200,11 +204,5 @@ article div p {
 
     .texto {
         width: 90%;
-    }
-}
-
-@media (min-width: 1280px) {
-    main .carrusel .container-img div .img-carrusel {
-        height: 660px;
     }
 }

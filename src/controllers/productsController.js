@@ -12,6 +12,28 @@ const productsController = {
             titulo: 'Producto - Used Fashion',
             css: 'productDetail'
         });
+    },
+    
+    listadoProductos: (req, res) => {
+        res.render('./products/myProducts', {
+            titulo: 'Tus Productos - Used Fashion',
+            css: 'myProducts'
+        });
+    },
+
+    crearProducto: (req, res) => {
+        res.render('./products/createProduct', {
+            titulo: 'Crear Producto - Used Fashion',
+            css: 'createProduct'
+        });
+    },
+
+    editarProducto: (req, res) => {
+        let idProducto = req.query.idProd;
+        res.render('./products/createProduct', {
+            titulo: 'Editar Producto - Used Fashion',
+            css: 'createProduct'
+        }, idProducto);
     }
 }
 
