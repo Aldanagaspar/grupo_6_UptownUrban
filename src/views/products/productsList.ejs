@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs')%>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+
+        <main>
+            <h1>Tienda Virtual</h1>
+            <section class="list">
+                <% for( let i = 0; i < 8; i++ ) { %>
+                    <%- include("../partials/article-card.ejs") %>
+                <% } %> %>
+            </section>
+        </main>
+
+    </body>
+
+    <%- include("../partials/footer.ejs") %>
+
+</html>

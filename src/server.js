@@ -23,7 +23,7 @@ app.listen(PORT, () => {
 
 app.use('/', mainRoutes);
 app.use('/users', usersRoutes);
-app.use('/product', productRoutes);
+app.use('/products', productRoutes);
 
 /*
 app.get('/',(req,res)=>{

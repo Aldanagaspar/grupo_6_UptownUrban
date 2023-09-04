@@ -15,9 +15,16 @@ const productsController = {
     },
     
     listadoProductos: (req, res) => {
+        res.render('./products/productsList', {
+            titulo: 'Tienda - Used Fashion',
+            css: 'productsList'
+        });
+    },    
+    
+    listadoProductosUsuario: (req, res) => {
         res.render('./products/myProducts', {
             titulo: 'Tus Productos - Used Fashion',
-            css: 'myProducts'
+            css: 'productsList'
         });
     },
 

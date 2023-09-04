@@ -342,6 +342,16 @@ button{
     cursor: pointer;
 }
 
+.boton-chiquito{
+    padding: .6rem;
+}
+
+.boton-peligroso{
+    background-color: #f45;
+
+    transition: all .1s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
 
 /* Clases útiles */
 .negrita{
