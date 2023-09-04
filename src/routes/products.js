@@ -3,10 +3,22 @@ const router = express.Router();
 
 const productsController = require('../controllers/productsController');
 
-router.get('/item', productsController.item);
 router.get('/cart', productsController.carrito);
+
+// ***** RUTAS DEL CRUD *****
+// *** rutas para OBTENER PRODUCTOS ***
 router.get('/',productsController.listadoProductos);
-router.get('/createProduct', productsController.crearProducto);
-router.get('/createProduct/:idProducto', productsController.editarProducto);
+router.get('/item/:id/', productsController.item);
+
+// *** rutas para AGREGAR PRODUCTOS ***
+router.get('/create/', productsController.crearProducto);
+router.post('/', productsController.guardarProducto);
+
+// *** rutas para EDITAR PRODUCTOS ***
+router.get('/edit/:id/', productsController.editarProducto);
+outer.put('/:id/', productsController.actualizarProducto);
+
+// *** rutas para BORRAR PRODUCTOS ***
+router.delete('/:id', productsController.borrarProducto);
 
 module.exports = router;
