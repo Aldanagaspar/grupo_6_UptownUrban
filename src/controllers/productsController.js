@@ -1,7 +1,8 @@
 // ***** importando librerías *****
 const path = require('path');
 const fs = require('fs');
-
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
     carrito: (req,res) => {
@@ -20,10 +21,7 @@ const productsController = {
     },
     
     listadoProductos: (req, res) => {
-        res.render('./products/productsList', {
-            titulo: 'Tienda - Used Fashion',
-            css: 'productsList'
-        });
+        res.render('./products/productsList',{products});
     },    
     
     listadoProductosUsuario: (req, res) => {
