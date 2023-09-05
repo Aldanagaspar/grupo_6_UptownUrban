@@ -16,7 +16,7 @@ router.post('/', productsController.guardarProducto);
 
 // *** rutas para EDITAR PRODUCTOS ***
 router.get('/edit/:id/', productsController.editarProducto);
-outer.put('/:id/', productsController.actualizarProducto);
+router.put('/:id/', productsController.actualizarProducto);
 
 // *** rutas para BORRAR PRODUCTOS ***
 router.delete('/:id', productsController.borrarProducto);
