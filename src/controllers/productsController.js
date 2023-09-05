@@ -28,7 +28,6 @@ const productsController = {
     item: (req,res) => {
         let idProduct = parseInt(req.params.id, 10);
         let product = products.find((p) => p.idProd == idProduct);
-        console.log(product)
         res.render("./products/productDetail",{product});
     },
 
