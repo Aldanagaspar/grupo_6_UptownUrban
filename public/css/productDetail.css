@@ -5,25 +5,48 @@ main {
     margin: auto;
 }
 
+h1{
+    font-size: 36px;
+    font-weight: 900;
+}
+
 main .detalle {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 1vh;
 }
+
 main .detalle .container-img-big {
-    width: 45%;
     background-size: contain;
     background-repeat: no-repeat;
-    position: relative;
     margin: 20px auto;
+    width: 100%;
 }
 main .detalle .container-img-data {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ddd;
     border-radius: 3px;
-    padding: 1vw;
+    padding: 1rem;
     color: #333;
-    font-family: 'League Spartan', 'Helvetica', sans-serif;
-    width: 40%;
+}
+
+.button.admin{
+    margin: 2rem 1rem 0;
+    padding: 1rem;
+
+    background-color: #eee;
+    border: solid 1px #555;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #2222;
+
+    text-align: center;
+}
+
+
+.button.admin button{
+    margin: .5rem;
 }
 
 main .detalle .container-img-data h2 {
@@ -38,23 +61,6 @@ main .detalle .container-img-data p i {
     color: rgb(81, 39, 127);
 }
 
-main .detalle .container-img-data .anuncios {
-    width: 45%;
-    margin: 5px 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-main .detalle .container-img-data .anuncios .orange {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: rgb(228, 121, 39);
-}
-
-main .detalle .container-img-data .anuncios p {
-    font-size: 1.1rem;
-    font-weight: 600;
-}
 
 main .detalle .container-img-data .info {
     margin: 15px 0;
@@ -85,46 +91,79 @@ main .detalle .container-img-data .info p {
     margin-top: 10px;
 }
 
-main .detalle .container-img-data .info .colors {
-    width: 30%;
-    height: 2vw;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center
-}
-
-main .detalle .container-img-data .info .colors .circle {
-    width: 1vw;
-    height: 1vw;
-    border-radius: 50%;
-}
-
-main .detalle .container-img-data .info .colors .gray {
-    background-color: gray;
-}
-
-main .detalle .container-img-data .info .colors .red {
-    background-color: red;
-}
-
-main .detalle .container-img-data .info .colors .green {
-    background-color: green;
-}
-
-main .detalle .container-img-data .info .colors .purple {
-    background-color: purple;
-}
-
-main .detalle .container-img-data .info .colors .orange {
-    background-color: orange;
-}
-
-main .detalle .container-img-data .info select {
+select {
     padding: 1vh 2vh;
-    text-align: center;
     border-radius: 3px;
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 15px;
+}
+
+a{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.boton-primario.boton-edit{
+    background-color: #fb5;
+    color: #222;
+}
+
+.boton-primario.boton-edit:hover{        
+    outline: solid 4px #222;
+    outline-offset: -4px;
+}
+
+.boton-primario.boton-edit:active{
+    background-color: #960;
+    color: #222;
+     
+    outline: solid 4px #222;
+    outline-offset: -4px;
+}
+
+
+.boton-primario.boton-del{
+    background-color: #f24;
+
+    transition: all .1s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.boton-primario.boton-del:active{
+    background-color: #902;
+}
+
+.inline{
+    display: inline;
+}
+
+
+
+@media (min-width: 768px) {
+    main .detalle .container-img-big {
+        width: 60%;
+    }
+    main .detalle .container-img-data{
+        text-align: center;
+    }
+}
+
+@media (min-width:1024px) {
+    main .detalle{
+        flex-direction: row;
+        padding: 2rem;
+    }
+    main .detalle .container-img-big {
+        width: 45%;
+    }
+    main .detalle .container-img-data{
+        width: 40%;
+        text-align: left;
+    }
+    .button button{
+        font-size: 14px;
+    }
+
 }
