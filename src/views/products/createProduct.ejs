@@ -1,62 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head.ejs')%>
-      
-<body>
-    <%- include("../partials/header.ejs") %>
-    <main>
-        <div class="container">
-            <div class="title-form">
-                <div class="labels">
-                    <p>Nombre del Producto</p>
-                    <p>Precio</p>
-                    <p>Categoria</p>
-                    <p>Estado</p>
-                    <p>Talle</p>
-                    <p>Color</p>
-                    <p>Marca</p>
-                    <p>Cantidad</p>
-                </div>
-                <form>
-                    <input type="text" placeholder="Nombre del Producto">
-                    <input type="text" placeholder="Precio">
-                    <select name="categoria">
-                        <option value="">Seleccionar categoria</option>
-                        <option value="remera">Remera</option>
-                        <option value="campera">Campera</option>
-                        <option value="pantalon">Pantalón</option>
-                        <option value="zapatillas">Zapatillas</option>
-                        <option value="accesorios">Accesorios</option>
-                    </select>
-                      <select name="estado">
-                          <option value="">Seleccionar estado del producto</option>
-                          <option value="Nuevo">Nuevo</option>
-                          <option value="Usada">Nuevo</option>
-                          <option value="Semi-nuevo">Semi-nuevo</option>
+<%- include('../partials/head.ejs', {titulo: 'Publicar Producto - Uptown Urban' , css: 'createProduct' })%>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+            <main>
+                <div class="container">
+                    <form action="/products/" method="POST">
+                        <label for="nombreProd">Nombre del Producto</label>
+                        <input id="nombreProd" name="nombreProd" type="text" placeholder="Ej. Buzo Nike" required>
+                        <label for="precio">Precio</label>
+                        <input id="precio" name="precio" type="text" placeholder="Ej. $4000" required>
+
+                        <label for="categoría">Categoría</label>
+                        <select id="categoria" name="categoria">
+                            <option value="remera" selected>Remera</option>
+                            <option value="campera">Buzo / Campera</option>
+                            <option value="pantalon">Pantalón</option>
+                            <option value="calzado">Calzado</option>
+                            <option value="accesorio">Accesorios</option>
                         </select>
-                        <input type="text" placeholder="Talle">
-                        <input type="text" placeholder="Color">
-                        <input type="text" placeholder="Marca (opcional)">
-                        <input type="text" placeholder="Cantidad">
+
+                        <label for="talle">Tamaño / Talle</label>
+                        <input id="talle" name="talle" type="text" placeholder="Ej. XL, 45cm, 40" required>
+
+                        <label for="descripcion">Descripción del Producto</label>
+                        <textarea name="descripcion" id="descripcion" cols="40" rows="5" required></textarea>
+
+                        <label for="imagen">Imagen</label>
+                        <input id="imagen" name="imagen" type="file" required>
+
+                        <button class="boton-primario">¡Publicar!</button>
                     </form>
-                    
+
                 </div>
-                <div class="img-product-add">
-                    <h2>Imagen del Producto</h2>
-                    <div class="add-img">
-                        <p>Haz click para añadir imagenes</p>
-                        <input type="file" class="custom-file-input">
-                    </div>
-                    <p>Descripción</p>
-                <textarea name="descripcion" placeholder="Descripción"></textarea>
-            </div>
-            <div class="btns">
-                <button class="boton-primario">Cargar producto</button>
-                <button class="boton-secundario">Modificar producto</button>
-            </div>
-        </div>
-    </main>
-    <%- include("../partials/footer.ejs") %>
-</body>
+                </div>
+            </main>
+            <%- include("../partials/footer.ejs") %>
+    </body>
+
 </html>

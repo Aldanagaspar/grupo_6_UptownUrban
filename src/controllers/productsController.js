@@ -1,8 +1,11 @@
 // ***** importando librerías *****
 const path = require('path');
 const fs = require('fs');
+
+// ***** obteniendo el JSON de productos como objeto literal
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 const productsController = {
     // métodos para OBTENER productos (GET)
@@ -33,14 +36,32 @@ const productsController = {
 
     // métodos para CREAR PRODUCTOS
     crearProducto: (req, res) => {
-        res.render('./products/createProduct', {
-            titulo: 'Crear Producto - Used Fashion',
-            css: 'createProduct'
-        });
+        res.render('./products/createProduct');
     },
 
-    guardarProducto: (req, res) => {
-        //código para guardar un producto en el JSON
+    guardarProducto: (req, res) => {        
+		// ***** calculando el nuevo id *****
+		let newProdID = (products[products.length - 1].idProd) + 1;
+
+		let newProduct = {
+			id: newProdID,
+			name: req.body.name,
+			price: req.body.price,
+			discount: req.body.discount,
+			category: req.body.category,
+			description: req.body.description
+		}
+
+		// ***** añadiendo el nuevo producto a la lista *****
+		products.push(newProduct);
+
+		// ***** devolviendo la lista a su formato JSON original
+		productsJSON = JSON.stringify(products);
+
+		// ***** escribiendo el JSON actualizado al archivo
+		fs.writeFileSync(path.join(__dirname,'../data/productsDataBase.json'),productsJSON);
+
+		res.redirect(`/products/detail/${newProduct.id}`);
     },
 
     // métodos para EDITAR PRODUCTOS

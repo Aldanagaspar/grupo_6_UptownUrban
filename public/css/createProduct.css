@@ -1,6 +1,6 @@
 main {
     width: 90vw;
-    padding: 3vw;
+    padding: 3rem;
     margin: auto;
     display: flex;
 }
@@ -8,29 +8,9 @@ main {
 main .container {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 }
-
-main .title-form {
-    display: flex;
-    justify-content: space-around;
-    gap: 4vw;
-}
-
-main .title-form .labels {
-    display: flex;
-    flex-direction: column;
-    gap: 3vw;
-    text-align: end;
-}
-
-main .container .title-form .labels p {
-    color: #222;
-    font-weight: 600;
-    margin: 8px 0;
-}
-
 
 main .container form {
     display: flex;
@@ -38,19 +18,18 @@ main .container form {
     gap: 2.8vw;
 }
 
-main .container .title-form form input[type="text"],select {
+main form input[type="text"],select, textarea {
     display: block;
     background-color: #fff;
     border: 1px solid #777;
     border-radius: 7px;
     color: #222;
-    font-weight: bolder;
     font-size: 1rem;
-    padding: 8px 0;
+    padding: .5rem;
     outline: none;
     text-indent: 3px;
+    resize: none;
 }
-
 
 main .img-product-add h2 {
     margin: 10px 0;
@@ -92,31 +71,4 @@ main .container .img-product-add textarea {
     border-radius: 7px;
     text-indent: 3px;
     font-weight: bolder;
-}
-
-main .container .btns {
-    width: 100%;
-    text-align: center;
-    padding: 2vw;
-}
-
-main .btns button {
-    margin: 0 2vw;
-    padding: 10px 30px;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-
-main .btns .cargar {
-    background-color: #323ab1;
-    color: #fff;
-    font-weight: 800;
-}
-
-main .btns .modificar {
-    background-color: #a53675;
-    color: #fff;
-    font-weight: 800;
 }
