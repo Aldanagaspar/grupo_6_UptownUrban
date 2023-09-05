@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head.ejs')%>
+<%- include('partials/head.ejs',{titulo:'Tienda-UserFashion',css:'index'})%>
 
 <body>
     <%- include("partials/header.ejs") %>
@@ -35,8 +35,8 @@
 
             <section class="contenedor-padre">
                 <h3 class="titulo-seccion">Lo último que llegó</h3>
-                <% for (let i=0; i < 4; i++) { %>
-                    <%- include("partials/article-card.ejs") %>
+                <% for (product of products) { %> 
+                    <%- include("partials/article-card.ejs",{product:product}) %>
                 <% } %>
             </section>
 
