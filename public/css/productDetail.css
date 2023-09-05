@@ -10,63 +10,20 @@ main .detalle {
     justify-content: space-between;
     padding: 1vh;
 }
-
-
-main .detalle .container-img-small {
-    width: 10%
-}
-
-main .detalle .container-img-small .img-small {
-    width: 5vw;
-    height: 5vw;
-    background: url("/img/camiseta-argentina.png") center;
-    background-size: contain;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: .5s;
-}
-
-main .detalle .container-img-small .img-small:hover {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
-
 main .detalle .container-img-big {
     width: 45%;
-    background: url("/img/camiseta-argentina.png") center;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
+    margin: 20px auto;
 }
-
-main .detalle .container-img-big .fa-chevron-left {
-    position: absolute;
-    top: 220px;
-    left: 35px;
-    font-size: 1.4rem;
-    color: #444;
-    cursor: pointer;
-}
-
-main .detalle .container-img-big .fa-chevron-right {
-    position: absolute;
-    top: 220px;
-    right: 35px;
-    font-size: 1.4rem;
-    color: #444;
-    cursor: pointer;
-}
-
 main .detalle .container-img-data {
     border: 1px solid #ddd;
     border-radius: 3px;
     padding: 1vw;
     color: #333;
     font-family: 'League Spartan', 'Helvetica', sans-serif;
+    width: 40%;
 }
 
 main .detalle .container-img-data h2 {
@@ -168,35 +125,6 @@ main .detalle .container-img-data .info select {
     text-align: center;
     border-radius: 3px;
     font-size: 1rem;
-    font-weight: 600
-}
-
-main .detalle .container-img-data .info .btns {
-    margin: 15px 0;
-    width: 55%;
-    display: flex;
-    justify-content: space-between;
-}
-
-main .detalle .container-img-data .info .btns .comprar {
-    padding: 1vh 3vh;
-    border: none;
-    font-size: .8rem;
     font-weight: 600;
-    color: #fff;
-    border-radius: 4px;
-    background-color: rgb(172, 27, 82);
-    cursor: pointer;
-}
-
-main .detalle .container-img-data .info .btns .agregar {
-    padding: 1vh 3vh;
-    border: none;
-    font-size: .8rem;
-    font-weight: 600;
-    color: rgb(172, 27, 82);
-    border-radius: 4px;
-    border: 1px solid rgb(172, 27, 82);
-    background-color: #fff;
-    cursor: pointer;
+    margin-bottom: 15px;
 }

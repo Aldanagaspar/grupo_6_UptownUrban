@@ -26,11 +26,10 @@ const productsController = {
     },
     
     item: (req,res) => {
-        let idProduct = req.params.id;
-        res.render("./products/productDetail", {
-            titulo: 'Producto - Used Fashion',
-            css: 'productDetail'
-        });
+        let idProduct = parseInt(req.params.id, 10);
+        let product = products.find((p) => p.idProd == idProduct);
+        console.log(product)
+        res.render("./products/productDetail",{product});
     },
 
     // métodos para CREAR PRODUCTOS
