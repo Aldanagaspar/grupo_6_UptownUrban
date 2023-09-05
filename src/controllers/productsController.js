@@ -43,14 +43,19 @@ const productsController = {
 		// ***** calculando el nuevo id *****
 		let newProdID = (products[products.length - 1].idProd) + 1;
 
+        console.log(req.body);
+
 		let newProduct = {
-			id: newProdID,
-			name: req.body.name,
-			price: req.body.price,
-			discount: req.body.discount,
-			category: req.body.category,
-			description: req.body.description
-		}
+            idProd: newProdID,
+            nombreProd: req.body.nombreProd,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            talle: req.body.talle,
+            imagen: "",
+            categoría: req.body.categoria
+		};
+
+        console.log(newProduct)
 
 		// ***** añadiendo el nuevo producto a la lista *****
 		products.push(newProduct);
@@ -59,9 +64,9 @@ const productsController = {
 		productsJSON = JSON.stringify(products);
 
 		// ***** escribiendo el JSON actualizado al archivo
-		fs.writeFileSync(path.join(__dirname,'../data/productsDataBase.json'),productsJSON);
+		fs.writeFileSync(path.join(__dirname,'../data/products.json'),productsJSON);
 
-		res.redirect(`/products/detail/${newProduct.id}`);
+		res.redirect(`/products/item/${newProdID}`);
     },
 
     // métodos para EDITAR PRODUCTOS

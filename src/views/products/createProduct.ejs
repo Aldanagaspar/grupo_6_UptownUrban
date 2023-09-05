@@ -7,13 +7,13 @@
         <%- include("../partials/header.ejs") %>
             <main>
                 <div class="container">
-                    <form action="/products/" method="POST">
+                    <form action="/products" method="POST">
                         <label for="nombreProd">Nombre del Producto</label>
                         <input id="nombreProd" name="nombreProd" type="text" placeholder="Ej. Buzo Nike" required>
                         <label for="precio">Precio</label>
-                        <input id="precio" name="precio" type="text" placeholder="Ej. $4000" required>
+                        <input id="precio" name="precio" type="number" placeholder="Ej. $4000" min="1" required>
 
-                        <label for="categoría">Categoría</label>
+                        <label for="categoria">Categoría</label>
                         <select id="categoria" name="categoria">
                             <option value="remera" selected>Remera</option>
                             <option value="campera">Buzo / Campera</option>
@@ -29,9 +29,9 @@
                         <textarea name="descripcion" id="descripcion" cols="40" rows="5" required></textarea>
 
                         <label for="imagen">Imagen</label>
-                        <input id="imagen" name="imagen" type="file" required>
+                        <input id="imagen" name="imagen" type="file">
 
-                        <button class="boton-primario">¡Publicar!</button>
+                        <button type="sumbit" class="boton-primario">¡Publicar!</button>
                     </form>
 
                 </div>

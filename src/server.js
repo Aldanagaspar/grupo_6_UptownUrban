@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const bodyParser = require('body-parser')
 
 const app = express();
 const mainRoutes = require("./routes");
@@ -8,7 +9,9 @@ const usersRoutes = require("./routes/users");
 
 const PORT = 8000;
 
-
+// ***** configurando body-parser *****
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 

@@ -15,24 +15,23 @@ main .container {
 main .container form {
     display: flex;
     flex-direction: column;
-    gap: 2.8vw;
+    gap: .5rem;
 }
 
-main form input[type="text"],select, textarea {
+main form input,
+main form select,
+main form textarea {
     display: block;
     background-color: #fff;
     border: 1px solid #777;
     border-radius: 7px;
     color: #222;
     font-size: 1rem;
+    margin: 0 0 1rem;
     padding: .5rem;
     outline: none;
     text-indent: 3px;
     resize: none;
-}
-
-main .img-product-add h2 {
-    margin: 10px 0;
 }
 
 main .img-product-add .add-img{
