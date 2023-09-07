@@ -6,11 +6,10 @@ const productsFilePath = path.resolve(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
-const productsController = {
-    // métodos para OBTENER productos (GET)
-    
+const productsController = {    
     listadoProductos: (req, res) => {
-        res.render('./products/productsList',{products});
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+        res.render('./products/productsList',{products:products});
     },    
     
     listadoProductosUsuario: (req, res) => {
@@ -32,14 +31,10 @@ const productsController = {
         let product = products.find((p) => p.idProd == idProduct);
         res.render("./products/productDetail",{product});
     },
-
-    // métodos para CREAR PRODUCTOS
     crearProducto: (req, res) => {
         res.render('./products/createProduct');
     },
-
     guardarProducto: (req, res) => {        
-		// ***** calculando el nuevo id *****
 		let newProdID = (products[products.length - 1].idProd) + 1;
 
         console.log(req.file.filename);
@@ -66,14 +61,11 @@ const productsController = {
 
 		res.redirect(`/products/item/${newProdID}`);
     },
-
-    // métodos para EDITAR PRODUCTOS
     editarProducto: (req, res) => {
         let id = +req.params.id;
         const product = products.find(prod => prod.idProd == id);
         res.render('./products/editProduct', {product:product});
     },
-
     actualizarProducto: (req, res) => {
         let id = +req.params.id;
         const {nombreProd, precio, talle, descripcion, categoria } = req.body;
@@ -93,8 +85,8 @@ const productsController = {
     // método para BORRAR PRODUCTOS
     borrarProducto: (req, res) => {
         //código para borrar un producto del JSON
-        let id = +req.params.idProd;
-        let datosActualizados = products.filter(producto => producto.idProd != id);
+        let id = +req.params.id;
+        const datosActualizados = products.filter(producto => producto.idProd != id);
         fs.writeFileSync(productsFilePath, JSON.stringify(datosActualizados,null,2), 'utf-8');
         res.redirect('/products');
     }
