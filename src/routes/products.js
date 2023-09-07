@@ -27,7 +27,7 @@ router.post('/', upload.single('imagen'), productsController.guardarProducto);
 
 // *** rutas para EDITAR PRODUCTOS ***
 router.get('/edit/:id/', productsController.editarProducto);
-router.put('/:id/', productsController.actualizarProducto);
+router.put('/edit/:id/', productsController.actualizarProducto);
 
 // *** rutas para BORRAR PRODUCTOS ***
 router.delete('/:id', productsController.borrarProducto);

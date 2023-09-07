@@ -1,1 +1,65 @@
-[{"idProd":1,"nombreProd":"Remera de Argentina","descripcion":"En estado nuevo, Original de Adidas","precio":24000,"talle":"XL","imagen":"camiseta-de-la-seleccion.webp","categoría":"camisas/camisetas"},{"idProd":2,"nombreProd":"Pantalon Jean","descripcion":"En estado nuevo, Modelo Clasico","precio":5500,"talle":"L","imagen":"jeans.jpg","categoría":"pantalon"},{"idProd":3,"nombreProd":"Cadena Collar Hombre Eslabon Figaro Acero Quirurgico 0.6cm","descripcion":"Grosor del eslabon: 0.6cm Apto para el uso en el agua, no se oxida!","precio":1769,"talle":"45 cm","imagen":"cadena-collar.webp","categoría":"accesorios"},{"idProd":4,"nombreProd":"Zapatillas Vans Old Skool Clasicas Negro/black","descripcion":"Como nuevo, un solo uso","precio":35000,"talle":"36","imagen":"vans-old-skool.jpeg","categoría":"calzado"},{"idProd":5,"nombreProd":"Camiseta Termica Manga Larga","descripcion":"En estado de medio uso, marca Pro One","precio":7000,"talle":"M","imagen":"termica.webp","categoría":"camisas/camisetas"},{"idProd":6,"nombreProd":"asdasd","descripcion":"dqwewqeqasd","precio":"231231","talle":"asd","imagen":"","categoría":"campera"},{"idProd":7,"nombreProd":"aqweqwe","descripcion":"zxczxczczxcz","precio":"231313","talle":"zxcxzc","imagen":"","categoría":"accesorio"},{"idProd":8,"nombreProd":"man","descripcion":"Una descripcion","precio":"4","talle":"XL","imagen":"","categoría":"remera"},{"idProd":9,"nombreProd":"pumba","descripcion":"artr","precio":"2","talle":"XL","imagen":"","categoría":"remera"},{"idProd":10,"nombreProd":"naiki","descripcion":"mAn","precio":"2","talle":"XL","imagen":"","categoría":"remera"},{"idProd":11,"nombreProd":"man","descripcion":"mmm","precio":"4","talle":"M","imagen":"","categoría":"remera"},{"idProd":12,"nombreProd":"pumba","descripcion":"mmmm","precio":"4","talle":"XL","imagen":"","categoría":"remera"},{"idProd":13,"nombreProd":"naiki","descripcion":"llll","precio":"5","talle":"XL","imagen":"1694044462168.jpg","categoría":"remera"},{"idProd":14,"nombreProd":"Remera de Argentina Actualizada","descripcion":"En estado nuevo, Original de Adidasasdfdsafds","precio":"240002332","talle":"M","imagen":"1694049495439.jpg","categoría":"remera"}]
+[
+  {
+    "idProd": 1,
+    "nombreProd": "Remera de Argentina",
+    "descripcion": "En estado nuevo, Original de Adidas",
+    "precio": 24000,
+    "talle": "XL",
+    "imagen": "camiseta-de-la-seleccion.webp",
+    "categoría": "camisas/camisetas"
+  },
+  {
+    "idProd": 2,
+    "nombreProd": "Pantalon Jean",
+    "descripcion": "En estado nuevo, Modelo Clasico",
+    "precio": 5500,
+    "talle": "L",
+    "imagen": "jeans.jpg",
+    "categoría": "pantalon"
+  },
+  {
+    "idProd": 3,
+    "nombreProd": "Cadena Collar Hombre Eslabon Figaro Acero Quirurgico 0.6cm",
+    "descripcion": "Grosor del eslabon: 0.6cm Apto para el uso en el agua, no se oxida!",
+    "precio": 1769,
+    "talle": "45 cm",
+    "imagen": "cadena-collar.webp",
+    "categoría": "accesorios"
+  },
+  {
+    "idProd": 4,
+    "precio": null,
+    "imagen": "vans-old-skool.jpeg",
+    "categoría": "calzado"
+  },
+  {
+    "idProd": 5,
+    "precio": null,
+    "categoría": "camisas/camisetas"
+  },
+  {
+    "idProd": 6,
+    "precio": null,
+    "categoría": "campera"
+  },
+  {
+    "idProd": 7,
+    "precio": null,
+    "imagen": "",
+    "categoría": "accesorio"
+  },
+  {
+    "idProd": 8,
+    "nombreProd": "man",
+    "descripcion": "Una descripcion",
+    "precio": "4",
+    "talle": "XL",
+    "imagen": "",
+    "categoría": "remera"
+  },
+  {
+    "idProd": 9,
+    "precio": null,
+    "categoría": "remera"
+  }
+]

@@ -70,31 +70,41 @@ const productsController = {
 
     // métodos para EDITAR PRODUCTOS
     editarProducto: (req, res) => {
-        let id = req.params.id;
-        let producto = products.find(prod => prod.idProd == id);
-        console.log(producto);
-        res.render('./products/editProduct', {producto:producto});
+        let id = +req.params.id;
+        let product = products.find(prod => prod.idProd == id);
+        res.render('./products/editProduct', {product:product});
     },
 
     actualizarProducto: (req, res) => {
-        //código par actualizar un producto del JSON
-        let id = +req.params.id;
-
-        let producto = productos.find(prod => prod.idProd == id);
+        let id = req.params.id;
+        let producto = products.find(prod => prod.idProd == id);
+        console.log(req.body);
         if (producto) {
             producto.nombreProd = req.body.nombreProd;
+            producto.descripcion = req.body.descripcion;
             producto.precio = +req.body.precio;
             producto.talle = req.body.talle;
-            producto.descripcion = req.body.descripcion;
-            fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 2), 'utf-8');
-            res.redirect('/products')
-        }
+            producto.imagen = req.body.imagen;
+            
+            let index = products.findIndex(prod => prod.idProd == id);
 
+            if (index !== -1) {
+                products[index] = producto;
+                fs.writeFileSync(productsFilePath, JSON.stringify(products,null,2), 'utf-8');
+
+                // res.redirect('/products')
+                res.send(products[index])
+            }
+        }
     },
 
     // método para BORRAR PRODUCTOS
     borrarProducto: (req, res) => {
         //código para borrar un producto del JSON
+        let id = +req.params.idProd;
+        let datosActualizados = products.filter(producto => producto.idProd != id);
+        fs.writeFileSync(productsFilePath, JSON.stringify(datosActualizados,null,2), 'utf-8');
+        res.redirect('/products');
     }
 }
 
