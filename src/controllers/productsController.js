@@ -70,15 +70,26 @@ const productsController = {
 
     // métodos para EDITAR PRODUCTOS
     editarProducto: (req, res) => {
-        let idProducto = req.query.idProd;
-        res.render('./products/createProduct', {
-            titulo: 'Editar Producto - Used Fashion',
-            css: 'createProduct'
-        }, idProducto);
+        let id = req.params.id;
+        let producto = products.find(prod => prod.idProd == id);
+        console.log(producto);
+        res.render('./products/editProduct', {producto:producto});
     },
 
     actualizarProducto: (req, res) => {
         //código par actualizar un producto del JSON
+        let id = +req.params.id;
+
+        let producto = productos.find(prod => prod.idProd == id);
+        if (producto) {
+            producto.nombreProd = req.body.nombreProd;
+            producto.precio = +req.body.precio;
+            producto.talle = req.body.talle;
+            producto.descripcion = req.body.descripcion;
+            fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 2), 'utf-8');
+            res.redirect('/products')
+        }
+
     },
 
     // método para BORRAR PRODUCTOS

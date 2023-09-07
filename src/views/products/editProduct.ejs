@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs', {titulo: 'Publicar Producto - Uptown Urban' , css: 'createProduct' })%>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+            <main>
+                <div class="container">
+                    <form action="/products/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <label for="nombreProd">Nombre del Producto</label>
+                        <input id="nombreProd" name="nombreProd" type="text" placeholder="Ej. Buzo Nike" value="<%=producto.nombreProd%>" required>
+                        <label for="precio">Precio</label>
+                        <input id="precio" name="precio" type="number" placeholder="Ej. $4000" min="1" value="<%=producto.precio%>" required>
+
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" name="categoria">
+                            <option value="remera" selected>Remera</option>
+                            <option value="campera">Buzo / Campera</option>
+                            <option value="pantalon">Pantalón</option>
+                            <option value="calzado">Calzado</option>
+                            <option value="accesorio">Accesorios</option>
+                        </select>
+
+                        <label for="talle">Tamaño / Talle</label>
+                        <input id="talle" name="talle" type="text" placeholder="Ej. XL, 45cm, 40" value="<%=producto.talle%>" required>
+
+                        <label for="descripcion">Descripción del Producto</label>
+                        <textarea name="descripcion" id="descripcion" cols="40" rows="5" required><%=producto.descripcion%></textarea>
+
+                        <label for="imagen">Imagen</label>
+                        <input id="imagen" name="imagen" type="file" value="<%=producto.imagen%>">
+
+                        <button type="sumbit" class="boton-primario">¡Modificar!</button>
+                    </form>
+
+                </div>
+                </div>
+            </main>
+            <%- include("../partials/footer.ejs") %>
+    </body>
+
+</html>
