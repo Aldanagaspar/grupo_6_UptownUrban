@@ -1,9 +1,8 @@
-// ***** importando librerías *****
 const path = require('path');
 const fs = require('fs');
 
 // ***** obteniendo el JSON de productos como objeto literal
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const productsFilePath = path.resolve(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
@@ -71,31 +70,24 @@ const productsController = {
     // métodos para EDITAR PRODUCTOS
     editarProducto: (req, res) => {
         let id = +req.params.id;
-        let product = products.find(prod => prod.idProd == id);
+        const product = products.find(prod => prod.idProd == id);
         res.render('./products/editProduct', {product:product});
     },
 
     actualizarProducto: (req, res) => {
-        let id = req.params.id;
-        let producto = products.find(prod => prod.idProd == id);
-        console.log(req.body);
-        if (producto) {
-            producto.nombreProd = req.body.nombreProd;
-            producto.descripcion = req.body.descripcion;
-            producto.precio = +req.body.precio;
-            producto.talle = req.body.talle;
-            producto.imagen = req.body.imagen;
-            
-            let index = products.findIndex(prod => prod.idProd == id);
+        let id = +req.params.id;
+        const {nombreProd, precio, talle, descripcion, categoria } = req.body;
+        const product = products.find(prod => prod.idProd == id);
 
-            if (index !== -1) {
-                products[index] = producto;
-                fs.writeFileSync(productsFilePath, JSON.stringify(products,null,2), 'utf-8');
+        product.nombreProd = nombreProd;
+        product.precio = +precio;
+        product.talle = talle;
+        product.descripcion = descripcion;
+        product.categoria = categoria;
 
-                // res.redirect('/products')
-                res.send(products[index])
-            }
-        }
+        fs.writeFileSync(productsFilePath, JSON.stringify(products,null,2), 'utf-8');
+
+        res.redirect('/products/')
     },
 
     // método para BORRAR PRODUCTOS

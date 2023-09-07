@@ -6,16 +6,16 @@
     "precio": 24000,
     "talle": "XL",
     "imagen": "camiseta-de-la-seleccion.webp",
-    "categoría": "camisas/camisetas"
+    "categoria": "camisas/camisetas"
   },
   {
     "idProd": 2,
-    "nombreProd": "Pantalon Jean",
-    "descripcion": "En estado nuevo, Modelo Clasico",
-    "precio": 5500,
-    "talle": "L",
+    "nombreProd": "Pantalon Jean Original",
+    "descripcion": "Modelo Clasico.",
+    "precio": 6000,
+    "talle": "40",
     "imagen": "jeans.jpg",
-    "categoría": "pantalon"
+    "categoria": "pantalon"
   },
   {
     "idProd": 3,
@@ -24,42 +24,24 @@
     "precio": 1769,
     "talle": "45 cm",
     "imagen": "cadena-collar.webp",
-    "categoría": "accesorios"
+    "categoria": "accesorios"
   },
   {
     "idProd": 4,
-    "precio": null,
+    "nombreProd": "Zapatillas Vans Old Skool Clasicas Negro/black",
+    "descripcion": "Como nuevo, un solo uso",
+    "precio": 35000,
+    "talle": "36",
     "imagen": "vans-old-skool.jpeg",
-    "categoría": "calzado"
+    "categoria": "calzado"
   },
   {
     "idProd": 5,
-    "precio": null,
-    "categoría": "camisas/camisetas"
-  },
-  {
-    "idProd": 6,
-    "precio": null,
-    "categoría": "campera"
-  },
-  {
-    "idProd": 7,
-    "precio": null,
-    "imagen": "",
-    "categoría": "accesorio"
-  },
-  {
-    "idProd": 8,
-    "nombreProd": "man",
-    "descripcion": "Una descripcion",
-    "precio": "4",
+    "nombreProd": "Camiseta Termica",
+    "descripcion": "Camiseta térmica manga larga, marca Pro One",
+    "precio": 8999,
     "talle": "XL",
-    "imagen": "",
-    "categoría": "remera"
-  },
-  {
-    "idProd": 9,
-    "precio": null,
-    "categoría": "remera"
+    "imagen": "termica.webp",
+    "categoria": "remera"
   }
 ]
