@@ -43,7 +43,7 @@ const productsController = {
 		// ***** calculando el nuevo id *****
 		let newProdID = (products[products.length - 1].idProd) + 1;
 
-        console.log(req.body);
+        console.log(req.file.filename);
 
 		let newProduct = {
             idProd: newProdID,
@@ -51,11 +51,10 @@ const productsController = {
             descripcion: req.body.descripcion,
             precio: req.body.precio,
             talle: req.body.talle,
-            imagen: "",
+            imagen: req.file.filename,
             categoría: req.body.categoria
 		};
 
-        console.log(newProduct)
 
 		// ***** añadiendo el nuevo producto a la lista *****
 		products.push(newProduct);
