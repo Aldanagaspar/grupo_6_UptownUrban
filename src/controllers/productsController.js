@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 
-// ***** obteniendo el JSON de productos como objeto literal
 const productsFilePath = path.resolve(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -11,21 +10,18 @@ const productsController = {
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
         res.render('./products/productsList',{products:products});
     },    
-    
     listadoProductosUsuario: (req, res) => {
         res.render('./products/myProducts', {
             titulo: 'Tus Productos - Used Fashion',
             css: 'productsList'
         });
     },
-
     carrito: (req,res) => {
         res.render("./products/productCart",{
             titulo: 'Tu Carrito - Used Fashion',
             css: 'productCart'
         });
     },
-    
     item: (req,res) => {
         let idProduct = parseInt(req.params.id, 10);
         let product = products.find((p) => p.idProd == idProduct);
@@ -76,13 +72,11 @@ const productsController = {
         product.talle = talle;
         product.descripcion = descripcion;
         product.categoria = categoria;
+        
 
         fs.writeFileSync(productsFilePath, JSON.stringify(products,null,2), 'utf-8');
-
         res.redirect('/products/')
     },
-
-    // método para BORRAR PRODUCTOS
     borrarProducto: (req, res) => {
         //código para borrar un producto del JSON
         let id = +req.params.id;

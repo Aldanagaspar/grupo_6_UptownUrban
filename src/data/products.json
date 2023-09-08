@@ -1,12 +1,12 @@
 [
   {
     "idProd": 1,
-    "nombreProd": "Remera de Argentina",
-    "descripcion": "En estado nuevo, Original de Adidas",
-    "precio": 24000,
-    "talle": "XL",
+    "nombreProd": "Camiseta Argentina N°24",
+    "descripcion": "Camiseta titular de la selección argentina de futbol.",
+    "precio": 30000,
+    "talle": "L",
     "imagen": "camiseta-de-la-seleccion.webp",
-    "categoria": "camisas/camisetas"
+    "categoria": "remera"
   },
   {
     "idProd": 2,

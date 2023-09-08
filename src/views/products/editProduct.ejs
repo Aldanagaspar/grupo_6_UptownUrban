@@ -28,10 +28,12 @@
                         <label for="descripcion">Descripción del Producto</label>
                         <textarea name="descripcion" id="descripcion" cols="40" rows="5" required><%=product.descripcion%></textarea>
 
+                        
+                        <button type="submit" class="boton-primario">¡Modificar!</button>
+                    </form>
+                    <form action="/products/edit/<%=product.idProd%>" method="POST" enctype="multipart/form-data">
                         <label for="imagen">Imagen</label>
                         <input id="imagen" name="imagen" type="file" value="<%=product.imagen%>">
-
-                        <button type="submit" class="boton-primario">¡Modificar!</button>
                     </form>
                 </div>
                 </div>
