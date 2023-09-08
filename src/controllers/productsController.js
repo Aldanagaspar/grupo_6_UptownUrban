@@ -17,10 +17,7 @@ const productsController = {
         });
     },
     carrito: (req,res) => {
-        res.render("./products/productCart",{
-            titulo: 'Tu Carrito - Used Fashion',
-            css: 'productCart'
-        });
+        res.render("./products/productCart");
     },
     item: (req,res) => {
         let idProduct = parseInt(req.params.id, 10);
@@ -63,8 +60,6 @@ const productsController = {
         res.render('./products/editProduct', {product:product});
     },
     actualizarProducto: (req, res) => {
-        //const {nombreProd, precio, talle, descripcion, categoria } = req.body;
-        //const product = products.find(prod => prod.idProd == id);
         let productIndex = products.findIndex(prod => prod.idProd == req.params.id);
 
         if(productIndex != -1){
