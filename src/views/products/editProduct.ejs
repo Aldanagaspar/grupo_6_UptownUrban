@@ -7,7 +7,7 @@
         <%- include("../partials/header.ejs") %>
             <main>
                 <div class="container">
-                    <form action="/products/edit/<%=product.idProd%>/?_method=PUT" method="POST">
+                    <form action="/products/edit/<%=product.idProd%>/?_method=PUT" method="POST" enctype="multipart/form-data">
                         <label for="nombreProd">Nombre del Producto</label>
                         <input id="nombreProd" name="nombreProd" type="text" placeholder="Ej. Buzo Nike" value="<%=product.nombreProd%>" required>
                         <label for="precio">Precio</label>
@@ -27,14 +27,14 @@
 
                         <label for="descripcion">Descripción del Producto</label>
                         <textarea name="descripcion" id="descripcion" cols="40" rows="5" required><%=product.descripcion%></textarea>
-
+                        
+                        <label for="imagen">Imagen</label>
+                        <input id="imagen" name="imagen" type="file" value="<%=product.imagen%>" required>
                         
                         <button type="submit" class="boton-primario">¡Modificar!</button>
                     </form>
-                    <form action="/products/edit/<%=product.idProd%>" method="POST" enctype="multipart/form-data">
-                        <label for="imagen">Imagen</label>
-                        <input id="imagen" name="imagen" type="file" value="<%=product.imagen%>">
-                    </form>
+                   <!--  <form action="/products/edit/<%=product.idProd%>" method="POST">
+                    </form> -->
                 </div>
                 </div>
             </main>

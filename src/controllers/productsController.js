@@ -63,18 +63,24 @@ const productsController = {
         res.render('./products/editProduct', {product:product});
     },
     actualizarProducto: (req, res) => {
-        let id = +req.params.id;
-        const {nombreProd, precio, talle, descripcion, categoria } = req.body;
-        const product = products.find(prod => prod.idProd == id);
+        //const {nombreProd, precio, talle, descripcion, categoria } = req.body;
+        //const product = products.find(prod => prod.idProd == id);
+        let productIndex = products.findIndex(prod => prod.idProd == req.params.id);
 
-        product.nombreProd = nombreProd;
-        product.precio = +precio;
-        product.talle = talle;
-        product.descripcion = descripcion;
-        product.categoria = categoria;
-        
+        if(productIndex != -1){
+            products[productIndex].nombreProd = req.body.nombreProd;
+            products[productIndex].precio = +req.body.precio;
+            products[productIndex].talle = req.body.talle;
+            products[productIndex].descripcion = req.body.descripcion;
+            products[productIndex].imagen = req.file.filename;
+            products[productIndex].categoria = req.body.categoria;   
+        }
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products,null,2), 'utf-8');
+		// ***** devolviendo la lista a su formato JSON original
+		productsJSON = JSON.stringify(products);
+
+		// ***** escribiendo el JSON actualizado al archivo
+		fs.writeFileSync(path.join(__dirname,'../data/products.json'),productsJSON);
         res.redirect('/products/')
     },
     borrarProducto: (req, res) => {
