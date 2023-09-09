@@ -17,7 +17,10 @@ const productsController = {
         });
     },
     carrito: (req,res) => {
-        res.render("./products/productCart");
+        res.render("./products/productCart", {
+            titulo: "Tu carrito - Uptown Urban",
+            css: "productCart"
+        });
     },
     item: (req,res) => {
         let idProduct = parseInt(req.params.id, 10);
