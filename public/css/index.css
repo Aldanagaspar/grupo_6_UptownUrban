@@ -8,39 +8,20 @@ article div p {
 }
 
 .carrusel .container-img {
-    display: block;
+    height: 370px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.carrusel .container-img .img-mobile {
     width: 100%;
-    margin: auto;
-    position: relative;
+    object-fit: contain;
 }
 
 .carrusel .container-img .img-carrusel {
-    width: 100%;
-}
-
-.carrusel .container-img div .circles {
-    position: absolute;
-    left: 530px;
-    width: 100px;
-    margin: auto;
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-around;
+    object-fit: contain;
     display: none;
 }
-
-.carrusel .container-img div .circles div {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #555;
-}
-
-.circles {
-    width: 8px;
-    border-radius: 50%;
-}
-
 
 .filtro {
     width: 100%;
@@ -160,7 +141,12 @@ article div p {
 
 @media (min-width: 768px) {
     main .carrusel .container-img div .img-carrusel {
-        height: 380px;
+        display: block;
+        width: 100%;
+    }
+
+    main .carrusel .container-img div .img-mobile {
+        display: none;
     }
 
     .container-secciones {
@@ -178,7 +164,6 @@ article div p {
         background-color: #eee;
     }
     main .carrusel .container-img div .img-carrusel {
-        height: 380px;
         object-fit: cover;
     }
 
