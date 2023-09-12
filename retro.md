@@ -1,6 +1,29 @@
 # Retrospectivas
 <sup>_(Ordenadas de la más reciente a la menos reciente)_</sup>
 
+## Retrospectiva del Sprint 4
+
+### ¿Qué debemos comenzar a hacer?
+* Empezar a escribir las historias de usuarioen el formato correcto
+* Normalizar el idioma de los nombres de las variables (escribirlas en inglés)
+
+### ¿Qué debemos hacer más?
+* Optimizar más el código
+* Eliminar código comentado
+
+### ¿Qué debemos seguir haciendo?
+* Separarnos las tareas
+* Proponer y consultar lo que sea
+* Interactuar con el tablero de Scrum
+
+### ¿Qué debemos hacer menos?
+* Proponer valor adicional que no es posible cumplir
+  
+### ¿Qué debemos dejar de hacer?
+* Hacer reuniones innecesarias
+
+
+
 ## Retrospectiva del Sprint 3
 
 ### ¿Qué debemos comenzar a hacer?
