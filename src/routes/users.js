@@ -9,5 +9,7 @@ router.get('/registro', usersController.register);
 
 router.get('/:id/myProducts',productsController.listadoProductosUsuario);
 
+router.get('/Profile', usersController.addUser);
+router.post('/addUser',usersController.addUser);
 
 module.exports = router;
