@@ -17,15 +17,20 @@ const productsController = {
         });
     },
     carrito: (req,res) => {
-        res.render("./products/productCart",{
-            titulo: 'Tu Carrito - Used Fashion',
-            css: 'productCart'
+        res.render("./products/productCart", {
+            titulo: "Tu carrito - Uptown Urban",
+            css: "productCart"
         });
     },
     item: (req,res) => {
         let idProduct = parseInt(req.params.id, 10);
         let product = products.find((p) => p.idProd == idProduct);
-        res.render("./products/productDetail",{product});
+        
+        if(product){
+            res.render("./products/productDetail",{product});
+        } else {
+            res.render("../views/error-producto", {id: req.params.id});
+        }
     },
     crearProducto: (req, res) => {
         res.render('./products/createProduct');
@@ -63,8 +68,6 @@ const productsController = {
         res.render('./products/editProduct', {product:product});
     },
     actualizarProducto: (req, res) => {
-        //const {nombreProd, precio, talle, descripcion, categoria } = req.body;
-        //const product = products.find(prod => prod.idProd == id);
         let productIndex = products.findIndex(prod => prod.idProd == req.params.id);
 
         if(productIndex != -1){

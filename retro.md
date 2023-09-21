@@ -1,23 +1,52 @@
 # Retrospectivas
+<sup>_(Ordenadas de la más reciente a la menos reciente)_</sup>
 
-## Retrospectiva del Sprint 1
+## Retrospectiva del Sprint 4
 
 ### ¿Qué debemos comenzar a hacer?
-* Hacer reuniones diarias
-* Darnos una mano ante cualquier inconveniente
+* Empezar a escribir las historias de usuarioen el formato correcto
+* Normalizar el idioma de los nombres de las variables (escribirlas en inglés)
 
 ### ¿Qué debemos hacer más?
-* Comunicarnos más
-* Pedir opiniones de los compañeros
+* Optimizar más el código
+* Eliminar código comentado
 
 ### ¿Qué debemos seguir haciendo?
-* Separar y organizarnos las tareas entre todos
+* Separarnos las tareas
+* Proponer y consultar lo que sea
+* Interactuar con el tablero de Scrum
 
 ### ¿Qué debemos hacer menos?
- **Todavía no intentamos nada que no nos haya dado resultados poco o medianamente satisfactorios como para quitarle prioridad.**
-
+* Proponer valor adicional que no es posible cumplir
+  
 ### ¿Qué debemos dejar de hacer?
-* Austenarse en las reuniones que hagamos
+* Hacer reuniones innecesarias
+
+
+
+## Retrospectiva del Sprint 3
+
+### ¿Qué debemos comenzar a hacer?
+* Implementar Weekly Meetings
+* Limpiar ramas en desuso
+* Optimizar el código
+
+### ¿Qué debemos hacer más?
+* Retocar la visual del sitio
+* Consultar cualquier duda que tengamos
+* Intercatuar con el tablero de Scrum
+
+### ¿Qué debemos seguir haciendo?
+* Separarnos las tareas
+* Proponer y consultar lo que sea
+
+### ¿Qué debemos hacer menos?
+* Crear ramas redundantes
+* Organizarnos mal
+  
+### ¿Qué debemos dejar de hacer?
+* Demorar las tareas asignadas
+* Hacer commits con código comentado
 
 
 
@@ -42,3 +71,25 @@
   
 ### ¿Qué debemos dejar de hacer?
 * Trabajar sobre la misma rama, sobre el mismo archivo, sin comunicación
+
+
+
+## Retrospectiva del Sprint 1
+
+### ¿Qué debemos comenzar a hacer?
+* Hacer reuniones diarias
+* Darnos una mano ante cualquier inconveniente
+
+### ¿Qué debemos hacer más?
+* Comunicarnos más
+* Pedir opiniones de los compañeros
+
+### ¿Qué debemos seguir haciendo?
+* Separar y organizarnos las tareas entre todos
+
+### ¿Qué debemos hacer menos?
+ **Todavía no intentamos nada que no nos haya dado resultados poco o medianamente satisfactorios como para quitarle prioridad.**
+
+### ¿Qué debemos dejar de hacer?
+* Austenarse en las reuniones que hagamos
+
