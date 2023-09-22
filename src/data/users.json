@@ -4,52 +4,41 @@
         "fullname": "Rodolfo Mendez",
         "email": "rodolfo192@gmail.com",
         "password": "12345678",
-        "fotoDePerfil": ""
+        "profilePicture": ""
     },
     {
         "idUsuario": 2,
         "fullname": "Maria Trinidad Ponce",
         "email": "mariapon12@gmail.com",
         "password": "bocajr",
-        "fotoDePerfil": ""
+        "profilePicture": ""
     },
     {
         "idUsuario": 3,
         "fullname": "Catalina Cuellar",
         "email": "cuellar82@gmail.com",
         "password": "riverplate",
-        "fotoDePerfil": ""
+        "profilePicture": ""
     },
     {
         "idUsuario": 4,
         "fullname": "Juan Manuel Cruz",
         "email": "juanma33@gmail.com",
         "password": "juancruz",
-        "fotoDePerfil": ""
+        "profilePicture": ""
     },
     {
         "idUsuario": 5,
         "fullname": "Jordi Villalba",
         "email": "jordivillalba@gmail.com",
         "password": "mariajuana",
-        "fotoDePerfil": ""
+        "profilePicture": ""
     },
     {
-        "idUsuario": "[object Object]1",
-        "fullname": "Alvaro Ramos",
-        "email": "alas@alskf.com",
-        "password": "$2a$10$Bx61M6n0JYJrFUc6BhzfKeG.7C5fZdJio3reE5jVVXHJnreMwKzTC"
-    },
-    {
-        "idUsuario": "[object Object]1",
-        "fullname": "Alvaro Ramos",
-        "email": "we@as",
-        "password": "$2a$10$V318AemfLO5NRJofTN0Iqu6Buus2Ei.T96sLENbCWCBOMxnIDvgyi"
-    },
-    {
-        "idUsuario": "[object Object]1",
-        "fullname": "Alvaro Ramos",
-        "email": "we@as",
-        "password": "$2a$10$B9UnMlS9wKohXTPelMg2.eatehWt6MBlyLVWrAdC2oyxl7Zr/Iq1S"
+        "idUsuario": 6,
+        "fullname": "usuarioNuevo",
+        "email": "user@test.com",
+        "password": "$2a$10$Se4Ugv7TBFABUFgDyhzRPuRZfZ5dzydf/FZ2TPZEY5ESojMBCcLbW",
+        "profilePicture": "1695347453660.jpg"
     }
 ]

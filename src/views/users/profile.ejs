@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>BIENVENIDO/A A NUESTRA PÁGINA <%= users.nombreCompleto %></h1>
-</body>
-</html>
+<%- include('../partials/head.ejs',{titulo:'Perfil - Uptown Urban',css:'profile'})%>
+
+<main>
+    <h1>Mi perfil</h1>
+    <div class="dataUser">
+        <img src="/img/users/<%=users[users.length - 1].profilePicture%>" alt="">
+        <h2><%= users[users.length - 1].fullname%></h2>
+        <p><%= users[users.length - 1].email%></p>
+    </div>
+</main>
+<%- include("../partials/footer.ejs") %>

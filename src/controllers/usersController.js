@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const usersFilePath = path.resolve(__dirname, '../data/users.json');
+const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 
 const usersController = {
@@ -18,17 +19,20 @@ const usersController = {
             css: 'login'
         });
     },
+    profile: (req,res) => {
+        res.render('./users/profile', {users:users})
+    },
     addUser: (req, res) => {
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
         const newUser = {
-            idUsuario : users[users.length - 1] + 1,
-            nombreCompleto: req.body.fullname,
+            idUsuario : (users[users.length - 1].idUsuario + 1),
+            fullname: req.body.fullname,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
+            profilePicture: req.file.filename
         }
         users.push(newUser);
         fs.writeFileSync(usersFilePath, JSON.stringify(users))
-        res.render('./users/profile', {users:users})
+        res.redirect('/users/profile')
     }
 }
 

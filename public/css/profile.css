@@ -1,0 +1,10 @@
+body {
+    text-align: center;
+}
+.dataUser {
+    margin: 20px auto;
+}
+.dataUser img {
+    width: 300px;
+    border-radius: 50%;
+}
