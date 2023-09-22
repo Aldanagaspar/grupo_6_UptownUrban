@@ -3,9 +3,9 @@
 <main>
     <h1>Mi perfil</h1>
     <div class="dataUser">
-        <img src="/img/users/<%=users[users.length - 1].profilePicture%>" alt="">
-        <h2><%= users[users.length - 1].fullname%></h2>
-        <p><%= users[users.length - 1].email%></p>
+        <img src="/img/users/<%= user.profilePicture %>" alt="">
+        <h2><%= user.fullname %></h2>
+        <p><%= user.email %></p>
     </div>
 </main>
 <%- include("../partials/footer.ejs") %>

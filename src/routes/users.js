@@ -21,7 +21,7 @@ router.get('/registro', usersController.register);
 
 router.get('/:id/myProducts',productsController.listadoProductosUsuario);
 
-router.get('/profile', usersController.profile)
+router.get('/profile/:id', usersController.profile)
 router.post('/registro', upload.single('profilePicture'),usersController.addUser);
 
 module.exports = router;

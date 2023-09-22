@@ -36,9 +36,9 @@
     },
     {
         "idUsuario": 6,
-        "fullname": "usuarioNuevo",
-        "email": "user@test.com",
-        "password": "$2a$10$Se4Ugv7TBFABUFgDyhzRPuRZfZ5dzydf/FZ2TPZEY5ESojMBCcLbW",
-        "profilePicture": "1695347453660.jpg"
+        "fullname": "Lionel Andres Messi",
+        "email": "messirve@gmail.com",
+        "password": "$2a$10$lxwfjB7fMOveP9AY.R0u9u.TNCVNq0qfqmGgo9EeLLTE0RSFAhxQi",
+        "profilePicture": "1695352301557.jpg"
     }
 ]

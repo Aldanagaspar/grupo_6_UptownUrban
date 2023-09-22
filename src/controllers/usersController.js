@@ -20,7 +20,9 @@ const usersController = {
         });
     },
     profile: (req,res) => {
-        res.render('./users/profile', {users:users})
+        const id = req.params.id;
+        const user = users.find(u => u.idUsuario == id)
+        res.render('./users/profile', {user:user})
     },
     addUser: (req, res) => {
         const newUser = {
@@ -32,7 +34,7 @@ const usersController = {
         }
         users.push(newUser);
         fs.writeFileSync(usersFilePath, JSON.stringify(users))
-        res.redirect('/users/profile')
+        res.redirect('/users/profile/'+newUser.idUsuario)
     }
 }
 
