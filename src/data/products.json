@@ -7,7 +7,7 @@
     "talle": "XL",
     "imagen": "camiseta-de-la-seleccion.webp",
     "categoría": "camisas/camisetas"
-  }, 
+  },
   {
     "idProd": 2,
     "nombreProd": "Pantalon Jean",
@@ -16,16 +16,7 @@
     "talle": "L",
     "imagen": "jeans.jpg",
     "categoría": "pantalon"
-  }, 
-  {
-    "idProd": 3,
-    "nombreProd": "Cadena Collar Hombre Eslabon Figaro Acero Quirurgico 0.6cm",
-    "descripcion": "Grosor del eslabon: 0.6cm Apto para el uso en el agua, no se oxida!",
-    "precio": 1769,
-    "talle": "45 cm",
-    "imagen": "cadena-collar.webp",
-    "categoría": "accesorios"
-  }, 
+  },
   {
     "idProd": 4,
     "nombreProd": "Zapatillas Vans Old Skool Clasicas Negro/black",
@@ -34,7 +25,7 @@
     "talle": "36",
     "imagen": "vans-old-skool.jpeg",
     "categoría": "calzado"
-  }, 
+  },
   {
     "idProd": 5,
     "nombreProd": "Camiseta Termica Manga Larga",
@@ -44,4 +35,4 @@
     "imagen": "termica.webp",
     "categoría": "camisas/camisetas"
   }
- ]
+]

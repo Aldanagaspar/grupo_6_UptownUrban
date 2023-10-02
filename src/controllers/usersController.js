@@ -49,7 +49,9 @@ const usersController = {
             } else {
                 res.send('Credenciales inválidas')
             }
-        } 
+        } else {
+            res.send("El usuario no existe")
+        }
     },
     profile: (req,res) => {
         res.render('./users/profile', {
