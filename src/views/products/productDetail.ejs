@@ -34,13 +34,15 @@
                         <button class="boton-secundario">Agregar al carrito</button>
                      </div>
                      
-                     <div class="button admin">
-                        <h4>Administración:</h4>
-                        <a href="/products/edit/<%=product.idProd%>"><button class="boton-primario boton-edit"><i class="fa fa-pencil"></i> Modificar</button></a>
-                        <form class="inline" action="/products/<%=product.idProd%>?_method=DELETE" method="POST">
-                           <button type="submit" class="boton-primario boton-del"><i class="fa fa-trash-can"></i> Eliminar</button>
-                        </form>
-                     </div>
+                     <% if (locals.isLogged && locals.isAdmin) { %>
+                        <div class="button admin">
+                           <h4>Administración:</h4>
+                           <a href="/products/edit/<%=product.idProd%>"><button class="boton-primario boton-edit"><i class="fa fa-pencil"></i> Modificar</button></a>
+                           <form class="inline" action="/products/<%=product.idProd%>?_method=DELETE" method="POST">
+                              <button type="submit" class="boton-primario boton-del"><i class="fa fa-trash-can"></i> Eliminar</button>
+                           </form>
+                        </div>
+                     <% } %>
                   </div>
                </div>
             </section>

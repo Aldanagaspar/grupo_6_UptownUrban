@@ -9,6 +9,7 @@ const productRoutes = require("./routes/products");
 const usersRoutes = require("./routes/users");
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const adminLoggedMiddleware = require('./middlewares/adminLoggedMiddleware');
 
 const app = express();
 const PORT = 8000;
@@ -23,6 +24,7 @@ app.use(express.static('public'));
 
 app.use(session({secret: "nabrunwotpu"}));
 app.use(userLoggedMiddleware);
+app.use(adminLoggedMiddleware);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,"/views"));

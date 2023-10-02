@@ -17,12 +17,14 @@
             <ul class="nav-bar">
                 <li><a class="boton-secundario sutil" href="#">Categorias</a></li>
                 <li><a class="boton-secundario sutil" href="#">Ofertas</a></li>
-                <li>
-                    <a href="/products/create/" class="boton-primario vende">
-                        <i style="font-size: 14px;" class="fa-solid fa-cart-plus"></i>
-                            Publicar
-                    </a>
-                </li>
+                <% if(locals.isLogged && locals.isAdmin) { %>
+                    <li>
+                        <a href="/products/create/" class="boton-primario vende">
+                            <i style="font-size: 14px;" class="fa-solid fa-cart-plus"></i>
+                                Publicar
+                        </a>
+                    </li>
+                <% } %>
             </ul>
             <form>
                 <label>
