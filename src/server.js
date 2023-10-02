@@ -1,13 +1,14 @@
 const express = require("express");
 const path = require("path");
-const bodyParser = require('body-parser')
-const methodOverride = require('method-override')
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const session = require('express-session');
 
-const app = express();
 const mainRoutes = require("./routes");
 const productRoutes = require("./routes/products");
 const usersRoutes = require("./routes/users");
 
+const app = express();
 const PORT = 8000;
 
 // ***** configurando body-parser *****
@@ -17,6 +18,8 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'))
 
 app.use(express.static('public'));
+
+app.use(session({secret: "nabrunwotpu"}));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,"/views"));

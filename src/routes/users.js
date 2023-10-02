@@ -15,13 +15,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
+router.get('/profile', usersController.profile)
 
-router.get('/login', usersController.login);
-router.get('/registro', usersController.register);
+router.get('/register', usersController.registerView);
+router.post('/register', upload.single('profilePicture'),usersController.register);
 
 router.get('/:id/myProducts',productsController.listadoProductosUsuario);
 
-router.get('/profile/:id', usersController.profile)
-router.post('/registro', upload.single('profilePicture'),usersController.addUser);
+router.get('/login', usersController.loginView);
+router.post('/login', usersController.login)
 
 module.exports = router;

@@ -2,40 +2,60 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 
-const usersFilePath = path.resolve(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
+const User = require('../models/User');
 
+const usersFilePath = path.resolve(__dirname, '../data/users.json');
 
 const usersController = {
-    login: (req,res) => {
+    loginView: (req,res) => {
         res.render("./users/login", {
             titulo: 'Iniciá Sesión - Used Fashion',
             css: 'login'
         });
     },
-    register: (req,res) => {
+    registerView: (req,res) => {
         res.render("./users/register", {
             titulo: 'Creá tu cuenta - Used Fashion',
             css: 'login'
         });
     },
-    profile: (req,res) => {
-        const id = req.params.id;
-        const user = users.find(u => u.idUsuario == id)
-        res.render('./users/profile', {user:user})
-    },
-    addUser: (req, res) => {
-        const newUser = {
-            idUsuario : (users[users.length - 1].idUsuario + 1),
-            fullname: req.body.fullname,
-            email: req.body.email,
+    register: (req, res) => {
+        let usersFile = fs.readFileSync(usersFilePath, 'utf-8')
+        let users;
+        let userToCreate = {
+            ...req.body,
             password: bcrypt.hashSync(req.body.password, 10),
             profilePicture: req.file.filename
-        }
-        users.push(newUser);
-        fs.writeFileSync(usersFilePath, JSON.stringify(users))
-        res.redirect('/users/profile/'+newUser.idUsuario)
-    }
+        };
+
+        if (usersFile == "") {
+            users = [];
+            fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' '), 'utf-8');
+            User.create(userToCreate);
+            return res.redirect('/users/login')
+        } else {
+            User.create(userToCreate);
+        };
+    },
+    login: (req,res) => {
+        let userToLogin = User.getUserByField('email',req.body.email);
+
+        if (userToLogin) {
+            let verifyPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+            if (verifyPassword) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                return res.redirect('/users/profile')
+            } else {
+                res.send('Credenciales inválidas')
+            }
+        } 
+    },
+    profile: (req,res) => {
+        res.render('./users/profile', {
+            user: req.session.userLogged
+        });
+    },
 }
 
 module.exports = usersController;

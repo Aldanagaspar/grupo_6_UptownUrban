@@ -10,23 +10,23 @@
             <div class="encabezadoLogin">
                 <h1>Iniciá Sesión</h1>
                 <span>
-                    ¿No tenés cuenta? <a href="registro">¡Create una acá!</a>
+                    ¿No tenés cuenta? <a href="register">¡Create una acá!</a>
                 </span>
             </div>
-            <form action="/" class="loginForm">
+            <form action="/users/login" class="loginForm" method="post">
                 <div class="form__group field">
-                    <input type="email" class="form__field" placeholder="Name" required="">
-                    <label for="name" class="form__label">Correo electrónico</label>
+                    <input type="email" class="form__field" placeholder="Name" required name="email">
+                    <label for="email" class="form__label">Correo electrónico</label>
                 </div>
                 <div class="form__group field">
-                    <input type="password" class="form__field" placeholder="Name" required="">
+                    <input type="password" class="form__field" placeholder="Name" required name="password">
                     <label for="name" class="form__label">Contraseña</label>
                 </div>
                 <div class="check">
                     <input type="checkbox" name="remember-user" id="remember-user">
                     <label for="remember-user">Recordar mis datos</label>
                 </div>
-                <button class="boton-primario" type="submit">Iniciar Sesión</button>  
+                <input class="boton-primario" type="submit" value="Iniciar Sesión">  
                 <div class="forgotPass">
                     <a href="#">¿Olvidaste tu contraseña?</a>
                 </div>              
