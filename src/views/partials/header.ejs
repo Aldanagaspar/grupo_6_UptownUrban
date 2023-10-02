@@ -35,7 +35,12 @@
                 <li class="dropdown">
                     <i class="fa-solid fa-circle-user dropbtn icon-med"></i>
                     <div class="dropdown-content">
-                        <a href="/users/login">Cerrar Sesión</a>
+                        <% if(locals.isLogged) { %>
+                            <a href="/users/logout">Cerrar Sesión</a>
+                        <% } else { %>
+                            <a href="/users/login">Iniciar Sesión</a>
+                            <a href="/users/register">Registrarme</a>
+                        <% } %>
                     </div>
                 </li>
             </ul>

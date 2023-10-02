@@ -8,6 +8,8 @@ const mainRoutes = require("./routes");
 const productRoutes = require("./routes/products");
 const usersRoutes = require("./routes/users");
 
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+
 const app = express();
 const PORT = 8000;
 
@@ -20,6 +22,7 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'));
 
 app.use(session({secret: "nabrunwotpu"}));
+app.use(userLoggedMiddleware);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,"/views"));

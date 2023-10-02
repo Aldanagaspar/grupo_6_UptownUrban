@@ -1,9 +1,9 @@
 [
  {
   "id": 1,
-  "fullname": "Lionel Andres Messi",
-  "email": "leo10@gmail.com",
-  "password": "$2a$10$o.Gxc.ojtStevXUJAft3yOlwYYHsZMUIbxacsmlzISf8y8ZpsbHHK",
-  "profilePicture": "1696226716654.jpg"
+  "fullname": "Usuario Administrador",
+  "email": "root@gmail.com",
+  "password": "$2a$10$1BkrQKmXnyc.vNQhgj8jxeNn113tP8bBkvxV7kOhorevw6kMDDrD2",
+  "profilePicture": "1696229420815.png"
  }
 ]
