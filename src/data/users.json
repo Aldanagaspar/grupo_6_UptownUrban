@@ -4,35 +4,35 @@
         "fullname": "Rodolfo Mendez",
         "email": "rodolfo192@gmail.com",
         "password": "12345678",
-        "profilePicture": ""
+        "profilePicture": "hombre2.png"
     },
     {
         "idUsuario": 2,
         "fullname": "Maria Trinidad Ponce",
         "email": "mariapon12@gmail.com",
         "password": "bocajr",
-        "profilePicture": ""
+        "profilePicture": "hombre3.png"
     },
     {
         "idUsuario": 3,
         "fullname": "Catalina Cuellar",
         "email": "cuellar82@gmail.com",
         "password": "riverplate",
-        "profilePicture": ""
+        "profilePicture": "img-user.png"
     },
     {
         "idUsuario": 4,
         "fullname": "Juan Manuel Cruz",
         "email": "juanma33@gmail.com",
         "password": "juancruz",
-        "profilePicture": ""
+        "profilePicture": "mujer3.png"
     },
     {
         "idUsuario": 5,
         "fullname": "Jordi Villalba",
         "email": "jordivillalba@gmail.com",
         "password": "mariajuana",
-        "profilePicture": ""
+        "profilePicture": "Sin título.png"
     },
     {
         "idUsuario": 6,
