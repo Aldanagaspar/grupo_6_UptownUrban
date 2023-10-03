@@ -264,6 +264,13 @@ footer ul li a:hover {
     color: #5c7;
 }
 
+.text-error {
+    color: #952121;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
+
 
 /* Botones */
 button{

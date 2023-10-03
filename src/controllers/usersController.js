@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 const User = require('../models/User');
 
@@ -20,6 +21,14 @@ const usersController = {
         });
     },
     register: (req, res) => {
+        let resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('./users/register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })
+        }
+
         let usersFile = fs.readFileSync(usersFilePath, 'utf-8')
         let users;
         let userToCreate = {
@@ -35,6 +44,7 @@ const usersController = {
             return res.redirect('/users/login')
         } else {
             User.create(userToCreate);
+            return res.redirect('/users/login');
         };
     },
     login: (req,res) => {
