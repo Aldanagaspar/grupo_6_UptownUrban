@@ -1,6 +1,10 @@
 body{
     text-align: center;
 }
+
+h1 {
+    margin: 15px auto;
+}
 .seccion-perfil-usuario .perfil-usuario-body,
 .seccion-perfil-usuario {
     display: flex;
@@ -20,7 +24,7 @@ body{
     display: block;
     position: relative;
     width: 90%;
-    height: 17rem;
+    height: 14rem;
 }
 
 .seccion-perfil-usuario .usuario-img {

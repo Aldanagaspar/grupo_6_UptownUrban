@@ -17,11 +17,11 @@
             <ul class="nav-bar">
                 <li><a class="boton-secundario sutil" href="#">Categorias</a></li>
                 <li><a class="boton-secundario sutil" href="#">Ofertas</a></li>
-                <% if(locals.isLogged && locals.isAdmin) { %>
+                <% if (locals.isLogged && locals.isAdmin) { %>
                     <li>
                         <a href="/products/create/" class="boton-primario vende">
                             <i style="font-size: 14px;" class="fa-solid fa-cart-plus"></i>
-                                Publicar
+                                    Publicar
                         </a>
                     </li>
                 <% } %>
@@ -33,10 +33,11 @@
                 </label>
             </form>
             <ul class="login-bar">
-                <li><a href="/products/cart"><i class="fa-solid fa-cart-shopping icon-cart"></i></a></li>
+                <li><a href="<%= locals.isLogged ? '/products/cart' : '/users/login' %>"><i class="fa-solid fa-cart-shopping icon-cart"></i></a></li>
                 <li class="dropdown">
                     <i class="fa-solid fa-circle-user dropbtn icon-med"></i>
                     <div class="dropdown-content">
+                        <a href="<%= locals.isLogged ? '/users/profile' : '/users/login' %>">Mi perfil</a>
                         <% if(locals.isLogged) { %>
                             <a href="/users/logout">Cerrar Sesión</a>
                         <% } else { %>
