@@ -1,6 +1,27 @@
 # Retrospectivas
 <sup>_(Ordenadas de la más reciente a la menos reciente)_</sup>
 
+## Retrospectiva del Sprint 5
+
+### ¿Qué debemos comenzar a hacer?
+* Borrar código que está de más
+* Revisar los estilos
+
+### ¿Qué debemos hacer más?
+* Reuniones
+
+### ¿Qué debemos seguir haciendo?
+* Interactuar con el tablero de Scrum
+* Consultar cualquier cosa
+
+### ¿Qué debemos hacer menos?
+* Proponer tareas que no suman mucho valor agregado
+  
+### ¿Qué debemos dejar de hacer?
+* Hacer una única reunión por Sprint
+
+
+
 ## Retrospectiva del Sprint 4
 
 ### ¿Qué debemos comenzar a hacer?
