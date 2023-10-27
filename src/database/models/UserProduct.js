@@ -1,12 +1,12 @@
 module.exports = (sequelize, DataTypes)=>{
-    const UserProduct = Sequelize.define("UserProduct",{
+    const UserProduct = sequelize.define("UserProduct",{
         cantidad:{
             type: DataTypes.INTEGER,
             allowNull: false,
         }
     },
     {
-        tablename: "UserProduct",
+        tableName: "UserProduct",
     })
 
     return UserProduct

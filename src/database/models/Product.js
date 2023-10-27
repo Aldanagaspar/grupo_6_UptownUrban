@@ -1,7 +1,5 @@
-const { Sequelize } = require(".")
-
 module.exports = (sequelize, DataTypes)=>{
-    const Product = Sequelize.define("Product",{
+    const Product = sequelize.define("Product",{
         idProd:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -32,18 +30,18 @@ module.exports = (sequelize, DataTypes)=>{
         }
     },
     {
-        tableName: "Products",
+        tableName: "Product",
     });
 
     Product.associate = function(models){
         Product.belongto(models.ProductCategorie,{
             as: "Category",
-            foringkey: "productcategorie_id",
+            foreingkey: "idCategoria",
         });
         Product.belongsToMany(models.User,{
             through: models.UserProduct,
-            foreignKey:"product_id",
-            otherKey:"user_id",
+            foreignKey:"idProd",
+            otherKey:"id",
             as: "users",
         });
     }

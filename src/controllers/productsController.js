@@ -49,7 +49,7 @@ const productsController = {
             imagen: req.file.filename,
             categoría: req.body.categoria
 		};
-
+        
 
 		// ***** añadiendo el nuevo producto a la lista *****
 		products.push(newProduct);

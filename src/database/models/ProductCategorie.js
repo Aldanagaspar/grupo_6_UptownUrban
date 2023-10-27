@@ -1,5 +1,3 @@
-const { Sequelize } = require(".")
-
 module.exports = (sequelize, DataTypes)=>{
     const ProductCategorie = sequelize.define("ProductCategorie",{
         idCategoria:{
@@ -14,13 +12,13 @@ module.exports = (sequelize, DataTypes)=>{
         }
     },
     {
-        tablename:"ProductCategories",
+        tableName:"ProductCategorie",
     });
 
     ProductCategorie.associate = function(models)  {
         ProductCategorie.hasMany(models.Product,{
             as: "Products",
-            foringkey: "productcategorie_id",
+            foreingkey: "idCategoria",
         })
     }
 

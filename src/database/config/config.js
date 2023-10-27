@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": null,
     "database": "uptown_urban_db",
     "host": "localhost",
     "dialect": "mysql"
