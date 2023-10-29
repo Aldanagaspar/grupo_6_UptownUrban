@@ -24,14 +24,14 @@ module.exports = (sequelize, DataTypes)=>{
         }
     },
     {
-        tableName: "User",
+        tableName: "users",
+        timestamps: false
     });
 
     User.associate = function(models){
         User.belongsToMany(models.Product,{
-            through: models.UserProduct,
-            foreignKey:"id",
-            otherKey:"idProd",
+            through: 'usersproducts',
+            foreignKey:"idProd",
             as: "products",
         });
     }

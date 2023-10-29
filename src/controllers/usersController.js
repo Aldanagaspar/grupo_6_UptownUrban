@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+const db = require('../database/models/index')
 
 const User = require('../models/User');
 

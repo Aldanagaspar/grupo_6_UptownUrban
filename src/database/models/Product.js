@@ -30,18 +30,18 @@ module.exports = (sequelize, DataTypes)=>{
         }
     },
     {
-        tableName: "Product",
+        tableName: "products",
+        timestamps: false
     });
 
     Product.associate = function(models){
-        Product.belongto(models.ProductCategorie,{
+        Product.belongsTo(models.ProductCategorie,{
             as: "Category",
-            foreingkey: "idCategoria",
+            foreignKey: "idCategoria",
         });
         Product.belongsToMany(models.User,{
-            through: models.UserProduct,
-            foreignKey:"idProd",
-            otherKey:"id",
+            through: 'usersproducts',
+            foreignKey:"id",
             as: "users",
         });
     }

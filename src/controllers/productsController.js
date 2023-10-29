@@ -3,6 +3,7 @@ const fs = require('fs');
 
 const productsFilePath = path.resolve(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const db = require('../database/models/index');
 
 
 const productsController = {    
@@ -92,7 +93,7 @@ const productsController = {
         const datosActualizados = products.filter(producto => producto.idProd != id);
         fs.writeFileSync(productsFilePath, JSON.stringify(datosActualizados,null,2), 'utf-8');
         res.redirect('/products');
-    }
+    },
 }
 
 module.exports = productsController;
