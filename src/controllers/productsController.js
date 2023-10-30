@@ -7,10 +7,14 @@ const db = require('../database/models/index');
 
 
 const productsController = {    
-    listadoProductos: (req, res) => {
-        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
-        res.render('./products/productsList',{products:products});
-    },    
+    listadoProductos: async (req, res) => {
+        try {
+            const products = await db.Product.findAll();
+            res.render('./products/productsList',{products:products});
+        } catch(error) {
+            console.log(error);
+        }       
+    },
     listadoProductosUsuario: (req, res) => {
         res.render('./products/myProducts', {
             titulo: 'Tus Productos - Used Fashion',
@@ -36,32 +40,23 @@ const productsController = {
     crearProducto: (req, res) => {
         res.render('./products/createProduct');
     },
-    guardarProducto: (req, res) => {        
-		let newProdID = (products[products.length - 1].idProd) + 1;
+    guardarProducto: async (req, res) => {        
+        try {
+            const productCategory = await db.ProductCategorie.findOne({where:{categoria: req.body.categoria}})
+            const saveProduct = await db.Product.create({
+                nombreProd: req.body.nombreProd,
+                descripcion: req.body.descripcion,
+                precio: +req.body.precio,
+                talle: req.body.talle,
+                idCategoria: productCategory.idCategoria,
+                imagen: req.body.imagen
+            });
+            const productsAll = await db.Product.findAll();
+            return res.json(productsAll);
+        } catch(error) {
+            console.log(error);
+        }
 
-        console.log(req.file.filename);
-
-		let newProduct = {
-            idProd: newProdID,
-            nombreProd: req.body.nombreProd,
-            descripcion: req.body.descripcion,
-            precio: req.body.precio,
-            talle: req.body.talle,
-            imagen: req.file.filename,
-            categoría: req.body.categoria
-		};
-        
-
-		// ***** añadiendo el nuevo producto a la lista *****
-		products.push(newProduct);
-
-		// ***** devolviendo la lista a su formato JSON original
-		productsJSON = JSON.stringify(products);
-
-		// ***** escribiendo el JSON actualizado al archivo
-		fs.writeFileSync(path.join(__dirname,'../data/products.json'),productsJSON);
-
-		res.redirect(`/products/item/${newProdID}`);
     },
     editarProducto: (req, res) => {
         let id = +req.params.id;

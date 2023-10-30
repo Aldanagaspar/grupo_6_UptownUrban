@@ -14,12 +14,13 @@
                         <input id="precio" name="precio" type="number" placeholder="Ej. $4000" min="1" required>
 
                         <label for="categoria">Categoría</label>
-                        <select id="categoria" name="categoria">
-                            <option value="remera" selected>Remera</option>
-                            <option value="campera">Buzo / Campera</option>
-                            <option value="pantalon">Pantalón</option>
-                            <option value="calzado">Calzado</option>
-                            <option value="accesorio">Accesorios</option>
+                        <select id="categoria" name="categoria" required>
+                            <option value="" selected></option>
+                            <% let categories = ['remera', 'campera', 'pantalon', 'calzado', 'accesorio'] %>
+                            <% for (let category of categories ) { %>
+                                    <option value="<%= category %>"><%= category %></option>
+                            <% }  %>
+                            
                         </select>
 
                         <label for="talle">Tamaño / Talle</label>
