@@ -6,6 +6,7 @@ const db = require('../database/models/index');
 
 const productsController = {    
     listadoProductos: async (req, res) => {
+        
     },
     listadoProductosUsuario: (req, res) => {
         res.render('./products/myProducts', {

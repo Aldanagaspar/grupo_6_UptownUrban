@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes)=>{
     },
     {
         tableName: "usersproducts",
-        timestamps: false
+        timestamps: false,
+        paranoid: true
     })
 
     return UserProduct
