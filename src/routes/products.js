@@ -35,8 +35,5 @@ router.put('/edit/:id/', upload.single('imagen'), productsController.actualizarP
 // *** rutas para BORRAR PRODUCTOS ***
 router.delete('/:id', productsController.borrarProducto);
 
-// test
-
-router.post('/createProduct', upload.single('imagen'), productsController.guardarProducto)
 
 module.exports = router;
