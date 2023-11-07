@@ -34,7 +34,7 @@ const usersController = {
                 fullname: req.body.fullname,
                 email : req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                profilePicture: req.body.profilePicture,
+                profilePicture: req.file.filename,
             })
             return res.render("./users/login")
         }
@@ -90,7 +90,7 @@ const usersController = {
             users.profilePicture = profilePicture;
             await users.save();
         
-            return res.render("./users/profile")
+            return res.render("./")
           } catch (error) {
             return res.status(500).json({ message: error.message });
           }

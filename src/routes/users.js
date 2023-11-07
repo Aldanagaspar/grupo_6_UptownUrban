@@ -40,7 +40,8 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 router.get('/profile', authMiddleware,usersController.profile);
-router.get('/profile/edit',authMiddleware,usersController.edit);
+router.get('/profile/edit',authMiddleware,usersController.editView)
+router.post('/profile/edit',authMiddleware,usersController.edit);
 
 router.get('/register', guestMiddleware,usersController.registerView);
 router.post('/register', upload.single('profilePicture'), validations,usersController.register);

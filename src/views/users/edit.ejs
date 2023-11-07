@@ -15,14 +15,14 @@
                             ¿Ya tenés cuenta? <a href="login">¡Iniciá sesión acá!</a>
                         </span>
                     </div>
-                    <form action="/users/edit" method="post" enctype="multipart/form-data">
+                    <form action="/users/edit" method="POST" enctype="multipart/form-data">
                         <label for="fullname">Nombres y Apellido</label>
-                        <input id="fullname" name="fullname" type="text" placeholder= "hola" value="<%= locals.oldData ? oldData.fullname : null %>">
+                        <input id="fullname" name="fullname" type="text" placeholder= "Nuevo Nombre" value="<%= locals.oldData ? oldData.fullname : null %>">
                         <label for="password">Contraseña</label>
                         <input id="password" name="password" type="password">
                         <label for="profilePicture">Foto de Perfil</label>
                         <input id="profilePicture" name="profilePicture" type="file">
-                        <button type="sumbit" class="boton-primario">¡Crear cuenta!</button>
+                        <button type="sumbit" class="boton-primario">¡Guardar Cambios!</button>
                     </form>
 
                 </div>
