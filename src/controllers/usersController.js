@@ -2,9 +2,9 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-const db = require('../database/models/index')
+const db = require('../database/models/index');
 
-const User = require('../models/User');
+const {User} = require('../database/models/User.js');
 
 const usersFilePath = path.resolve(__dirname, '../data/users.json');
 
@@ -15,53 +15,52 @@ const usersController = {
             css: 'login'
         });
     },
-    registerView: (req,res) => {
+    registerView: async(req,res) => {
+        const users = await db.User.findAll();
         res.render("./users/register", {
             titulo: 'Creá tu cuenta - Used Fashion',
             css: 'login'
         });
     },
-    register: (req, res) => {
-        let resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            return res.render('./users/register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
+    register: async (req, res) => {
+        try{
+            let resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render('./users/register', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                })};
+            const users = await db.User.create({
+                fullname: req.body.fullname,
+                email : req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                profilePicture: req.body.profilePicture,
             })
+            return res.render("./users/login")
         }
-
-        let usersFile = fs.readFileSync(usersFilePath, 'utf-8')
-        let users;
-        let userToCreate = {
-            ...req.body,
-            password: bcrypt.hashSync(req.body.password, 10),
-            profilePicture: req.file.filename
-        };
-
-        if (usersFile == "") {
-            users = [];
-            fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' '), 'utf-8');
-            User.create(userToCreate);
-            return res.redirect('/users/login')
-        } else {
-            User.create(userToCreate);
-            return res.redirect('/users/login');
-        };
+        catch (error) {
+            console.error('Error', error);}
     },
-    login: (req,res) => {
-        let userToLogin = User.getUserByField('email',req.body.email);
-
-        if (userToLogin) {
-            let verifyPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-            if (verifyPassword) {
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-                return res.redirect('/users/profile')
-            } else {
-                res.send('Credenciales inválidas')
+    login: async (req, res) => {
+        try {
+            const { email, password } = req.body;
+            const user = await db.User.findOne({ where: { email } });
+    
+            if (!user) {
+                return res.send('El usuario no existe');
             }
-        } else {
-            res.send("El usuario no existe")
+    
+            const isPasswordValid = bcrypt.compareSync(password, user.password);
+    
+            if (!isPasswordValid) {
+                return res.send('Contraseña incorrecta');
+            }
+    
+            req.session.userLogged = user;
+            return res.redirect('/users/profile');
+        }
+        catch (error) {
+            console.error('Error al iniciar sesión:', error);
         }
     },
     profile: (req,res) => {
@@ -72,7 +71,28 @@ const usersController = {
     logout: (req,res) => {
         req.session.destroy();
         res.redirect('/')
-    }
-}
-
+    },
+    editView: (req,res) => {
+        res.render("./users/edit", {
+            titulo: 'Edita Perfil - Used Fashion',
+            css: 'login',
+            user: req.session.userLogged,
+        });
+    },
+    edit: async (req,res) => {
+        try {
+            const email = req.session.userLogged.email;
+            const { fullname, password, profilePicture } = req.body;
+        
+            const users = await db.User.findByPk(email);
+            users.fullname = fullname;
+            users.password = bcrypt.hashSync(password, 10);
+            users.profilePicture = profilePicture;
+            await users.save();
+        
+            return res.render("./users/profile")
+          } catch (error) {
+            return res.status(500).json({ message: error.message });
+          }
+}};
 module.exports = usersController;
