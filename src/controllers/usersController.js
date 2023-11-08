@@ -80,8 +80,6 @@ const usersController = {
         try {
             const user = await db.User.findOne({where: {email: req.session.userLogged.email}});
             res.render("./users/edit", {
-                titulo: 'Edita Perfil - Used Fashion',
-                css: 'login',
                 user: user,
             });
         } catch(error) {

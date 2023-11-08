@@ -3,6 +3,7 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cookies = require('cookie-parser');
 
 const mainRoutes = require("./routes");
 const productRoutes = require("./routes/products");

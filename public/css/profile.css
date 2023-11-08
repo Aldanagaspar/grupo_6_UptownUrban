@@ -48,6 +48,7 @@ h1 {
     height: 180px;
     position: relative;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .seccion-perfil-usuario .usuario-img .boton-img {
@@ -96,6 +97,11 @@ h1 {
 .seccion-perfil-usuario .perfil-usuario-bio {
     margin-bottom: 1.25rem;
     text-align: center;
+}
+
+main .btn-edit {
+    display: inline-block;
+    margin: 20px 0;
 }
 
 @media (max-width: 750px) {
