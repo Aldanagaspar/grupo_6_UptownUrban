@@ -39,12 +39,13 @@ const usersController = {
             return res.render("./users/login")
         }
         catch (error) {
-            console.error('Error', error);}
+            console.error('Error', error);
+        }
     },
     login: async (req, res) => {
         try {
             const { email, password } = req.body;
-            const user = await db.User.findOne({ where: { email } });
+            const user = await db.User.findOne({ where: {email} });
     
             if (!user) {
                 return res.send('El usuario no existe');
@@ -63,36 +64,52 @@ const usersController = {
             console.error('Error al iniciar sesión:', error);
         }
     },
-    profile: (req,res) => {
-        res.render('./users/profile', {
-            user: req.session.userLogged
-        });
+    profile: async (req,res) => {
+        try {
+            const user = await db.User.findOne({where: {email: req.session.userLogged.email}})
+            return res.render('./users/profile', {user});
+        } catch(error) {
+            console.log(error);
+        }
     },
     logout: (req,res) => {
         req.session.destroy();
         res.redirect('/')
     },
-    editView: (req,res) => {
-        res.render("./users/edit", {
-            titulo: 'Edita Perfil - Used Fashion',
-            css: 'login',
-            user: req.session.userLogged,
-        });
+    editView: async (req,res) => {
+        try {
+            const user = await db.User.findOne({where: {email: req.session.userLogged.email}});
+            res.render("./users/edit", {
+                titulo: 'Edita Perfil - Used Fashion',
+                css: 'login',
+                user: user,
+            });
+        } catch(error) {
+            console.log(error);
+        }
     },
     edit: async (req,res) => {
         try {
-            const email = req.session.userLogged.email;
-            const { fullname, password, profilePicture } = req.body;
-        
-            const users = await db.User.findByPk(email);
-            users.fullname = fullname;
-            users.password = bcrypt.hashSync(password, 10);
-            users.profilePicture = profilePicture;
-            await users.save();
-        
-            return res.render("./")
+            const userToUpdate = await db.User.findOne({where: {email: req.session.userLogged.email}});
+            let dataFile = req.file;
+            let userFile;
+            if (dataFile) {
+                userFile = verifyFile.filename;
+            } else {
+                userFile = userToUpdate.profilePicture;
+            }
+
+            const userUpdate = await db.User.update({
+                fullname: req.body.fullname,
+                password: bcrypt.hashSync(req.body.password, 10),
+                profilePicture: userFile
+            }, {where: {id: userToUpdate.id}});
+
+            res.redirect('/users/profile')
+
           } catch (error) {
             return res.status(500).json({ message: error.message });
           }
-}};
+    }
+};
 module.exports = usersController;
