@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 const db = require('../database/models/index');
+const { Op } = require('sequelize');
 
 
 const productsController = {    
@@ -9,6 +10,22 @@ const productsController = {
         try {
             const products = await db.Product.findAll({raw:true});
             return res.render('./products/productsList', {products: products})
+        } catch(error) {
+            console.log(error);
+        }
+    },
+    buscarProducto: async (req,res) => { // No funciona
+        const textInput = req.body.search;
+        try {
+            const searchProduct = await db.Product.findAll({
+                where: {
+                    nombreProd: {[Op.like]: `%${textInput}`}
+                }
+            });
+            if (searchProduct.length > 1) {
+                return res.render('./products/searchProducts', {products: searchProduct})
+            };
+
         } catch(error) {
             console.log(error);
         }

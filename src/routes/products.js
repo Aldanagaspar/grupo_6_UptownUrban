@@ -32,6 +32,9 @@ router.post('/', upload.single('imagen'), productsController.guardarProducto);
 router.get('/edit/:id/', authMiddleware,productsController.editarProducto);
 router.put('/edit/:id/', upload.single('imagen'), productsController.actualizarProducto);
 
+/* Ruta para BUSCAR PRODUCTOS */
+router.post('/products/search', productsController.buscarProducto)
+
 // *** rutas para BORRAR PRODUCTOS ***
 router.delete('/:id', productsController.borrarProducto);
 
