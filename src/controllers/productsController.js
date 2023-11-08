@@ -6,7 +6,12 @@ const db = require('../database/models/index');
 
 const productsController = {    
     listadoProductos: async (req, res) => {
-        
+        try {
+            const products = await db.Product.findAll({raw:true});
+            return res.render('./products/productsList', {products: products})
+        } catch(error) {
+            console.log(error);
+        }
     },
     listadoProductosUsuario: (req, res) => {
         res.render('./products/myProducts', {
@@ -20,14 +25,12 @@ const productsController = {
             css: "productCart"
         });
     },
-    item: (req,res) => {
-        let idProduct = parseInt(req.params.id, 10);
-        let product = products.find((p) => p.idProd == idProduct);
-        
-        if(product){
-            res.render("./products/productDetail",{product});
-        } else {
-            res.render("../views/error-producto", {id: req.params.id});
+    item: async (req,res) => {
+        try {
+            const product = await db.Product.findByPk(req.params.id);
+            return res.render('./products/productDetail', {product});
+        } catch(error) {
+            console.log(error);
         }
     },
     crearProducto: (req, res) => {
@@ -45,7 +48,7 @@ const productsController = {
                 imagen: req.file.filename
             });
             const productsAll = await db.Product.findAll();
-            res.render('./products', {products: productsAll})
+            res.redirect('products')
         } catch(error) {
             console.log(error);
         }
@@ -76,6 +79,7 @@ const productsController = {
             const deleteProduct = await db.Product.destroy({
                 where: {idProd: req.params.id}
             });
+            return res.redirect('products')
         } catch(error) {
             console.log(error);
         }
