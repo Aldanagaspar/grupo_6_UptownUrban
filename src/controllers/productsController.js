@@ -19,15 +19,18 @@ const productsController = {
         try {
             const searchProduct = await db.Product.findAll({
                 where: {
-                    nombreProd: {[Op.like]: `%${textInput}`}
+                    nombreProd: {[Op.like]: `%${textInput}%`}
                 }
-            });
+            })
+
             if (searchProduct.length > 1) {
-                return res.render('./products/searchProducts', {products: searchProduct})
-            };
+                return res.render('./products/productsList', {products: searchProduct})
+            } else {
+                return res.render('./products/productsList', {product: searchProduct})
+            }
 
         } catch(error) {
-            console.log(error);
+            return res.json(error)
         }
     },
     listadoProductosUsuario: (req, res) => {
