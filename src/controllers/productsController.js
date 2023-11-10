@@ -22,13 +22,13 @@ const productsController = {
                     nombreProd: {[Op.like]: `%${textInput}%`}
                 }
             })
-
-            if (searchProduct.length > 1) {
-                return res.render('./products/productsList', {products: searchProduct})
+            if (searchProduct.length === 1) {
+                return res.render('./products/productsList', { products: searchProduct });
+            } else if (searchProduct.length > 1) {
+                return res.render('./products/productsList', { products: searchProduct });
             } else {
-                return res.render('./products/productsList', {product: searchProduct})
+                return res.render('./products/error', { message: 'No se encontro el producto ' + textInput});
             }
-
         } catch(error) {
             return res.json(error)
         }

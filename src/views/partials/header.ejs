@@ -15,7 +15,14 @@
         <div class="nav-md-lg">
             <a href="/"><img class="header-logo" src="/img/Logo.png" alt="Logo de la marca"></a>
             <ul class="nav-bar">
-                <li><a class="boton-secundario sutil" href="#">Categorias</a></li>
+                    <select name="categry" id="" class="category-header">
+                        <option value="" selected class="selected-category">Categorías</option>
+                        <option value="remera">Remeras</option>
+                        <option value="pantalon">Pantalones</option>
+                        <option value="calzado">Calzado</option>
+                        <option value="campera">Camperas/buzos</option>
+                        <option value="accesorio">Accesorios</option>
+                    </select>
                 <li><a class="boton-secundario sutil" href="#">Ofertas</a></li>
                 <% if (locals.isLogged && locals.isAdmin) { %>
                     <li>

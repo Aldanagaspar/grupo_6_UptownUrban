@@ -110,6 +110,13 @@ header nav .nav-md-lg form label input {
     padding: .5rem;
 }
 
+header nav .category-header {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1px;
+}
+
+
 .search-btn{
     background-color: #0000;
     border: none;
@@ -224,6 +231,25 @@ footer ul li a:hover {
     color: #eee;
 }
 
+/* NOT FOUN PRODUCT */
+.not-found-product {
+    text-align: center;
+}
+
+.message-error-product {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 25px;
+}
+
+.btn-volver {
+    display: inline-block;
+    margin: auto;
+    align-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+/* --   --   --  --   --  --  */
 
 .logo-footer {
     display: block;
