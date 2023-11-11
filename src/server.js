@@ -19,6 +19,8 @@ const PORT = 8000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+app.use(cookies())
+
 app.use(methodOverride('_method'))
 
 app.use(express.static('public'));

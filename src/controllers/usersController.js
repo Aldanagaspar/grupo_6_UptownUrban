@@ -1,12 +1,9 @@
 const bcrypt = require('bcryptjs');
-const fs = require('fs');
-const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require('../database/models/index');
 
 const {User} = require('../database/models/User.js');
 
-const usersFilePath = path.resolve(__dirname, '../data/users.json');
 
 const usersController = {
     loginView: (req,res) => {
@@ -16,13 +13,13 @@ const usersController = {
         });
     },
     registerView: async(req,res) => {
-        const users = await db.User.findAll();
         res.render("./users/register", {
             titulo: 'Creá tu cuenta - Used Fashion',
             css: 'login'
         });
     },
     register: async (req, res) => {
+        
         try{
             let resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0) {
@@ -48,15 +45,22 @@ const usersController = {
             const user = await db.User.findOne({ where: {email} });
     
             if (!user) {
-                return res.send('El usuario no existe');
+                return res.render('./users/login', {errors: {
+                    email: {msg: 'Este email no está registrado.'}
+                }})
             }
     
             const isPasswordValid = bcrypt.compareSync(password, user.password);
     
             if (!isPasswordValid) {
-                return res.send('Contraseña incorrecta');
+                return res.render('./users/login', {errors: {
+                    email: {msg: 'Las credenciales que pusiste son inválidas.'}
+                }})
             }
     
+            // if (req.body.remember) {
+            //     res.cookie('userEmail', email, {maxAge: (1000 * 60) * 2})
+            // }
             req.session.userLogged = user;
             return res.redirect('/users/profile');
         }
@@ -65,6 +69,7 @@ const usersController = {
         }
     },
     profile: async (req,res) => {
+        console.log(req.cookies.userEmail);
         try {
             const user = await db.User.findOne({where: {email: req.session.userLogged.email}})
             return res.render('./users/profile', {user});
@@ -73,6 +78,7 @@ const usersController = {
         }
     },
     logout: (req,res) => {
+        // res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/')
     },

@@ -49,7 +49,7 @@ router.post('/register', upload.single('profilePicture'), validations,usersContr
 router.get('/:id/myProducts',productsController.listadoProductosUsuario);
 
 router.get('/login', guestMiddleware,usersController.loginView);
-router.post('/login', usersController.login);
+router.post('/login', validations,usersController.login);
 
 router.get('/logout', usersController.logout);
 

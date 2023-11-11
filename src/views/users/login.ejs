@@ -16,14 +16,19 @@
                 <div class="form__group field">
                     <input type="email" class="form__field" placeholder="Name" required name="email">
                     <label for="email" class="form__label">Correo electrónico</label>
+                    <% if (locals.errors && errors.email) { %>
+                        <span class="text-error">
+                            <%= errors.email.msg %>
+                        </span>
+                    <% } %>
                 </div>
                 <div class="form__group field">
                     <input type="password" class="form__field" placeholder="Name" required name="password">
                     <label for="name" class="form__label">Contraseña</label>
                 </div>
                 <div class="check">
-                    <input type="checkbox" name="remember-user" id="remember-user">
-                    <label for="remember-user">Recordar mis datos</label>
+                    <input type="checkbox" name="remember" id="remember-user">
+                    <label for="remember">Recordar mis datos</label>
                 </div>
                 <input class="boton-primario" type="submit" value="Iniciar Sesión">  
                 <div class="forgotPass">
