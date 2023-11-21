@@ -23,11 +23,13 @@ const validations = [
             throw new Error('Este email ya está registrado.')
         } else return true;
     }),
+
     body('password').notEmpty().withMessage('La contraseña no puede estar vacía.').bail()
     .isLength({min:8}).withMessage('La contraseña debe tener mínimo 8 caracteres').bail()
     // .matches() agrupa las condionces para la contrasña
     .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).{8,}$/)
     .withMessage('La contraseña debe contener al menos una letra mayúscula, una minúscula, un número y un caracter especial.'),
+
     body('profilePicture').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg','.jpeg','.png','.gif']

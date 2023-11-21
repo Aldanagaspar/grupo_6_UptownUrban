@@ -1,8 +1,6 @@
-const path = require('path');
-const fs = require('fs');
-
 const db = require('../database/models/index');
 const { Op } = require('sequelize');
+const { validationResult } = require('express-validator')
 
 
 const productsController = {    
@@ -58,6 +56,13 @@ const productsController = {
     },
     guardarProducto: async (req, res) => {        
         try {
+            let resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render('./users/register', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                })
+            };
             const productCategory = await db.ProductCategorie.findOne({where:{categoria: req.body.categoria}})
             const saveProduct = await db.Product.create({
                 nombreProd: req.body.nombreProd,
@@ -79,6 +84,13 @@ const productsController = {
     },
     actualizarProducto: async (req, res) => {
         try {
+            let resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render('./users/register', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                })
+            };
             const productCategory = await db.ProductCategorie.findOne({where: {categoria: req.body.categoria}});
             const productUpdate = await db.Product.update({
                     nombreProd: req.body.nombreProd,

@@ -10,8 +10,19 @@
                     <form action="/products/edit/<%=product.idProd%>/?_method=PUT" method="POST" enctype="multipart/form-data">
                         <label for="nombreProd">Nombre del Producto</label>
                         <input id="nombreProd" name="nombreProd" type="text" placeholder="Ej. Buzo Nike" value="<%=product.nombreProd%>" required>
+                        <% if (locals.errors && errors.nombreProd) { %>
+                            <span class="text-error">
+                                <%= errors.nombreProd.msg %>
+                            </span>
+                        <% } %>
+
                         <label for="precio">Precio</label>
                         <input id="precio" name="precio" type="number" placeholder="Ej. $4000" min="1" value="<%=product.precio%>" required>
+                        <% if (locals.errors && errors.precio) { %>
+                            <span class="text-error">
+                                <%= errors.precio.msg %>
+                            </span>
+                        <% } %>
 
                         <label for="categoria">Categoría</label>
                         <select id="categoria" name="categoria">
@@ -21,15 +32,35 @@
                             <option value="calzado">Calzado</option>
                             <option value="accesorio">Accesorios</option>
                         </select>
+                        <% if (locals.errors && errors.categoria) { %>
+                            <span class="text-error">
+                                <%= errors.categoria.msg %>
+                            </span>
+                        <% } %>
 
                         <label for="talle">Tamaño / Talle</label>
                         <input id="talle" name="talle" type="text" placeholder="Ej. XL, 45cm, 40" value="<%=product.talle%>" required>
+                        <% if (locals.errors && errors.talle) { %>
+                            <span class="text-error">
+                                <%= errors.talle.msg %>
+                            </span>
+                        <% } %>
 
                         <label for="descripcion">Descripción del Producto</label>
                         <textarea name="descripcion" id="descripcion" cols="40" rows="5" required><%=product.descripcion%></textarea>
+                        <% if (locals.errors && errors.descripcion) { %>
+                            <span class="text-error">
+                                <%= errors.descripcion.msg %>
+                            </span>
+                        <% } %>
                         
                         <label for="imagen">Imagen</label>
                         <input id="imagen" name="imagen" type="file" value="<%=product.imagen%>" required>
+                        <% if (locals.errors && errors.imagen) { %>
+                            <span class="text-error">
+                                <%= errors.imagen.msg %>
+                            </span>
+                        <% } %>
                         
                         <button type="submit" class="boton-primario">¡Modificar!</button>
                     </form>

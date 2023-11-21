@@ -52,7 +52,6 @@ const usersController = {
             }
 
             const isPasswordValid = bcrypt.compareSync(password, user.password);
-
             if (!isPasswordValid) {
                 return res.render('./users/login', {
                     errors: {
