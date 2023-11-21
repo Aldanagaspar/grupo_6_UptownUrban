@@ -32,6 +32,11 @@
 
                         <label for="password">Contraseña</label>
                         <input id="password" name="password" type="password">
+                        <% if (locals.errors && errors.password) { %>
+                            <span class="text-error">
+                                <%= errors.password.msg %>
+                            </span>
+                        <% } %>
 
                         <label for="profilePicture">Foto de Perfil</label>
                         <input id="profilePicture" name="profilePicture" type="file">

@@ -25,6 +25,11 @@
                 <div class="form__group field">
                     <input type="password" class="form__field" placeholder="Name" required name="password">
                     <label for="name" class="form__label">Contraseña</label>
+                    <% if (locals.errors && errors.password) { %>
+                        <span class="text-error">
+                            <%= errors.password.msg %>
+                        </span>
+                    <% } %>
                 </div>
                 <div class="check">
                     <input type="checkbox" name="remember" id="remember-user">
