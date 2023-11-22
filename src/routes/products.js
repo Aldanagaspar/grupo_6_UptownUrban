@@ -13,11 +13,12 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const validations = [
     body('nombreProd').notEmpty().withMessage('El nombre del producto no puede estar vacío.').bail()
     .isLength({min:5}).withMessage('El nombre debe tener al menos 5 caracteres.'),
-    body('precio').notEmpty().withMessage('El precio no puede estar vacío.').bail(),
+    body('precio').notEmpty().withMessage('El precio no puede estar vacío.').bail()
+    .isNumeric().withMessage('El campo solo debe contener números.'),
     body('categoria').notEmpty().withMessage('Debes seleccionar una categoria.'),
     body('talle').notEmpty().withMessage('Debes especificar un talle para el producto'),
     body('descripcion').notEmpty().withMessage('La descripción no puede estar vacía.').bail()
-    .isLength({min:20}).withMessage('La descripción deberá contar con al menos 20 caracteres.'),
+    .trim().isLength({min:20}).withMessage('La descripción deberá contar con al menos 20 caracteres.'),
     body('imagen').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg','.jpeg','.png','.gif']
@@ -51,11 +52,11 @@ router.get('/item/:id', productsController.item);
 
 // *** rutas para AGREGAR PRODUCTOS ***
 router.get('/create/', authMiddleware,productsController.crearProducto);  
-router.post('/', upload.single('imagen'), productsController.guardarProducto);
+router.post('/', upload.single('imagen'), validations,productsController.guardarProducto);
 
 // *** rutas para EDITAR PRODUCTOS ***
 router.get('/edit/:id/', authMiddleware,productsController.editarProducto);
-router.put('/edit/:id/', upload.single('imagen'), productsController.actualizarProducto);
+router.put('/edit/:id/', upload.single('imagen'), validations,productsController.actualizarProducto);
 
 /* Ruta para BUSCAR PRODUCTOS */
 router.post('/search', productsController.buscarProducto)

@@ -58,7 +58,7 @@ const productsController = {
         try {
             let resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0) {
-                return res.render('./users/register', {
+                return res.render('./products/createProduct', {
                     errors: resultValidation.mapped(),
                     oldData: req.body
                 })
@@ -72,8 +72,7 @@ const productsController = {
                 idCategoria: productCategory.idCategoria,
                 imagen: req.file.filename
             });
-            const productsAll = await db.Product.findAll();
-            res.redirect('products')
+            return res.redirect('products')
         } catch(error) {
             console.log(error);
         }
@@ -86,7 +85,7 @@ const productsController = {
         try {
             let resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0) {
-                return res.render('./users/register', {
+                return res.render('./products/editProduct', {
                     errors: resultValidation.mapped(),
                     oldData: req.body
                 })

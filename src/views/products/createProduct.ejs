@@ -9,7 +9,7 @@
                 <div class="container">
                     <form action="/products" method="POST" enctype="multipart/form-data">
                         <label for="nombreProd">Nombre del Producto</label>
-                        <input id="nombreProd" name="nombreProd" type="text" placeholder="Ej. Buzo Nike" required>
+                        <input id="nombreProd" name="nombreProd" type="text" placeholder="Ej. Buzo Nike" required value="<%= locals.oldData ? oldData.nombreProd : null %>">
                         <% if (locals.errors && errors.nombreProd) { %>
                             <span class="text-error">
                                 <%= errors.nombreProd.msg %>
@@ -17,7 +17,7 @@
                         <% } %>
 
                         <label for="precio">Precio</label>
-                        <input id="precio" name="precio" type="number" placeholder="Ej. $4000" min="1" required>
+                        <input id="precio" name="precio" type="number" placeholder="Ej. $4000" min="1" required value="<%= locals.oldData ? oldData.precio : null %>">
                         <% if (locals.errors && errors.precio) { %>
                             <span class="text-error">
                                 <%= errors.precio.msg %>
@@ -39,7 +39,7 @@
                         <% } %>
 
                         <label for="talle">Tamaño / Talle</label>
-                        <input id="talle" name="talle" type="text" placeholder="Ej. XL, 45cm, 40" required>
+                        <input id="talle" name="talle" type="text" placeholder="Ej. XL, 45cm, 40" required value="<%= locals.oldData ? oldData.talle : null %>">
                         <% if (locals.errors && errors.talle) { %>
                             <span class="text-error">
                                 <%= errors.talle.msg %>
@@ -47,7 +47,8 @@
                         <% } %>
 
                         <label for="descripcion">Descripción del Producto</label>
-                        <textarea name="descripcion" id="descripcion" cols="40" rows="5" required></textarea>
+                        <textarea name="descripcion" id="descripcion" cols="40" rows="5" required value="<%= locals.oldData ? oldData.descripcion : null %>">
+                        </textarea>
                         <% if (locals.errors && errors.descripcion) { %>
                             <span class="text-error">
                                 <%= errors.descripcion.msg %>
