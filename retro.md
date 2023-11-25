@@ -1,6 +1,27 @@
 # Retrospectivas
 <sup>_(Ordenadas de la más reciente a la menos reciente)_</sup>
 
+## Retrospectiva del Sprint 6
+
+### ¿Qué debemos comenzar a hacer?
+* Avisar sobre inconvenientes
+* Revisar problemas de estilos
+
+### ¿Qué debemos hacer más?
+* Fomentar la comunicación
+
+### ¿Qué debemos seguir haciendo?
+* Mantener el ritmo de trabajo
+* Hacer consultas
+
+### ¿Qué debemos hacer menos?
+* Confiarse con el tiempo
+  
+### ¿Qué debemos dejar de hacer?
+* Ausentarse por tiempo prolongado
+
+
+
 ## Retrospectiva del Sprint 5
 
 ### ¿Qué debemos comenzar a hacer?
