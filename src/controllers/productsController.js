@@ -12,7 +12,7 @@ const productsController = {
             console.log(error);
         }
     },
-    buscarProducto: async (req,res) => { // No funciona
+    buscarProducto: async (req,res) => {
         const textInput = req.body.search;
         try {
             const searchProduct = await db.Product.findAll({
