@@ -1,7 +1,7 @@
 window.addEventListener("load", function(){
     let formulario = document.querySelector("form.createProduct");
     let nombreProd = document.querySelector("#nombreProd");
-    let password = document.querySelector("#password");
+    let precio = document.querySelector("#precio");
     let email = document.querySelector("#email");
 
     formulario.addEventListener("submit", function(e){
@@ -27,6 +27,15 @@ window.addEventListener("load", function(){
             return
         }else{
             document.querySelector("#error_nombreProd_length").style.display ="none";
+        }
+    })
+    precio.addEventListener("blur", function(e){
+        document.querySelector("#error_precio").style.display ="none";
+        if (precio.value == ""){
+            document.querySelector("#error_precio").style.display ="block";
+            return
+        }else{
+            document.querySelector("#error_precio").style.display ="none";
         }
     })
 })

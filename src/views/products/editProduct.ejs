@@ -7,23 +7,29 @@
         <%- include("../partials/header.ejs") %>
             <main>
                 <div class="container">
-                    <form action="/products/edit/<%=product.idProd%>/?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <form action="/products/edit/<%=product.idProd%>/?_method=PUT" method="POST" enctype="multipart/form-data" class="editProduct">
                         <label for="nombreProd">Nombre del Producto</label>
-                        <input id="nombreProd" name="nombreProd" type="text" placeholder="Ej. Buzo Nike" value="<%=product.nombreProd%>" required>
-                        <% if (locals.errors && errors.nombreProd) { %>
-                            <span class="text-error">
-                                <%= errors.nombreProd.msg %>
-                            </span>
-                        <% } %>
+                        <div>
+                            <input id="nombreProd" name="nombreProd" type="text" placeholder="Ej. Buzo Nike" value="<%=product.nombreProd%>" required>
+                            <% if (locals.errors && errors.nombreProd) { %>
+                                <span class="text-error">
+                                    <%= errors.nombreProd.msg %>
+                                </span>
+                            <% } %>
+                            <p class="error" id="error_nombreProd" style ="display: none">Ingrese un Nombre para el producto</p>
+                            <p class="error" id="error_nombreProd_length" style ="display: none">El nombre tiene que tener mas de 5 caracteres</p>
+                        </div>
 
                         <label for="precio">Precio</label>
-                        <input id="precio" name="precio" type="number" placeholder="Ej. $4000" min="1" value="<%=product.precio%>" required>
-                        <% if (locals.errors && errors.precio) { %>
-                            <span class="text-error">
-                                <%= errors.precio.msg %>
-                            </span>
-                        <% } %>
-
+                        <div>
+                            <input id="precio" name="precio" type="number" placeholder="Ej. $4000" min="1" value="<%=product.precio%>" required>
+                            <% if (locals.errors && errors.precio) { %>
+                                <span class="text-error">
+                                    <%= errors.precio.msg %>
+                                </span>
+                            <% } %>
+                            <p class="error" id="error_precio" style ="display: none">Ingrese un precio para el producto</p>
+                        </div>
                         <label for="categoria">Categoría</label>
                         <select id="categoria" name="categoria">
                             <option value="remera" selected>Remera</option>
@@ -69,5 +75,5 @@
             </main>
             <%- include("../partials/footer.ejs") %>
     </body>
-
+    <script src="/js/editProduct.js"></script>
 </html>
