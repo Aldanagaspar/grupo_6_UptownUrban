@@ -2,8 +2,6 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models/index');
 
-const { User } = require('../database/models/User.js');
-
 
 const usersController = {
     loginView: (req, res) => {
@@ -74,6 +72,7 @@ const usersController = {
     },
     profile: async (req, res) => {
         //console.log(req.cookies.userEmail);
+
         try {
             const user = await db.User.findOne({ where: { email: req.session.userLogged.email } })
             return res.render('./users/profile', { user });
