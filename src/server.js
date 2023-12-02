@@ -3,7 +3,7 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
-const cookies = require('cookie-parser');
+//const cookies = require('cookie-parser');
 
 const mainRoutes = require("./routes");
 const productRoutes = require("./routes/products");
@@ -19,7 +19,7 @@ const PORT = 8000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use(cookies())
+//app.use(cookies())
 
 app.use(methodOverride('_method'))
 

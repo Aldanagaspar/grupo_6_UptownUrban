@@ -20,6 +20,7 @@ const usersController = {
     },
     register: async (req, res) => {
         try {
+            console.log("hola")
             let resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0) {
                 return res.render('./users/register', {
@@ -27,12 +28,13 @@ const usersController = {
                     oldData: req.body
                 })
             };
-            const users = await db.User.create({
+                        const users = await db.User.create({
                 fullname: req.body.fullname,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 profilePicture: req.file.filename,
             })
+            console.log('Usuario registrado con éxito:', users);
             return res.render("./users/login")
         } catch (error) {
             console.error('Error', error);
@@ -71,7 +73,7 @@ const usersController = {
         }
     },
     profile: async (req, res) => {
-        console.log(req.cookies.userEmail);
+        //console.log(req.cookies.userEmail);
         try {
             const user = await db.User.findOne({ where: { email: req.session.userLogged.email } })
             return res.render('./users/profile', { user });
