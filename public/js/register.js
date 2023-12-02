@@ -4,6 +4,16 @@ window.addEventListener("load", function(){
     let password = document.querySelector("#password");
     let email = document.querySelector("#email");
 
+    formulario.addEventListener("submit", function(e){
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (fullname.value == "" || fullname.value.length < 5 || password.value == "" || password.value.length < 5 || email.value == "" || !emailRegex.test(email.value)){
+            e.preventDefault();
+            alert("Complete el formulario")
+            
+        }else{
+            alert("El perfil se registro perfectamente") 
+        }
+    });
     fullname.addEventListener("blur", function(e){
         document.querySelector("#error_fullname").style.display ="none";
         document.querySelector("#error_fullname_length").style.display ="none";

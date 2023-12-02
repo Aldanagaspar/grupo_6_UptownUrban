@@ -71,3 +71,8 @@ main .container .img-product-add textarea {
     text-indent: 3px;
     font-weight: bolder;
 }
+.error{
+    color:#842029;
+    text-align: center;
+    border-radius: 10px;
+}

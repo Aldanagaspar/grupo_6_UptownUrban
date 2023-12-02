@@ -18,7 +18,6 @@ const usersController = {
     },
     register: async (req, res) => {
         try {
-            console.log("hola")
             let resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0) {
                 return res.render('./users/register', {
