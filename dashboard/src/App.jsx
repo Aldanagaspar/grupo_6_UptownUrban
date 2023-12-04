@@ -1,8 +1,7 @@
 import './App.css'
-import DataCard from './components/RowMovies/DataCard';
+import DataSection from './components/DataSummary/DataSummarySection';
 import ContentRow from './components/ContentRow/ContentRow';
 import Footer from './components/Footer/Footer';
-import Table from './components/Table/Table';
 
 function App() {
 
@@ -24,12 +23,14 @@ function App() {
                   <h1 className="text-gray-950 font-black block sm:hidden text-lg pt-3">Administración de Uptown Urban</h1>
                </div>
                {/* <!-- End of Topbar --> */}
-               <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Últimos registros de la Base de Datos</h3>
+               <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Registros totales</h3>
                {/* <!-- Content Row Top --> */}
                <div className="container-fluid">
 
+                  <DataSection />
+                  
+                  <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Últimos registros de la Base de Datos</h3>
                   <ContentRow />
-                  <DataCard/>
 
                </div>
                {/* <!--End Content Row Top--> */}

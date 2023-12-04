@@ -1,19 +1,8 @@
 import FotoProducto from '../../assets/images/producto-ejemplo.webp'
 import FotoUsuario from '../../assets/images/usuario-ejemplo.jpg'
-import Card from './Card/Card';
-import GenreCard from './GenreCard/GenreCard';
+import Card from './LastDataCard/LastDataCard';
 
 function ContentRow() {
-
-  const genres = [
-    "Accion",
-    "Aventura",
-    "Comedia",
-    "Drama",
-    "Terror",
-    "Documental",
-    "Infantiles"
-  ]
 
 
   return (
@@ -42,7 +31,7 @@ function ContentRow() {
         <div className="text-center">
           <img className="img-fluid px-3 px-sm-4 mb-6 w-50 mx-auto rounded-circle" style={{ width: '40rem' }} src={FotoUsuario} alt=" Star Wars - Mandalorian " />
         </div>
-        
+
         <div className='flex flex-column'>
           <h3 className='text-center font-bold text-gray-900'>Nombre del usuario</h3>
           <h4 className='text-center'>usuario@gmail.com</h4>
@@ -56,13 +45,13 @@ function ContentRow() {
         </div>
       </Card>
 
-      <Card title={"Genres in Data Base"}>
+      {/* <Card title={"Genres in Data Base"}>
         <div className="row">
           {
             genres.map((genre, i) => <GenreCard key={i + genre} genre={genre} />)
           }
         </div>
-      </Card>
+      </Card> */}
 
 
     </div>

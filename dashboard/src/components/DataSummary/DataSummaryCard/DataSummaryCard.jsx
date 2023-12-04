@@ -1,13 +1,13 @@
 function Card(props) {
 
-    {/* Declarando valores por defecto (en caso de no pasar valores por props) */}
+    {/* Declarando valores por defecto (en caso de no pasar valores por props) */ }
     const {
         titulo = "Datos",
         cifra = 0,
-        icono = "fas fa-comment-slash fa-2x",
+        icono = "fas fa-question fa-2x",
     } = props;
 
-    
+
     return (
         <div className="col-md-4 mb-4">
             <div className='card shadow h-100 py-2'>
