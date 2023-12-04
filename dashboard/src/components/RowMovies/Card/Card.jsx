@@ -1,23 +1,21 @@
 function Card(props) {
+
+    {/* Declarando valores por defecto (en caso de no pasar valores por props) */}
     const {
-        titulo = "Titulo por defecto",
+        titulo = "Datos",
         cifra = 0,
-        color = "danger",
         icono = "fas fa-comment-slash fa-2x",
-        config = {},
-        myFunction = () => {}
     } = props;
 
     
     return (
         <div className="col-md-4 mb-4">
-            <div className={`card border-left-${color} shadow h-100 py-2`}>
+            <div className='card shadow h-100 py-2'>
                 <div className="card-body">
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
-                            <div className={`text-xs font-weight-bold text-${color} text-uppercase mb-1`}>{titulo}</div>
+                            <div className={`text-xs font-weight-bold text-gray-900 text-uppercase mb-1`}>{titulo}</div>
                             <div className="h5 mb-0 font-weight-bold text-gray-800">{cifra}</div>
-                            <div className="h5 mb-0 font-weight-bold text-gray-800">{config.nombre}</div>
                         </div>
                         <div className="col-auto">
                             <i className={`${icono} text-gray-300`}></i>
