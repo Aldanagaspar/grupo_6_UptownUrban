@@ -10,7 +10,7 @@ function Card(props) {
 
     return (
         <div className="col-md-4 mb-4">
-            <div className='card shadow h-100 py-2'>
+            <div className='transition-all ease-in card hover:shadow-xl hover:shadow-slate-200 h-100 py-2'>
                 <div className="card-body">
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">

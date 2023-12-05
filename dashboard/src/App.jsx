@@ -2,6 +2,8 @@ import './App.css'
 import DataSection from './components/DataSummary/DataSummarySection';
 import ContentRow from './components/ContentRow/ContentRow';
 import Footer from './components/Footer/Footer';
+import Table from './components/Table/Table'
+import ButtonsSection from './components/ActionButton/ButtonsSection';
 
 function App() {
 
@@ -23,14 +25,22 @@ function App() {
                   <h1 className="text-gray-950 font-black block sm:hidden text-lg pt-3">Administración de Uptown Urban</h1>
                </div>
                {/* <!-- End of Topbar --> */}
-               <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Registros totales</h3>
                {/* <!-- Content Row Top --> */}
                <div className="container-fluid">
 
+                  <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Acciones</h3>
+                  <div className="flex flex-row">
+                     <ButtonsSection/>
+                  </div>
+
+                  <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Registros totales</h3>
                   <DataSection />
-                  
+
                   <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Últimos registros de la Base de Datos</h3>
                   <ContentRow />
+
+                  <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Número de productos por categoría</h3>
+                  <Table />
 
                </div>
                {/* <!--End Content Row Top--> */}

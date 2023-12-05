@@ -7,17 +7,17 @@ function Footer() {
 
               {/* Créditos para pantallas chicas */}
               <div className="sm:hidden block flex flex-column gap-4 justify-center mt-4">
-                <a className="text-gray-700" href="https://www.github.com/AlvaroR15">Facundo Farfán</a>
+                <a className="text-gray-700" href="https://www.github.com/FacuFarfan">Facundo Farfán</a>
                 <a className="text-gray-700" href="https://www.github.com/AlvaroR15">Álvaro Ramos</a>
-                <a className="text-gray-700" href="https://www.github.com/AlvaroR15">Emanuel Toconás</a>
+                <a className="text-gray-700" href="https://www.github.com/Man29Toconas">Emanuel Toconás</a>
                 <a className="text-gray-700" href="https://www.github.com/NT125">Ignacio Torres</a>
               </div>
 
               {/* Créditos para pantallas medianas en adelante */}
               <div className="hidden sm:flex flex-row gap-6 justify-center mt-4">
-                <a className="text-gray-700" href="https://www.github.com/AlvaroR15">Facundo Farfán</a>
+                <a className="text-gray-700" href="https://www.github.com/FacuFarfan">Facundo Farfán</a>
                 <a className="text-gray-700" href="https://www.github.com/AlvaroR15">Álvaro Ramos</a>
-                <a className="text-gray-700" href="https://www.github.com/AlvaroR15">Emanuel Toconás</a>
+                <a className="text-gray-700" href="https://www.github.com/Man29Toconas">Emanuel Toconás</a>
                 <a className="text-gray-700" href="https://www.github.com/NT125">Ignacio Torres</a>
               </div>
             </div>

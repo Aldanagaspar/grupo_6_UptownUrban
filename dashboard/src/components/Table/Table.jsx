@@ -2,41 +2,42 @@ import Row from "./Row";
 
 function Table() {
 
-    const movies = [
+    const categorias = [
         {
-            titulo: "Billy Elliot",
-            duracion: 150,
-            rating: 9,
-            generos: ["comedia", "drama"],
-            premios: 3,
+            titulo: "Remeras y Camisas",
+            cantidad: 73
         },
         {
-            titulo: "Alicia en el pais de las maravillas",
-            duracion: 198,
-            rating: 2,
-            generos: ["animación", "comedia", "drama"],
-            premios: 3,
+            titulo: "Pantalones",
+            cantidad: 88
+        },
+        {
+            titulo: "Calzado",
+            cantidad: 150
+        },
+        {
+            titulo: "Accesorios",
+            cantidad: 56
         }
     ]
 
     return (
-        <table className="table table-striped">
-            <thead>
-                <tr>
-                    <th>Titulo</th>
-                    <th>Duración</th>
-                    <th>Rating</th>
-                    <th>Generos</th>
-                    <th>Premios</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    Array.isArray(movies) && movies.map((movie, i) => <Row key={i + movie.titulo} movie={movie} />)
-                }
-            </tbody>
+        <div className="container-fluid">
+            <table className="transition-all ease-in bg-white table w-100 border border-gray-800 mx-auto text-center rounded rounded-xl hover:shadow-lg hover:shadow-slate-200 mb-4">
+                <thead>
+                    <tr>
+                        <th className="text-gray-900">Categoría</th>
+                        <th className="text-gray-900">N° de productos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        Array.isArray(categorias) && categorias.map((categoria, i) => <Row key={i + categoria.titulo} movie={categoria} />)
+                    }
+                </tbody>
 
-        </table>
+            </table>
+        </div>
     )
 }
 
