@@ -1,9 +1,7 @@
 import './App.css'
-import DataSection from './components/DataSummary/DataSummarySection';
-import ContentRow from './components/ContentRow/ContentRow';
 import Footer from './components/Footer/Footer';
-import Table from './components/Table/Table'
-import ButtonsSection from './components/ActionButton/ButtonsSection';
+import MainPage from './components/MainPage/MainPage';
+import TopBar from './components/TopBar/TopBar';
 
 function App() {
 
@@ -17,33 +15,13 @@ function App() {
             <div id="content">
 
                {/* <!-- Topbar --> */}
-               <div className="bg-white topbar p-2 mb-4 static-top shadow flex flex-row justify-center sm:justify-between">
-                  <img className='h-100 hidden sm:block' src="../Logo.png" alt="Logo de Uptown Urban" />
-                  <h1 className="pe-3 text-gray-950 font-black hidden sm:block">Administración</h1>
-
-                  {/* <!-- Título para pantallas chicas -> */}
-                  <h1 className="text-gray-950 font-black block sm:hidden text-lg pt-3">Administración de Uptown Urban</h1>
-               </div>
+              <TopBar/>
                {/* <!-- End of Topbar --> */}
+
                {/* <!-- Content Row Top --> */}
-               <div className="container-fluid">
-
-                  <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Acciones</h3>
-                  <div className="flex flex-row">
-                     <ButtonsSection/>
-                  </div>
-
-                  <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Registros totales</h3>
-                  <DataSection />
-
-                  <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Últimos registros de la Base de Datos</h3>
-                  <ContentRow />
-
-                  <h3 className="text-gray-700 font-bold p-2 text-center text-xl">Número de productos por categoría</h3>
-                  <Table />
-
-               </div>
+               <MainPage/>
                {/* <!--End Content Row Top--> */}
+
             </div>
             {/* <!-- End of MainContent --> */}
 
