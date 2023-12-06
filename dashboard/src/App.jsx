@@ -1,39 +1,27 @@
 import './App.css'
 import Footer from './components/Footer/Footer';
+import ProductsList from './components/ListPage/ProductsList';
 import MainPage from './components/MainPage/MainPage';
 import TopBar from './components/TopBar/TopBar';
+
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
    return (
       <div id="wrapper">
-
-         {/* <!-- Content Wrapper --> */}
          <div id="content-wrapper" className="d-flex flex-column">
 
-            {/* <!-- Main Content --> */}
             <div id="content">
-
-               {/* <!-- Topbar --> */}
-              <TopBar/>
-               {/* <!-- End of Topbar --> */}
-
-               {/* <!-- Content Row Top --> */}
-               <MainPage/>
-               {/* <!--End Content Row Top--> */}
-
+               <TopBar />
+               <Routes>
+                  <Route path="/" exact={true} element={<MainPage/>} />
+                  <Route path="/products" exact={true} element={<ProductsList/>}/>
+               </Routes>
             </div>
-            {/* <!-- End of MainContent --> */}
 
-
-
-            {/* <!-- Footer --> */}
             <Footer />
-
-            {/* <!-- End of Footer --> */}
-
          </div>
-         {/* <!-- End of Content Wrapper --> */}
 
       </div>
    );
