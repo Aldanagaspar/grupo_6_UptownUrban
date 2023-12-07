@@ -6,10 +6,10 @@ const { validationResult } = require('express-validator')
 const productsController = {    
     listadoProductos: async (req, res) => {
         try {
-            const products = await db.Product.findAll({raw:true});
+            const products = await db.Product.findAll({include: ['Category']});
             return res.render('./products/productsList', {products: products})
         } catch(error) {
-            console.log(error);
+            res.status(500).json('Ha ocurrido un error.', error)
         }
     },
     buscarProducto: async (req,res) => {
@@ -28,7 +28,7 @@ const productsController = {
                 return res.render('./products/error', { message: 'No se encontro el producto ' + textInput});
             }
         } catch(error) {
-            return res.json(error)
+            res.status(500).json('Ha ocurrido un error.', error)
         }
     },
     listadoProductosUsuario: (req, res) => {
@@ -48,11 +48,12 @@ const productsController = {
             const product = await db.Product.findByPk(req.params.id);
             return res.render('./products/productDetail', {product});
         } catch(error) {
-            console.log(error);
+            res.status(500).json('Ha ocurrido un error.', error)
         }
     },
-    crearProducto: (req, res) => {
-        res.render('./products/createProduct');
+    crearProducto: async (req, res) => {
+        const categorias = await db.ProductCategorie.findAll({raw: true});
+        return res.render('./products/createProduct', {categorias});
     },
     guardarProducto: async (req, res) => {        
         try {
@@ -63,13 +64,12 @@ const productsController = {
                     oldData: req.body
                 })
             };
-            const productCategory = await db.ProductCategorie.findOne({where:{categoria: req.body.categoria}})
-            const saveProduct = await db.Product.create({
+            await db.Product.create({
                 nombreProd: req.body.nombreProd,
                 descripcion: req.body.descripcion,
                 precio: +req.body.precio,
                 talle: req.body.talle,
-                idCategoria: productCategory.idCategoria,
+                idCategoria: req.body.categoria,
                 imagen: req.file.filename
             });
             return res.redirect('products')
@@ -78,8 +78,14 @@ const productsController = {
         }
     },
     editarProducto: async (req, res) => {
-        const product = await db.Product.findByPk(req.params.id, {include:['Category']});
-        res.render('./products/editProduct', {product:product});
+        try {
+            const product = await db.Product.findByPk(req.params.id, {include:['Category']});
+            const categoriasData = await db.ProductCategorie.findAll({raw:true});
+            res.render('./products/editProduct', {product:product, categoriasData});
+
+        } catch(error) {
+            res.status(500).json('Ha ocurrido un error.', error)
+        }
     },
     actualizarProducto: async (req, res) => {
         try {
@@ -90,19 +96,20 @@ const productsController = {
                     oldData: req.body
                 })
             };
-            const productCategory = await db.ProductCategorie.findOne({where: {categoria: req.body.categoria}});
-            const productUpdate = await db.Product.update({
+            await db.Product.update({
                     nombreProd: req.body.nombreProd,
                     descripcion: req.body.descripcion,
                     precio: +req.body.precio,
                     talle: req.body.talle,
-                    idCategoria: productCategory.idCategoria,
+                    idCategoria: req.body.categoria,
                     imagen: req.file.filename
             }, {
                 where: {idProd: req.params.id}
             });
+
+            return res.redirect('/products')
         } catch (error) {
-            console.log(error);
+            res.status(500).json('Ha ocurrido un error.', error)
         }
     },
     borrarProducto: async (req, res) => {
@@ -112,7 +119,7 @@ const productsController = {
             });
             return res.redirect('products')
         } catch(error) {
-            console.log(error);
+            res.status(500).json('Ha ocurrido un error.', error)
         }
     },
 }

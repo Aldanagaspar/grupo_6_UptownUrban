@@ -51,11 +51,11 @@ router.get('/',productsController.listadoProductos);
 router.get('/item/:id', productsController.item);
 
 // *** rutas para AGREGAR PRODUCTOS ***
-router.get('/create/', authMiddleware,productsController.crearProducto);  
+router.get('/create/', productsController.crearProducto);  
 router.post('/', upload.single('imagen'), validations,productsController.guardarProducto);
 
 // *** rutas para EDITAR PRODUCTOS ***
-router.get('/edit/:id/', authMiddleware,productsController.editarProducto);
+router.get('/edit/:id/', productsController.editarProducto);
 router.put('/edit/:id/', upload.single('imagen'), validations,productsController.actualizarProducto);
 
 /* Ruta para BUSCAR PRODUCTOS */

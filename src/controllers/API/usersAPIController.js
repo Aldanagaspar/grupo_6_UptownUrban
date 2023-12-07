@@ -1,6 +1,4 @@
 const db = require('../../database/models/index');
-const fs = require('fs');
-const path = require('path');
 
 const usersAPIController = {
     users: async (req,res) => {
@@ -28,12 +26,11 @@ const usersAPIController = {
                 raw: true
             });
 
-            // C:\Users\PC\Desktop\grupo_6_UsedFashion\public\img\
             const user = {
                 id: usersData.id,
                 nombre: usersData.fullname,
                 email: usersData.email,
-                imagen: usersData.profilePicture
+                imagen: req.protocol + '://' + req.get('host') + '/img/users/' + usersData.profilePicture
             }
             
             return res.status(200).json(user)
