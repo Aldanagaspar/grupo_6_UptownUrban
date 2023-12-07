@@ -23,7 +23,7 @@ function Table() {
 
     return (
         <div className="container-fluid">
-            <table className="transition-all ease-in bg-white table w-100 border border-gray-800 mx-auto text-center rounded rounded-xl hover:shadow-lg hover:shadow-slate-200 mb-4">
+            <table className="transition-all ease-in bg-white table table-responsive-sm w-100 border border-gray-800 mx-auto text-center rounded rounded-xl hover:shadow-lg hover:shadow-slate-200 mb-4">
                 <thead>
                     <tr>
                         <th className="text-gray-900">Categoría</th>
@@ -32,7 +32,7 @@ function Table() {
                 </thead>
                 <tbody>
                     {
-                        Array.isArray(categorias) && categorias.map((categoria, i) => <Row key={i + categoria.titulo} movie={categoria} />)
+                        Array.isArray(categorias) && categorias.map((categoria, i) => <Row key={i + categoria.titulo} categoria={categoria} />)
                     }
                 </tbody>
 

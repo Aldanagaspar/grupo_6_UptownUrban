@@ -35,13 +35,6 @@ function ContentRow() {
         <div className='flex flex-column'>
           <h3 className='text-center font-bold text-gray-900'>Nombre del usuario</h3>
           <h4 className='text-center'>usuario@gmail.com</h4>
-          {/* <a className="mx-5 my-2 p-2 
-                        rounded rounded-xl
-                        bg-gray-900 shadow shadow-md
-                        text-center text-white hover:no-underline
-                        transition-all ease-in"
-            target="_blank" rel="nofollow" href="/"
-          >Ver todos los usuarios</a> */}
         </div>
       </Card>
 

@@ -1,6 +1,7 @@
 import './App.css'
 import Footer from './components/Footer/Footer';
 import ProductsList from './components/ListPage/ProductsList';
+import UsersList from './components/ListPage/UsersList';
 import MainPage from './components/MainPage/MainPage';
 import TopBar from './components/TopBar/TopBar';
 
@@ -17,6 +18,7 @@ function App() {
                <Routes>
                   <Route path="/" exact={true} element={<MainPage/>} />
                   <Route path="/products" exact={true} element={<ProductsList/>}/>
+                  <Route path="/users" exact={true} element={<UsersList/>}/>
                </Routes>
             </div>
 

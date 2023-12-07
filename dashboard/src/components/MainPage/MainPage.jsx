@@ -2,7 +2,7 @@ import React from 'react'
 import ButtonsSection from '../ActionButton/ButtonsSection'
 import DataSection from '../DataSummary/DataSummarySection';
 import ContentRow from '../ContentRow/ContentRow'
-import Table from '../Table/Table'
+import Table from '../Table/CategoriesTable/Table'
 
 const MainPage = () => {
     return (
