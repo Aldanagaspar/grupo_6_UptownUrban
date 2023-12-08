@@ -82,7 +82,6 @@ const productsController = {
             const product = await db.Product.findByPk(req.params.id, {include:['Category']});
             const categoriasData = await db.ProductCategorie.findAll({raw:true});
             res.render('./products/editProduct', {product:product, categoriasData});
-
         } catch(error) {
             res.status(500).json('Ha ocurrido un error.', error)
         }
@@ -90,26 +89,37 @@ const productsController = {
     actualizarProducto: async (req, res) => {
         try {
             let resultValidation = validationResult(req);
+            const categoriasData = await db.ProductCategorie.findAll({raw:true})
             if (resultValidation.errors.length > 0) {
                 return res.render('./products/editProduct', {
                     errors: resultValidation.mapped(),
-                    oldData: req.body
+                    oldData: req.body,
+                    categoriasData
                 })
             };
-            await db.Product.update({
-                    nombreProd: req.body.nombreProd,
-                    descripcion: req.body.descripcion,
-                    precio: +req.body.precio,
-                    talle: req.body.talle,
-                    idCategoria: req.body.categoria,
-                    imagen: req.file.filename
-            }, {
-                where: {idProd: req.params.id}
-            });
+
+            const productToUpdate = await db.Product.findByPk(req.params.id,{raw:true});
+            const file = req.file;
+
+            const productUpdate = {
+                nombreProd: req.body.nombreProd,
+                descripcion: req.body.descripcion,
+                precio: +req.body.precio,
+                talle: req.body.talle,
+                idCategoria: req.body.categoria,
+            }
+
+            if (file) {
+                productUpdate.imagen = file.filename;
+            } else {
+                productUpdate.imagen = productToUpdate.imagen;
+            }
+            
+            await db.Product.update(productUpdate, {where: {idProd: req.params.id}})
 
             return res.redirect('/products')
         } catch (error) {
-            res.status(500).json('Ha ocurrido un error.', error)
+            return res.status(500).json({msg:'Ha ocurrido un error.', error:error})
         }
     },
     borrarProducto: async (req, res) => {
