@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const path = require("path");
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -33,7 +34,14 @@ app.use(adminLoggedMiddleware);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,"/views"));
-
+app.use(cors());
+app.use(
+    cors({
+        origin:["http://localhost:8000", "http://localhost:3000"],
+        methods:"GET,POST,PUT,DELETE",
+        credentials:true
+    })
+);
 app.listen(PORT, () => {
     console.log("\n¡Servidor en línea! :D");
     console.log(`Iniciado en el puerto ${PORT}`);
