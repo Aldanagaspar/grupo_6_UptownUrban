@@ -1,4 +1,4 @@
-function ProductRow({ producto: producto }) {
+function ProductRow({ producto }) {
     return (
         <tr>
             <td>{producto.idProd}</td>
