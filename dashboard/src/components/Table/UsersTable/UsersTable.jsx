@@ -1,18 +1,18 @@
 import UserRow from "./UserRow";
-import {getUser } from "../../../services/userServices";
+import { getUsers } from "../../../services/userServices";
 import React, { Component } from "react";
 class UsersTable extends Component {
     
     constructor(){
         super()
         this.state = {
-            usuario:[]
+            usuarios:[]
         }
     }
 
     async componentDidMount(){
-        const response = await getUser()
-        this.setState({usuario: response})
+        const response = await getUsers()
+        this.setState({usuarios: response})
     }
 
     render() {
@@ -29,7 +29,7 @@ class UsersTable extends Component {
                     </thead>
                     <tbody>
                         {
-                            Array.isArray(this.state.usuario) && this.state.usuario.map((usuario) => <UserRow key={usuario.id} usuario={usuario} />)
+                            Array.isArray(this.state.usuarios) && this.state.usuarios.map((usuario) => <UserRow key={usuario.id} usuario={usuario} />)
                         }
                     </tbody>
 
