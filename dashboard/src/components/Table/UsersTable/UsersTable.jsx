@@ -11,8 +11,21 @@ class UsersTable extends Component {
     }
 
     async componentDidMount(){
+        
         const response = await getUsers()
-        this.setState({usuarios: response})
+        this.setState({user: response})
+ 
+
+
+    //     fetch('http://localhost:8000/api/users')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //     console.log(data);
+    //     this.setState({
+    //         usuarios:data
+    //     })
+    //     })
+    // .catch(console.log)
     }
 
     render() {
@@ -29,13 +42,13 @@ class UsersTable extends Component {
                     </thead>
                     <tbody>
                         {
-                            Array.isArray(this.state.usuarios) && this.state.usuarios.map((usuario) => <UserRow key={usuario.id} usuario={usuario} />)
+                            Array.isArray(this.setState.usuarios) && this.setState.usuarios.map((usuario) => <UserRow key={usuario.id} usuario={usuario} />)
                         }
                     </tbody>
-
+    
                 </table>
             </div>
         )
-    }
+                    }
 }
 export default UsersTable;
