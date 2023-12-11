@@ -1,6 +1,6 @@
 import ProductRow from "./ProductRow";
 import React, { Component } from "react";
-import {getProduct } from "../../../services/productService";
+import {getProducts } from "../../../services/productService";
 
 class ProductsTable extends Component {
     constructor(){
@@ -10,7 +10,8 @@ class ProductsTable extends Component {
         }
     }
     async componentDidMount(){
-        const response = await getProduct()
+
+        const response = await getProducts()
         this.setState({product: response})
     }
 
@@ -31,7 +32,7 @@ class ProductsTable extends Component {
                     </thead>
                     <tbody>
                         {
-                            Array.isArray(this.state.product) && this.state.product.map((producto) => <ProductRow key={producto.idProd} producto={producto} />)
+                            Array.isArray(this.state.product.products) && this.state.product.products.map((producto) => <ProductRow key={producto.idProd} producto={producto} />)
                         }
                     </tbody>
 

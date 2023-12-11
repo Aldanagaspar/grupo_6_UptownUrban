@@ -1,6 +1,7 @@
 import UserRow from "./UserRow";
 import { getUsers } from "../../../services/userServices";
 import React, { Component } from "react";
+
 class UsersTable extends Component {
     
     constructor(){
@@ -13,19 +14,7 @@ class UsersTable extends Component {
     async componentDidMount(){
         
         const response = await getUsers()
-        this.setState({user: response})
- 
-
-
-    //     fetch('http://localhost:8000/api/users')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //     console.log(data);
-    //     this.setState({
-    //         usuarios:data
-    //     })
-    //     })
-    // .catch(console.log)
+        this.setState({usuarios: response})
     }
 
     render() {
@@ -42,7 +31,7 @@ class UsersTable extends Component {
                     </thead>
                     <tbody>
                         {
-                            Array.isArray(this.setState.usuarios) && this.setState.usuarios.map((usuario) => <UserRow key={usuario.id} usuario={usuario} />)
+                            Array.isArray(this.state.usuarios.users) && this.state.usuarios.users.map((usuario) => <UserRow key={usuario.id} usuario={usuario} />)
                         }
                     </tbody>
     
