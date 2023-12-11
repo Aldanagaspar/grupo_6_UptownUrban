@@ -16,8 +16,8 @@
                                     <%= errors.nombreProd.msg %>
                                 </span>
                             <% } %>
-                            <p class="error" id="error_nombreProd" style ="display: none">Ingrese un Nombre para el producto</p>
-                            <p class="error" id="error_nombreProd_length" style ="display: none">El nombre tiene que tener mas de 5 caracteres</p>
+                            <p class="error" id="error_nombreProd" style ="display: none">Ingrese un nombre para el producto.</p>
+                            <p class="error" id="error_nombreProd_length" style ="display: none">El nombre tiene que tener mas de 5 caracteres.</p>
                         </div>
                         <label for="precio">Precio</label>
                         <div>
@@ -27,16 +27,15 @@
                                     <%= errors.precio.msg %>
                                 </span>
                             <% } %>
-                            <p class="error" id="error_precio" style ="display: none">Ingrese un precio para el producto</p>
+                            <p class="error" id="error_precio" style ="display: none">Ingrese un precio para el producto.</p>
                         </div>
 
                         <label for="categoria">Categoría</label>
                         <select id="categoria" name="categoria" required>
-                            <option value="" selected></option>
-                            <% let categories = ['remera', 'campera', 'pantalon', 'calzado', 'accesorio'] %>
-                            <% for (let category of categories ) { %>
-                                    <option value="<%= category %>"><%= category %></option>
-                            <% }  %>
+                            <option value="" selected disabled>Selecciona la categoría</option>
+                            <% for (let categoria of categorias) { %>
+                                <option value="<%= categoria.idCategoria %>"><%= categoria.categoria %></option>
+                            <% } %>
                         </select>
                         <% if (locals.errors && errors.categoria) { %>
                             <span class="text-error">
