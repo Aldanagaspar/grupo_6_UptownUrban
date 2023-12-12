@@ -46,7 +46,7 @@ const productAPIController = {
                 return {
                     ...product,
                     Categoria: category ? category.categoria : null,
-                    detail: req.protocol + '://' + req.get('host') + '/api' + req.url + product.idProd
+                    detail: req.protocol + '://' + req.get('host') + '/api' + req.url + "/" + product.idProd
                 };
             });
             const CategoryCounts = CategoryData.reduce((acc, category) => {
