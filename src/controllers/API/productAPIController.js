@@ -6,15 +6,21 @@ const productAPIController = {
     product: async (req, res) => {
         try{
             const Data = await db.Product.findByPk(req.params.id, {
-                attributes:["nombreProd","descripcion","precio","talle","idCategoria","imagen"],
+                attributes:["idProd","nombreProd","descripcion","precio","talle","idCategoria","imagen"],
                 raw:true
             });
+            const CategoryData = await db.ProductCategorie.findOne({
+                attributes: ["categoria"],
+                where: { idCategoria: Data.idCategoria },
+                raw:true
+            })
             const product ={
+                idProd: Data.idProd,
                 nombreProd: Data.nombreProd,
                 descripcion: Data.descripcion,
                 precio: Data.precio,
                 talle: Data.talle,
-                idCategoria: Data.idCategoria,
+                Categoria: CategoryData ? CategoryData.categoria : null,
                 imagen: req.protocol + '://' + req.get('host') + '/img/products/' + Data.imagen
             }
             return res.status(200).json(product)
@@ -26,17 +32,23 @@ const productAPIController = {
     products: async (req, res) => {
         try{
             const Data = await db.Product.findAll({
-                attributes:["nombreProd","descripcion","precio","talle","idCategoria","imagen"],
+                attributes:["idProd","nombreProd","descripcion","precio","talle","idCategoria","imagen"],
                 raw:true
             });
-            const products = Data.map(product => ({
-                ...product,
-                detail: req.protocol + '://' + req.get('host') + '/api' + req.url + '/' +product.idProd 
-            }))
             const CategoryData = await db.ProductCategorie.findAll({
-                attributes: ["categoria",[db.sequelize.literal('(SELECT COUNT(*) FROM products WHERE products.idCategoria = ProductCategorie.idCategoria)'), 'Cantidad']],
+                attributes: ["idCategoria","categoria",[db.sequelize.literal('(SELECT COUNT(*) FROM products WHERE products.idCategoria = ProductCategorie.idCategoria)'), 'Cantidad']],
                 raw:true
             })
+
+            const products = Data.map(product => {
+                const category = CategoryData.find(cat => cat.idCategoria === product.idCategoria);
+
+                return {
+                    ...product,
+                    Categoria: category ? category.categoria : null,
+                    detail: req.protocol + '://' + req.get('host') + '/api' + req.url + product.idProd
+                };
+            });
             const CategoryCounts = CategoryData.reduce((acc, category) => {
                 acc[category.categoria] = category.Cantidad;
                 return acc;

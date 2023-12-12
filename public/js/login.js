@@ -3,6 +3,16 @@ window.addEventListener("load", function(){
     let password = document.querySelector("#password");
     let email = document.querySelector("#email");
     
+    formulario.addEventListener("submit", function(e){
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (password.value == "" || password.value.length < 5 || email.value == "" || !emailRegex.test(email.value)){
+            e.preventDefault();
+            alert("Complete el formulario")
+            
+        }else{
+            alert("El perfil se logio perfectamente") 
+        }
+    });
     email.addEventListener("blur", function(e){
         let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         document.querySelector("#error_email").style.display ="none";
