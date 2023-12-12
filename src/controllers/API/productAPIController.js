@@ -26,12 +26,12 @@ const productAPIController = {
     products: async (req, res) => {
         try{
             const Data = await db.Product.findAll({
-                attributes:["nombreProd","descripcion","precio","talle","idCategoria","imagen"],
+                attributes:["idProd","nombreProd","descripcion","precio","talle","idCategoria","imagen"],
                 raw:true
             });
             const products = Data.map(product => ({
                 ...product,
-                detail: req.protocol + '://' + req.get('host') + '/api' + req.url + '/' +product.idProd 
+                detail: req.protocol + '://' + req.get('host') + '/api' + req.url + '/' + product.idProd 
             }))
             return res.status(200).json({
                 count: products.length,

@@ -3,7 +3,7 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
-//const cookies = require('cookie-parser');
+const cookies = require('cookie-parser');
 
 const mainRoutes = require("./routes");
 const productRoutes = require("./routes/products");
@@ -13,6 +13,7 @@ const productApiRoutes = require('./routes/API/productApi');
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const adminLoggedMiddleware = require('./middlewares/adminLoggedMiddleware');
+const cookiesMiddleware = require("./middlewares/cookiesMiddleware");
 
 const app = express();
 const PORT = 8000;
@@ -21,15 +22,19 @@ const PORT = 8000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-//app.use(cookies())
+
+app.use(session({secret: "nabrunwotpu"}));
+
+app.use(userLoggedMiddleware);
+app.use(adminLoggedMiddleware);
+
+app.use(cookies());
+app.use(cookiesMiddleware);
 
 app.use(methodOverride('_method'))
 
 app.use(express.static('public'));
 
-app.use(session({secret: "nabrunwotpu"}));
-app.use(userLoggedMiddleware);
-app.use(adminLoggedMiddleware);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,"/views"));
