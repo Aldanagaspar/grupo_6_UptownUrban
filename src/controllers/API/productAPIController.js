@@ -33,8 +33,17 @@ const productAPIController = {
                 ...product,
                 detail: req.protocol + '://' + req.get('host') + '/api' + req.url + '/' + product.idProd 
             }))
+            const CategoryData = await db.ProductCategorie.findAll({
+                attributes: ["categoria",[db.sequelize.literal('(SELECT COUNT(*) FROM products WHERE products.idCategoria = ProductCategorie.idCategoria)'), 'Cantidad']],
+                raw:true
+            })
+            const CategoryCounts = CategoryData.reduce((acc, category) => {
+                acc[category.categoria] = category.Cantidad;
+                return acc;
+            }, {});
             return res.status(200).json({
-                count: products.length,
+                Count: products.length,
+                CategoryCounts,
                 products
             })
         }
