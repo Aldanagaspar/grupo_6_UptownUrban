@@ -1,4 +1,4 @@
-function UserRow({ usuario: usuario }) {
+function UserRow({ usuario }) {
     return (
         <tr>
             <td>{usuario.id}</td>
