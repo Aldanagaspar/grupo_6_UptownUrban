@@ -6,7 +6,10 @@ const { validationResult } = require('express-validator')
 const productsController = {    
     listadoProductos: async (req, res) => {
         try {
-            const products = await db.Product.findAll({include: ['Category']});
+            const products = await db.Product.findAll({
+                include: ['Category']
+            });
+
             return res.render('./products/productsList', {products: products})
         } catch(error) {
             res.status(500).json('Ha ocurrido un error.', error)

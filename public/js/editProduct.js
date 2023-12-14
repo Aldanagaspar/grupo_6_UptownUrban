@@ -5,12 +5,12 @@ window.addEventListener("load", function(){
     let email = document.querySelector("#email");
 
     formulario.addEventListener("submit", function(e){
-        if (fullname.value == "" || fullname.value.length < 5 || password.value == "" || password.value.length < 5 || email.value == "" || !emailRegex.test(email.value)){
+        if (nombreProd.value == "" || nombreProd.value.length < 5 || precio.value == "" || precio.value < 0){
             e.preventDefault();
             alert("Complete el formulario")
             
         }else{
-            alert("El perfil se registro perfectamente") 
+            alert("El producto se modifico perfectamente") 
         }
     });
     nombreProd.addEventListener("blur", function(e){
@@ -31,7 +31,7 @@ window.addEventListener("load", function(){
     })
     precio.addEventListener("blur", function(e){
         document.querySelector("#error_precio").style.display ="none";
-        if (precio.value == ""){
+        if (precio.value == "" || precio.value < 0){
             document.querySelector("#error_precio").style.display ="block";
             return
         }else{
