@@ -11,6 +11,7 @@ const productRoutes = require("./routes/products");
 const usersRoutes = require("./routes/users");
 const usersApiRoutes = require('./routes/API/users');
 const productApiRoutes = require('./routes/API/productApi');
+const generalApiRoutes = require('./routes/API/index');
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const adminLoggedMiddleware = require('./middlewares/adminLoggedMiddleware');
@@ -50,7 +51,7 @@ app.listen(PORT, () => {
 app.use('/', mainRoutes);
 app.use('/users', usersRoutes);
 app.use('/products', productRoutes);
-app.use('/api', usersApiRoutes,productApiRoutes);
+app.use('/api', usersApiRoutes,productApiRoutes, generalApiRoutes);
 
 
 

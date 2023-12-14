@@ -23,6 +23,7 @@ router.get('/cart', authMiddleware,productsController.carrito);
 // *** rutas para OBTENER PRODUCTOS ***
 router.get('/',productsController.listadoProductos);
 router.get('/item/:id', productsController.item);
+router.get('/:category', productsController.productosPorCategoria);
 
 // *** rutas para AGREGAR PRODUCTOS ***
 router.get('/create/', authMiddleware,productsController.crearProducto);  

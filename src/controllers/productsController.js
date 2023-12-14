@@ -34,6 +34,23 @@ const productsController = {
             res.status(500).json('Ha ocurrido un error.', error)
         }
     },
+    productosPorCategoria: async (req,res) => {
+        try {
+            const searchProducts = await db.Product.findAll({
+                include: ['Category'],
+                where: {
+                    '$Category.categoria$': req.params.category
+                }
+            });
+
+            if (searchProducts) {
+                return res.render('./products/productsList', {products: searchProducts})
+                // return res.json(searchProducts)
+            }
+        } catch(err) {
+
+        }
+    },
     listadoProductosUsuario: (req, res) => {
         res.render('./products/myProducts', {
             titulo: 'Tus Productos - Used Fashion',

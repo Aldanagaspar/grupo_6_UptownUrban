@@ -172,7 +172,7 @@ header nav .nav-md-lg .login-bar li a {
 }
 
 .dropdown-content a {
-    padding: 12px;
+    padding: 8px 3px !important;
     text-decoration: none;
     display: block;
 }
