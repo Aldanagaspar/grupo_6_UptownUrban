@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
-const cors = require('cors');
 
 const mainRoutes = require("./routes");
 const productRoutes = require("./routes/products");
@@ -42,14 +41,7 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,"/views"));
-app.use(cors());
-app.use(
-    cors({
-        origin:["http://localhost:8000", "http://localhost:3000"],
-        methods:"GET,POST,PUT,DELETE",
-        credentials:true
-    })
-);
+
 app.listen(PORT, () => {
     console.log("\n¡Servidor en línea! :D");
     console.log(`Iniciado en el puerto ${PORT}`);
