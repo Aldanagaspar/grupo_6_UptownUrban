@@ -1,4 +1,4 @@
-function Row({categoria: categoria}) {
+function Row({categoria}) {
     return(
         <tr>
           <td>{categoria.titulo}</td>
