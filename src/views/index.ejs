@@ -21,18 +21,12 @@
             <section class="filtro">
                 <h2>¿Qué andás buscando?</h2>
                 <div class="container-secciones">
-                    <a href="#" class="seccion">
-                        <img src="/img/remeras-filtro.jpg" alt="">
-                    </a>
-                    <a href="#" class="seccion">
-                        <img src="/img/pantalones-filtro.jpg" alt="">
-                    </a>
-                    <a href="#" class="seccion">
-                        <img src="/img/zapatillas-filtro.jpg" alt="">
-                    </a>
-                    <a href="#" class="seccion">
-                        <img src="/img/accesorios-filtro.jpg" alt="">
-                    </a>
+                    <% let imgs = ['accesorios-filtro.jpg','zapatillas-filtro.jpg','remeras-filtro.jpg','pantalones-filtro.jpg'] %>
+                    <% for (let i = 0; i < imgs.length; i++) { %>
+                        <a href="/products/<%=categorias[i] == 'campera' ? categorias[i] = 'remera' : categorias[i] %>" class="seccion">
+                            <img src="/img/<%=imgs[i]%>" alt="">
+                        </a>
+                    <% } %>
                 </div>
             </section>
 

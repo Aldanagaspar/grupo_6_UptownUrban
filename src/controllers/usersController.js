@@ -1,94 +1,101 @@
 const bcrypt = require('bcryptjs');
-const fs = require('fs');
-const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require('../database/models/index');
 
-const {User} = require('../database/models/User.js');
-
-const usersFilePath = path.resolve(__dirname, '../data/users.json');
 
 const usersController = {
-    loginView: (req,res) => {
+    loginView: (req, res) => {
         res.render("./users/login", {
             titulo: 'Iniciá Sesión - Used Fashion',
             css: 'login'
         });
     },
-    registerView: async(req,res) => {
-        const users = await db.User.findAll();
+    registerView: async (req, res) => {
         res.render("./users/register", {
             titulo: 'Creá tu cuenta - Used Fashion',
             css: 'login'
         });
     },
     register: async (req, res) => {
-        try{
+        try {
             let resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0) {
                 return res.render('./users/register', {
                     errors: resultValidation.mapped(),
                     oldData: req.body
-                })};
-            const users = await db.User.create({
+                })
+            };
+                        const users = await db.User.create({
                 fullname: req.body.fullname,
-                email : req.body.email,
+                email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 profilePicture: req.file.filename,
             })
+            console.log('Usuario registrado con éxito:', users);
             return res.render("./users/login")
-        }
-        catch (error) {
+        } catch (error) {
             console.error('Error', error);
         }
     },
     login: async (req, res) => {
         try {
             const { email, password } = req.body;
-            const user = await db.User.findOne({ where: {email} });
-    
-            if (!user) {
-                return res.send('El usuario no existe');
+            const user = await db.User.findOne({ where: { email } });
+
+           if (!user) {
+               return res.render('./users/login', {
+                   errors: {
+                       email: { msg: 'Este email no está registrado.' }
+                   }
+               })
+           }
+
+           const isPasswordValid = bcrypt.compareSync(password, user.password);
+           if (!isPasswordValid) {
+               return res.render('./users/login', {
+                   errors: {
+                       email: { msg: 'Las credenciales que pusiste son inválidas.' }
+                   }
+               })
+           };
+
+            req.session.userLogged = user.email;
+            if (req.body.remember) {
+                res.cookie('userLogged', req.session.userLogged, {maxAge: (1000 * 60) * 60})
             }
-    
-            const isPasswordValid = bcrypt.compareSync(password, user.password);
-    
-            if (!isPasswordValid) {
-                return res.send('Contraseña incorrecta');
-            }
-    
-            req.session.userLogged = user;
+
             return res.redirect('/users/profile');
         }
         catch (error) {
             console.error('Error al iniciar sesión:', error);
         }
     },
-    profile: async (req,res) => {
+    profile: async (req, res) => {
         try {
-            const user = await db.User.findOne({where: {email: req.session.userLogged.email}})
-            return res.render('./users/profile', {user});
-        } catch(error) {
+            const user = await db.User.findOne({ where: { email: req.session.userLogged } })
+            return res.render('./users/profile', { user });
+        } catch (error) {
             console.log(error);
         }
     },
-    logout: (req,res) => {
+    logout: (req, res) => {
+        res.clearCookie('userLogged');
         req.session.destroy();
         res.redirect('/')
     },
-    editView: async (req,res) => {
+    editView: async (req, res) => {
         try {
-            const user = await db.User.findOne({where: {email: req.session.userLogged.email}});
+            const user = await db.User.findOne({ where: { email: req.session.userLogged } });
             res.render("./users/edit", {
                 user: user,
             });
-        } catch(error) {
+        } catch (error) {
             console.log(error);
         }
     },
-    edit: async (req,res) => {
+    edit: async (req, res) => {
         try {
-            const userToUpdate = await db.User.findOne({where: {email: req.session.userLogged.email}});
+            const userToUpdate = await db.User.findOne({ where: { email: req.session.userLogged } });
             let dataFile = req.file;
             let userFile;
             if (dataFile) {
@@ -97,17 +104,17 @@ const usersController = {
                 userFile = userToUpdate.profilePicture;
             }
 
-            const userUpdate = await db.User.update({
+            await db.User.update({
                 fullname: req.body.fullname,
                 password: bcrypt.hashSync(req.body.password, 10),
                 profilePicture: userFile
-            }, {where: {id: userToUpdate.id}});
+            }, { where: { id: userToUpdate.id } });
 
             res.redirect('/users/profile')
 
-          } catch (error) {
+        } catch (error) {
             return res.status(500).json({ message: error.message });
-          }
+        }
     }
 };
 module.exports = usersController;

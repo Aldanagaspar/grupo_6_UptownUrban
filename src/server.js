@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const path = require("path");
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -8,9 +9,13 @@ const cookies = require('cookie-parser');
 const mainRoutes = require("./routes");
 const productRoutes = require("./routes/products");
 const usersRoutes = require("./routes/users");
+const usersApiRoutes = require('./routes/API/users');
+const productApiRoutes = require('./routes/API/productApi');
+const generalApiRoutes = require('./routes/API/index');
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const adminLoggedMiddleware = require('./middlewares/adminLoggedMiddleware');
+const cookiesMiddleware = require("./middlewares/cookiesMiddleware");
 
 const app = express();
 const PORT = 8000;
@@ -19,13 +24,20 @@ const PORT = 8000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+app.use(cors());
+
+app.use(session({secret: "nabrunwotpu"}));
+
+app.use(userLoggedMiddleware);
+app.use(adminLoggedMiddleware);
+
+app.use(cookies());
+app.use(cookiesMiddleware);
+
 app.use(methodOverride('_method'))
 
 app.use(express.static('public'));
 
-app.use(session({secret: "nabrunwotpu"}));
-app.use(userLoggedMiddleware);
-app.use(adminLoggedMiddleware);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,"/views"));
@@ -39,6 +51,7 @@ app.listen(PORT, () => {
 app.use('/', mainRoutes);
 app.use('/users', usersRoutes);
 app.use('/products', productRoutes);
+app.use('/api', usersApiRoutes,productApiRoutes, generalApiRoutes);
 
 
 

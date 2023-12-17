@@ -35,11 +35,12 @@ main form input{
     border-radius: 5px;
     color: #222;
     font-size: 1rem;
-    margin: 0 0 1rem;
+    /*margin: 0 0 1rem;*/
     padding: .5rem;
     outline: none;
     text-indent: 3px;
     resize: none;
+    width: 100%;
 }
 
 
@@ -81,7 +82,11 @@ span a:active{
     margin: .5rem 0 2rem;
     text-shadow: 0 0 10px #0005;
 }
-
+.error{
+    color:#842029;
+    text-align: center;
+    border-radius: 10px;
+}
 @media (min-width: 768px){
     main .container form{
         margin: 2rem 0;
