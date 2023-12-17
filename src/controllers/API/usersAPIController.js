@@ -9,6 +9,7 @@ const usersAPIController = {
             });
             const users = usersData.map(user => ({
                 ...user,
+                profilePicture: req.protocol + '://' + req.get('host') + '/img/users/' + user.profilePicture,
                 detail: req.protocol + '://' + req.get('host') + '/api' + req.url + '/' +user.id
             }))
             return res.status(200).json({

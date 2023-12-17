@@ -45,6 +45,7 @@ const productAPIController = {
 
                 return {
                     ...product,
+                    imageURL: req.protocol + '://' + req.get('host') + '/img/products/' + product.imagen,
                     Categoria: category ? category.categoria : null,
                     detail: req.protocol + '://' + req.get('host') + '/api' + req.url + "/" + product.idProd
                 };

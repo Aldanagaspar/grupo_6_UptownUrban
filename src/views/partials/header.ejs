@@ -36,7 +36,9 @@
                 <li class="dropdown">
                     <i class="fa-solid fa-circle-user dropbtn icon-med"></i>
                     <div class="dropdown-content">
-                        <a href="<%= locals.isLogged ? '/users/profile' : '/users/login' %>">Mi perfil</a>
+                        <% if (locals.isLogged) { %>
+                            <a href="/users/profile">Mi perfil</a>
+                        <% } %>
                         <% if(locals.isLogged) { %>
                             <a href="/users/logout">Cerrar Sesión</a>
                         <% } else { %>

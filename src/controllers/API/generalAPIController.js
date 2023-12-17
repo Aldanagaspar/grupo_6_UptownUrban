@@ -15,26 +15,38 @@ const generalApiController = {
                 return acc;
             }, {});
 
+            const lastUserSelect = users[users.length - 1];
+            const lastUser = {
+                ...lastUserSelect,
+                imagen: req.protocol + '://' + req.get('host') + '/img/users/' + lastUserSelect.profilePicture
+            }
+
+            const lastProductSelect = products[products.length - 1];
+            const lastProduct = {
+                ...lastProductSelect,
+                imagen: req.protocol + '://' + req.get('host') + '/img/products/' + lastProductSelect.imagen
+            }
+
             return res.status(200).json({
                 info: [
                     {
                         titulo: 'Productos totales',
                         total: products.length,
-                        icono: "fas fa-question fa-2x"
+                        icono: "fas fa-tshirt fa-2x"
                     },
                     {
                         titulo: 'Usuarios registrados',
                         total: users.length,
-                        icono: "fas fa-question fa-2x"
+                        icono: "fas fa-user fa-2x"
                     },
                     {
                         titulo: 'Categorias cargadas',
                         total: categories.length,
-                        icono: "fas fa-question fa-2x"
+                        icono: "fas fa-tag fa-2x"
                     }
                 ],
-                lastProduct: products[products.length - 1],
-                lastUser: users[users.length - 1],
+                lastProduct,
+                lastUser,
                 CategoryCounts
             })
         } catch(error) {

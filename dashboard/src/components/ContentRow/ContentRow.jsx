@@ -28,7 +28,7 @@ class ContentRow extends Component  {
       <Card title={"Último producto registrado"}>
 
         <div className="text-center">
-          <img className="img-fluid px-3 px-sm-4 mb-6 w-50 mx-auto" style={{ width: '40rem' }} src={`../../../${lastProduct.imagen}`} alt={lastProduct.nombreProd} />
+          <img className="img-fluid px-3 px-sm-4 mb-6 w-50 mx-auto" style={{ width: '40rem' }} src={lastProduct.imagen} alt={lastProduct.nombreProd} />
         </div>
         <div className='flex flex-column'>
           <h3 className='text-center font-bold text-gray-900'>{lastProduct.nombreProd}</h3>
