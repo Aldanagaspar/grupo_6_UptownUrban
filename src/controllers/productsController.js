@@ -45,7 +45,6 @@ const productsController = {
 
             if (searchProducts) {
                 return res.render('./products/productsList', {products: searchProducts})
-                // return res.json(searchProducts)
             }
         } catch(err) {
 
@@ -72,16 +71,22 @@ const productsController = {
         }
     },
     crearProducto: async (req, res) => {
-        const categorias = await db.ProductCategorie.findAll({raw: true});
-        return res.render('./products/createProduct', {categorias});
+        try {
+            const categorias = await db.ProductCategorie.findAll({raw:true});
+            return res.render('./products/createProduct', {categorias});
+        } catch(err) {
+            res.status(500).json(err)
+        }
     },
     guardarProducto: async (req, res) => {        
         try {
+            const categorias = await db.ProductCategorie.findAll({raw:true});
             let resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0) {
                 return res.render('./products/createProduct', {
                     errors: resultValidation.mapped(),
-                    oldData: req.body
+                    oldData: req.body,
+                    categorias
                 })
             };
             await db.Product.create({

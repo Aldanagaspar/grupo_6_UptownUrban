@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 router.get('/cart', authMiddleware,productsController.carrito);
+router.get('/create/', authMiddleware,productsController.crearProducto);  
 
 // ***** RUTAS DEL CRUD *****
 // *** rutas para OBTENER PRODUCTOS ***
@@ -26,7 +27,6 @@ router.get('/item/:id', productsController.item);
 router.get('/:category', productsController.productosPorCategoria);
 
 // *** rutas para AGREGAR PRODUCTOS ***
-router.get('/create/', authMiddleware,productsController.crearProducto);  
 router.post('/', upload.single('imagen'), validationCreateProduct,productsController.guardarProducto);
 
 // *** rutas para EDITAR PRODUCTOS ***

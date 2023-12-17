@@ -33,8 +33,10 @@
                         <label for="categoria">Categoría</label>
                         <select id="categoria" name="categoria" required>
                             <option value="" selected disabled>Selecciona la categoría</option>
-                            <% for (let categoria of categorias) { %>
-                                <option value="<%= categoria.idCategoria %>"><%= categoria.categoria %></option>
+                            <% if (categorias) { %>
+                                <% for (let categoria of categorias) { %>
+                                    <option value="<%= categoria.idCategoria %>"><%= categoria.categoria %></option>
+                                <% } %>
                             <% } %>
                         </select>
                         <% if (locals.errors && errors.categoria) { %>
