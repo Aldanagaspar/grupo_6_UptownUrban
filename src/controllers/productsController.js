@@ -7,7 +7,7 @@ const productsController = {
     listadoProductos: async (req, res) => {
         try {
             const products = await db.Product.findAll({
-                include: ['Category']
+                include: ['Category'],
             });
 
             return res.render('./products/productsList', {products: products})
@@ -149,10 +149,10 @@ const productsController = {
     },
     borrarProducto: async (req, res) => {
         try {
-            const deleteProduct = await db.Product.destroy({
+            await db.Product.destroy({
                 where: {idProd: req.params.id}
             });
-            return res.redirect('products')
+            return res.redirect('/products')
         } catch(error) {
             res.status(500).json('Ha ocurrido un error.', error)
         }

@@ -5,11 +5,7 @@ window.addEventListener("load", function(){
 
     formulario.addEventListener("submit", function(e){
         if (fullname.value == "" || fullname.value.length < 5 || password.value == "" || password.value.length < 5){
-            e.preventDefault();
-            alert("Complete el formulario")
-            
-        }else{
-            alert("El perfil se edito perfectamente")  
+            e.preventDefault();            
         }
     });
     fullname.addEventListener("blur", function(e){
