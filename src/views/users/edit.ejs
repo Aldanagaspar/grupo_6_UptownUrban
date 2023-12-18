@@ -19,10 +19,14 @@
                         <div>
                             <input id="password" name="password" type="password"><br>
                             <p class="error" id="error_password" style ="display: none">Ingrese una Contraseña</p>
-                            <p class="error" id="error_password_length" style ="display: none">La contraseña tiene que tener mas de 5 caracteres</p>
+                            <p class="error" id="error_password_length" style ="display: none">La contraseña tiene que tener mas de 8 caracteres</p>
+                            <p class="error" id="error_password_requirements" style ="display: none">La contraseña debe contener al menos una letra mayúscula, una minúscula, un número y un caracter especial</p>
                         </div>
                         <label for="profilePicture">Foto de Perfil</label>
-                        <input id="profilePicture" name="profilePicture" type="file" value="<%= user.profilePicture %>"><br>
+                        <div>
+                            <input id="profilePicture" name="profilePicture" type="file" value="<%= user.profilePicture %>"><br>
+                            <p class="error" id="error_profilePicture" style ="display: none">Ingrese una imagen</p>
+                        </div>
                         <button type="submit" class="boton-primario">¡Guardar Cambios!</button>
                     </form>
                 </div>

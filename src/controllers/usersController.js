@@ -99,7 +99,7 @@ const usersController = {
             let dataFile = req.file;
             let userFile;
             if (dataFile) {
-                userFile = verifyFile.filename;
+                userFile = dataFile.filename;
             } else {
                 userFile = userToUpdate.profilePicture;
             }

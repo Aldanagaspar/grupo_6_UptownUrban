@@ -49,7 +49,7 @@
                                 <%= errors.categoria.msg %>
                             </span>
                         <% } %>
-
+                        <p class="error" id="error_categoria" style ="display: none">Elija una categoria.</p>
                         <label for="talle">Tamaño / Talle</label>
                         <input id="talle" name="talle" type="text" placeholder="Ej. XL, 45cm, 40"
                         value="<%=product.talle%>" required>
@@ -58,7 +58,7 @@
                                 <%= errors.talle.msg %>
                             </span>
                         <% } %>
-
+                        <p class="error" id="error_talle" style ="display: none">Ingrese una Talle</p>
                         <label for="descripcion">Descripción del Producto</label>
                         <textarea name="descripcion" id="descripcion" cols="40" rows="5" required><%=product.descripcion%></textarea>
                         <% if (locals.errors && errors.descripcion) { %>
@@ -66,7 +66,8 @@
                                 <%= errors.descripcion.msg %>
                             </span>
                         <% } %>
-
+                        <p class="error" id="error_descripcion" style ="display: none">Ingrese una descripcion.</p>
+                        <p class="error" id="error_descripcion_length" style ="display: none">La descripcion debe contener al menos 20 caracteres</p>
                         <label for="imagen">Imagen</label>
                         <input id="imagen" name="imagen" type="file" value="<%= product.imagen %>">
                         <button type="submit" class="boton-primario">¡Modificar!</button>
