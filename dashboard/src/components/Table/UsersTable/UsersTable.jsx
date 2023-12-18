@@ -24,7 +24,6 @@ class UsersTable extends Component {
                     <thead>
                         <tr>
                             <th className="text-gray-900">ID</th>
-                            <th className="text-gray-900">Foto de Perfil</th>
                             <th className="text-gray-900">Nombre Completo</th>
                             <th className="text-gray-900">Correo Electrónico</th>
                         </tr>

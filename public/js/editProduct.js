@@ -6,11 +6,7 @@ window.addEventListener("load", function(){
 
     formulario.addEventListener("submit", function(e){
         if (nombreProd.value == "" || nombreProd.value.length < 5 || precio.value == "" || precio.value < 0){
-            e.preventDefault();
-            alert("Complete el formulario")
-            
-        }else{
-            alert("El producto se modifico perfectamente") 
+            e.preventDefault();            
         }
     });
     nombreProd.addEventListener("blur", function(e){

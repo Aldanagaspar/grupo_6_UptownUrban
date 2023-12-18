@@ -233,6 +233,7 @@ footer ul li a:hover {
 
 /* NOT FOUN PRODUCT */
 .not-found-product {
+    margin: 4rem 0;
     text-align: center;
 }
 

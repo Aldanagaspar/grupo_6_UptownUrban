@@ -8,10 +8,6 @@ window.addEventListener("load", function(){
         let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (fullname.value == "" || fullname.value.length < 5 || password.value == "" || password.value.length < 5 || email.value == "" || !emailRegex.test(email.value)){
             e.preventDefault();
-            alert("Complete el formulario")
-            
-        }else{
-            alert("El perfil se registro perfectamente") 
         }
     });
     fullname.addEventListener("blur", function(e){
